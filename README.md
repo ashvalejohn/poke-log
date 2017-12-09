@@ -5,6 +5,13 @@
 ## Project description
 Description of project, including goals
 
+## Functionality & MVP
+Users will be able to:
+- [ ] Log in/Log out
+- [ ] Log an infusion (including date, dose, and whether it was in response to a bleed)
+- [ ] See a calendar view of infusions and bleeds
+- [ ] Notify interested parties of an infusion
+
 ## Stack
 - PostgreSQL
 - Node.js
