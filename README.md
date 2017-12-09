@@ -18,6 +18,7 @@ Users will be able to:
 ## Stack
 - PostgreSQL
 - Node.js
+- Sequelize (?)
 - Express.js (?)
 - React/Redux
 
