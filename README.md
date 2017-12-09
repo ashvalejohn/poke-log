@@ -8,11 +8,16 @@
 *Hemophilia App* is built for hemophilia patients to consolidate infusion and bleed information.
 
 ## Functionality & MVP
+- [ ] Hosted on Heroku
+- [ ] Can save to home screen
 Users will be able to:
 - [ ] Log in/Log out
 - [ ] Schedule a reminder to infuse
 - [ ] Log an infusion (including date, dose, and whether it was in response to a bleed)
-- [ ] See a calendar view of infusions and bleeds
+- [ ] See a calendar view of infusions
+
+### Bonus Features
+- [ ] See a heatmap view of bleeds
 - [ ] Notify interested parties of an infusion
 
 ## Stack
@@ -42,6 +47,7 @@ Include screenshots of anything that looks pretty
   - [ ] completed Project Proposal
   - [ ] understanding of stack
   - [ ] JWT user authentication
+  - [ ] Initial host on Heroku
   
 ### Phase One: Login
 - [ ] User can create account
@@ -108,6 +114,7 @@ Include screenshots of anything that looks pretty
 ### Sunday
 - Objective: Send notification to share users (LOL)
 - Objective: Final polish
+- Objective: Production README
 
 ### Monday
 - 9:00 am: 🕊🍻✨
