@@ -25,7 +25,7 @@ Users will be able to:
 ## Implementation Details
 ### (basically anything you had to stop and think about before building)
 - Progressive Web App (Service Workers)
-- JSON Web Tokens (Auth)
+- **JSON Web Tokens**: user authentication
 - Responsive Web Design
 - **Socket.io**: to alert shared users after an infusion or bleed
 
@@ -43,29 +43,71 @@ Include screenshots of anything that looks pretty
   - [ ] understanding of stack
   - [ ] JWT user authentication
   
-### Phase One: Login & Infusion Log
+### Phase One: Login
 - [ ] User can create account
 - [ ] User can log into account
-- [ ] User can create an infusion
-- [ ] User can update an infusion
 
 #### Monday
 - Objective: Users should be able to login
-- [ ]
+- [ ] Create App Shell
+- [ ] Users table in DB
+- [ ] Send user info via Express/Node to frontend
+- [ ] Login React Component
+- [ ] Signup React Component
 
-### 
-Tuesday
+### Phase Two: Infusion Log & User Settings
+- [ ] User can read/update dosage
+- [ ] User can read/update shared users
+- [ ] User can create an infusion
+- [ ] User can update an infusion
+- [ ] Implement Service Worker
 
-### Wednesday
+#### Tuesday
+- Objective: Complete log component
+- [ ] Responsive design
+- [ ] Log React Component (form, submit)
+- [ ] Infusion table in DB
+- [ ] Send infusion data to DB
 
-### Thursday
+#### Wednesday
+- Objective: Integrate service worker for infusion log
+- Objective: Allow user to update settings
+- [ ] Send infusion data to service worker
+- [ ] Send infusion data from service worker to DB
+- [ ] Settings React Component
+- [ ] Send user settings data to DB
+- [ ] Send user settings data to service worker
+- [ ] Send user settings data from service worker to DB
 
-### Friday
+### Phase Three: Review Infusion (Index Views)
+- [ ] User can see calendar view of past infusions (infusion index)
+- [ ] User can see heatmap view of past bleeds (bleed index) **BONUS?**
 
-### Saturday
+#### Thursday
+- Objective: Built calendar component
+- [ ] Responsive design
+- [ ] Calendar React Component
+- [ ] Send infusion data from DB
+- [ ] Send infusion data for current month from service worker
+
+#### Friday
+- Objective: Build heatmap component
+- [ ] Responsive design 
+- [ ] Heatmap React Component
+- [ ] Send bleed data from DB
+- [ ] Indicate that heatmap only available online
+
+### Phase Four: Notifications
+- [ ] Remind user to infuse
+- [ ] Notify shared users of infusion
+
+#### Saturday
+- Objective: Send push notification to patient
+- [ ] Schedule push notifications
 
 ### Sunday
-- [ ] Styling
+- Objective: Send notification to share users (LOL)
+- Objective: Final polish
 
 ### Monday
 - 9:00 am: 🕊🍻✨
