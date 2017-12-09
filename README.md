@@ -27,6 +27,7 @@ Users will be able to:
 - Progressive Web App (Service Workers)
 - JSON Web Tokens (Auth)
 - Responsive Web Design
+- *Socket.io*: to alert shared users after an infusion or bleed
 
 ## Code Snippets
 Include links to the neatest parts of the code, or embed snippets
@@ -34,4 +35,24 @@ Include links to the neatest parts of the code, or embed snippets
 ## Screenshots
 Include screenshots of anything that looks pretty
 
-## To Dos and Future Features
+## To Dos
+### Weekend 1
+- Objective: All members will use the weekend to familiarize themselves with the new elements of the stack (Node.js, Express, PWA, JSON Web Tokens). 
+- Goals:
+  - [ ] completed Project Proposal
+  - [ ] understanding of stack
+  - [ ] JWT user authentication
+  
+### Monday
+
+### Tuesda
+
+### Wednesday
+
+### Day 4
+
+### Day 5
+
+### Day 2
+
+
