@@ -27,7 +27,7 @@ Users will be able to:
 - Progressive Web App (Service Workers)
 - JSON Web Tokens (Auth)
 - Responsive Web Design
-- *Socket.io*: to alert shared users after an infusion or bleed
+- **Socket.io**: to alert shared users after an infusion or bleed
 
 ## Code Snippets
 Include links to the neatest parts of the code, or embed snippets
@@ -43,16 +43,32 @@ Include screenshots of anything that looks pretty
   - [ ] understanding of stack
   - [ ] JWT user authentication
   
-### Monday
+### Phase One: Login & Infusion Log
+- [ ] User can create account
+- [ ] User can log into account
+- [ ] User can create an infusion
+- [ ] User can update an infusion
 
-### Tuesda
+#### Monday
+- Objective: Users should be able to login
+- [ ]
+
+### 
+Tuesday
 
 ### Wednesday
 
-### Day 4
+### Thursday
 
-### Day 5
+### Friday
 
-### Day 2
+### Saturday
+
+### Sunday
+- [ ] Styling
+
+### Monday
+- 9:00 am: 🕊🍻✨
+
 
 
