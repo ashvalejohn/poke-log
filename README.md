@@ -28,17 +28,10 @@ Users will be able to:
 - React/Redux
 
 ## Implementation Details
-### (basically anything you had to stop and think about before building)
 - Progressive Web App (Service Workers)
 - **JSON Web Tokens**: user authentication
 - Responsive Web Design
 - **Socket.io**: to alert shared users after an infusion or bleed
-
-## Code Snippets
-Include links to the neatest parts of the code, or embed snippets
-
-## Screenshots
-Include screenshots of anything that looks pretty
 
 ## To Dos
 ### Weekend 1
