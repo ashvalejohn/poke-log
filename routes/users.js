@@ -1,9 +1,15 @@
 var express = require('express');
 var router = express.Router();
 
-/* GET users listing. */
-router.get('/', function(req, res, next) {
-  res.send('respond with a resource');
+
+router.get('/api/users', (req, res, next) => {
+  console.log('request for /api/users');
+  res.send('This is the user show page');
+});
+
+router.get('/api/users/:id', (req, res, next) => {
+  console.log('request for /api/users/:id');
+  res.send(`This is the user show page for ${req.params.id}`);
 });
 
 module.exports = router;
