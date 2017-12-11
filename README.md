@@ -5,12 +5,13 @@ PokeLog is built for hemophilia patients to consolidate infusion and bleed infor
 
 ## Functionality & MVP
 - [ ] Hosted on Heroku
-- [ ] Can save to home screen
+
 Users will be able to:
 - [ ] Log in/Log out
 - [ ] Schedule a reminder to infuse
 - [ ] Log an infusion (including date, dose, and whether it was in response to a bleed)
 - [ ] See a calendar view of infusions
+- [ ] Save the app to their home screen and log infusions while offline
 
 ### Bonus Features
 - [ ] See a heatmap view of bleeds
