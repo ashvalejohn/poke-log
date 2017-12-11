@@ -9,6 +9,5 @@ connection.authenticate()
   .then(() => console.log('Connected to the database'))
   .catch(() => console.log('Error: Unable to connect to database'));
 
-// connection.sync().then()
 
 module.exports = connection;
