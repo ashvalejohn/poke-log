@@ -1,3 +1,46 @@
 body{
   background-color: $ltyell;
+  margin: 0;
+  padding: 0;
+  h1{
+    margin: 0;
+  }
+}
+
+#root{
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+}
+
+.mobile-nav{
+  background-color: $white;
+  border-top: 2px solid $dkyell;
+  height: 10vh;
+  position: fixed;
+  bottom: 0;
+  width: 100vw;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
+
+.mobile-nav__icon{
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
+  padding: 2%;
+  flex: 1;
+  height: 50%;
+}
+
+.calendar--inactive{
+  background-image: url('../images/icons/calendar-yellow.svg');
+}
+
+.droplet--inactive{
+  background-image: url('../images/icons/droplet-yellow.svg');
+}
+.settings--inactive{
+  background-image: url('../images/icons/settings-yellow.svg');
 }
