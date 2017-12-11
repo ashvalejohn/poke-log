@@ -1,11 +1,9 @@
 # Project Proposal
 
-- Link to live demo and/or instructions on how to use and run code -
-
 ## Project description
-*Hemophilia App* is a Progressive Web App (PWA) that allows hemophilia patients to log and review their bleeds and infusions while on or offline. *Hemophilia App*'s design is device-agnostic, so users have a consistent experience on desktop and mobile. In addition, users can save the web app to their smartphone home screen to mimic a native app experience. Users can choose to share their bleeds and infusions with interested parties (i.e. parents, doctors, etc.). Users can set their infusion schedule and *Hemophilia App* will remind them to infuse.
+PokeLog is a Progressive Web App (PWA) that allows hemophilia patients to log and review their bleeds and infusions while on or offline. PokeLog's design is device-agnostic, so users have a consistent experience on desktop and mobile. In addition, users can save the web app to their smartphone home screen to mimic a native app experience. Users can set their infusion schedule and PokeLog will remind them to infuse. As a bonus feature, users can choose to share their bleeds and infusions with interested parties (i.e. parents, doctors, etc.). 
 
-*Hemophilia App* is built for hemophilia patients to consolidate infusion and bleed information.
+PokeLog is built for hemophilia patients to consolidate infusion and bleed information.
 
 ## Functionality & MVP
 - [ ] Hosted on Heroku
@@ -22,29 +20,30 @@ Users will be able to:
 
 ## Stack
 - PostgreSQL
+- Sequelize
 - Node.js
-- Sequelize (?)
-- Express.js (?)
+- Express
 - React/Redux
 
 ## Implementation Details
 - Progressive Web App (Service Workers)
-- **JSON Web Tokens**: user authentication
+- Passport.js: user authentication
 - Responsive Web Design
-- **Socket.io**: to alert shared users after an infusion or bleed
+- Socket.io: to alert shared users after an infusion or bleed
 
 ## To Dos
 ### Weekend 1
 - Objective: All members will use the weekend to familiarize themselves with the new elements of the stack (Node.js, Express, PWA, JSON Web Tokens). 
 - Goals:
-  - [ ] completed Project Proposal
-  - [ ] understanding of stack
-  - [ ] JWT user authentication
-  - [ ] Initial host on Heroku
+  - [x] completed Project Proposal
+  - [x] understanding of stack
+  - [x] completed wireframes
+  - [x] setup Node/Express backend
   
 ### Phase One: Login
 - [ ] User can create account
 - [ ] User can log into account
+- [ ] Initial host on Heroku
 
 #### Monday
 - Objective: Users should be able to login
