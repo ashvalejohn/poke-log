@@ -1,0 +1,44 @@
+.auth{
+  height: 90vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
+  width: 90%;
+  margin: 0 auto;
+  h1{
+    font-size: 4rem;
+    text-align: center;
+  }
+}
+
+.auth__form{
+  color: $black;
+  display: flex;
+  flex-direction: column;
+  font-size: 4rem;
+  width: 100%;
+}
+
+.auth__form-field{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin: 0 2%;
+  input{
+    border: 2px solid $dkyell;
+    height: 5vh;
+    width: 80%;
+  }
+}
+
+.auth__submit{
+  background-color: $dkyell;
+  border: 0px;
+  color: $white;
+  border-radius: $button-border;
+  font-size: 4rem;
+  height: 10vh;
+  width: 60vw;
+}

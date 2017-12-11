@@ -2,6 +2,8 @@ body {
   background-color: #FCF9F2;
   margin: 0;
   padding: 0;
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 16px;
 }
 body h1 {
   margin: 0;
@@ -44,4 +46,49 @@ body h1 {
 
 .settings--inactive {
   background-image: url("../images/icons/settings-yellow.svg");
+}
+
+.auth {
+  height: 90vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
+  width: 90%;
+  margin: 0 auto;
+}
+.auth h1 {
+  font-size: 4rem;
+  text-align: center;
+}
+
+.auth__form {
+  color: #0b101a;
+  display: flex;
+  flex-direction: column;
+  font-size: 4rem;
+  width: 100%;
+}
+
+.auth__form-field {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin: 0 2%;
+}
+.auth__form-field input {
+  border: 2px solid #F7DA99;
+  height: 5vh;
+  width: 80%;
+}
+
+.auth__submit {
+  background-color: #F7DA99;
+  border: 0px;
+  color: white;
+  border-radius: 5px;
+  font-size: 4rem;
+  height: 10vh;
+  width: 60vw;
 }
