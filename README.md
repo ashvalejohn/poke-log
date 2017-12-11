@@ -1,6 +1,4 @@
 # Project Proposal
-
-## Project description
 PokeLog is a Progressive Web App (PWA) that allows hemophilia patients to log and review their bleeds and infusions while on or offline. PokeLog's design is device-agnostic, so users have a consistent experience on desktop and mobile. In addition, users can save the web app to their smartphone home screen to mimic a native app experience. Users can set their infusion schedule and PokeLog will remind them to infuse. As a bonus feature, users can choose to share their bleeds and infusions with interested parties (i.e. parents, doctors, etc.). 
 
 PokeLog is built for hemophilia patients to consolidate infusion and bleed information.
@@ -30,6 +28,19 @@ Users will be able to:
 - Passport.js: user authentication
 - Responsive Web Design
 - Socket.io: to alert shared users after an infusion or bleed
+
+## Wireframes
+### App Shell
+![App Shell](http://res.cloudinary.com/ashvalejohn/image/upload/bo_1px_solid_rgb:000000,r_5/v1512873077/MobileAppShell_bbrjgh.png)
+
+### Log a Poke (Landing Page)
+![Log a Poke](http://res.cloudinary.com/ashvalejohn/image/upload/bo_1px_solid_rgb:000000,r_5/v1512873077/MobileLog_p2ouom.png)
+
+### Poke Log (Calendar View)
+![Poke Log](http://res.cloudinary.com/ashvalejohn/image/upload/bo_1px_solid_rgb:000000,r_5/v1512873077/MobileCalendar_flwcdd.png)
+
+### Settings
+![Settings](http://res.cloudinary.com/ashvalejohn/image/upload/bo_1px_solid_rgb:000000,r_5/v1512873077/MobileSettings_rls5af.png)
 
 ## To Dos
 ### Weekend 1
