@@ -18,8 +18,8 @@ export const loginUser = user => dispatch => (
     currentUser => (
       dispatch(receiveCurrentUser(currentUser))
     ),
-    error => (
-      dispatch(receiveErrors(errors.responseJSON))
+    errors => (
+      dispatch(receiveSessionErrors(errors.responseJSON))
     ),
   )
 )
@@ -29,7 +29,7 @@ export const signupUser = user => dispatch => (
     currentUser => (
       dispatch(receiveCurrentUser(currentUser))
     ),
-    error => (
+    errors => (
       dispatch(receiveSessionErrors(errors.responseJSON))
     ),
   )

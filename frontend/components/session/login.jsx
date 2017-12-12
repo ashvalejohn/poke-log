@@ -6,8 +6,8 @@ class Login extends Component {
     super(props);
 
     this.state = {
-      email: 'YAY',
-      password: 'SUBMIT',
+      email: '',
+      password: '',
     }
 
     this.handleSubmit = this.handleSubmit.bind(this);

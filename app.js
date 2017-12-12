@@ -17,7 +17,7 @@ models.sequelize.sync()
 
 var app = express();
 
-app.use('/api/session', (req, res, next) => {
+app.use('/api/*', (req, res, next) => {
   console.log('signed in????');
   console.log('req user:', req.user);
   console.log('req session:', req.session);
@@ -29,8 +29,10 @@ app.use('/api/session', (req, res, next) => {
 app.use(logger('dev'));
 app.use(bodyParser.json());
 app.use(session({ secret: "Cat pokes hurt the most.", resave: false, saveUninitialized: false }));
-app.use(bodyParser.urlencoded({ extended: false }));
+app.use(bodyParser.urlencoded({ extended: true }));
 app.use(cookieParser());
+
+app.use('/api/*', (req, res, next) => { console.log('req body: ', req.body); next(); });
 
 app.use(passport.initialize());
 app.use(passport.session());
