@@ -1,0 +1,42 @@
+body{
+  background-color: $ltyell;
+  margin: 0;
+  padding: 0;
+  font-family: Arial, Helvetica, sans-serif;
+  
+  h1, p{
+    margin: 0;
+  }
+}
+
+#root{
+  display: flex;
+  flex-direction: column;
+  height: 90vh;
+  @media screen and (min-width: $desktop){
+    margin-top: 10vh;
+  }
+}
+
+.page-title {
+  font-size: 32px;
+  text-align: center;
+  color: blue;
+  @media screen and (min-width: $tablet){
+    font-size: 3rem;
+  }
+}
+
+.button{
+  border-radius: $button-border;
+  font-size: 1.25rem;
+  height: 60px;
+  text-transform: uppercase;
+  width: 50vw;
+  margin-bottom: 2%;
+  @media screen and (min-width: $tablet){
+    font-size: 1.5rem;
+    height: 75px;
+    width: 200px;
+  }
+}

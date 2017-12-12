@@ -1,0 +1,83 @@
+.auth{
+  height: 90vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  align-items: center;
+  width: 90%;
+  margin: 0 auto;
+}
+
+.auth__form{
+  color: $black;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  font-size: 24px;
+  width: 80%;
+  @media screen and (min-width: $tablet){
+    align-items: center;
+    font-size: 2rem;
+  }
+}
+
+.auth__form-field{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  margin: 0 2%;
+  color: $dkyell;
+  &:last-of-type{
+    margin-top: 2vh;
+  }
+  
+}
+
+.auth__form-input{
+  border: 2px solid $dkyell;
+  border-radius: $button-border;
+  height: 50px;
+  padding-left: 2%;
+  font-size: inherit;
+  color: $black;
+  &:valid{
+    border: 2px solid $green;
+    outline-color: $green;
+  }
+  @media screen and (min-width: $tablet){
+    width: 350px;
+  }
+}
+
+.auth__title{
+  color: $dkyell;
+  @extend .page-title;
+}
+
+.auth__login-signup{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  p {
+    color: $black;
+    font-size: 16px;
+    margin-top: 2%;
+    a {
+      font-weight: bold;
+      &:hover{
+        color: $blue;
+      }
+      &:visited{
+        color: inherit;
+      }
+    }
+  }
+}
+
+.auth__submit{
+  background-color: $dkyell;
+  border: 0px;
+  color: $white;
+  @extend .button;
+}

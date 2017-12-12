@@ -1,0 +1,117 @@
+.nav{
+  background-color: $white;
+  border-top: 2px solid $yell;
+  height: 10vh;
+  position: fixed;
+  bottom: 0;
+  width: 100vw;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  padding: 2%;
+  width: 100%;
+  transition-duration: .5s;
+  @media screen and (min-width: $desktop){
+    top: 0;
+    margin-bottom: 10vh;
+    border-top: none;
+    border-bottom: 2px solid $yell;
+  }
+}
+
+.nav__icon{
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
+  flex: 1;
+  height: 60%;
+  text-align: center;
+  transition-duration: .5s;
+  div{
+    height: 100%;
+    width: 60px;
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-position: center;
+    transition-duration: .5s;
+    margin: 0 auto;
+  }
+  img{
+    height: 100%;
+  }
+  p{
+    display: none;
+  }
+  @media screen and (min-width: $desktop){
+    background-position: left;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center; 
+    text-decoration: none;
+    color: $yell;
+    font-size: 24px;
+    div{
+      margin: 0;
+    }
+    p{
+      color: inherit;
+      display: block;
+      text-align: center;
+      margin-left: 2%;
+    }
+    &:visited{
+      color: inherit;
+      text-decoration: none;
+    }
+  }
+  &:hover{
+    div{
+      transition-duration: .5s;
+    }
+  }
+}
+
+.nav__icon--calendar{
+  div{
+    background-image: url('../images/icons/calendar-yellow.svg');
+  }
+  &:hover{
+    div{
+      background-image: url('../images/icons/calendar-blue.svg');
+      transition-duration: .5s;
+    }
+    color: $blue;
+    transition-duration: .5s;
+  }
+}
+
+
+.nav__icon--droplet{
+  div{
+    background-image: url('../images/icons/droplet-yellow.svg');
+  }
+  &:hover{
+    div{
+      background-image: url('../images/icons/droplet-red.svg');
+      transition-duration: .5s;
+    }
+    color: $red;
+    transition-duration: .5s;
+  }
+}
+
+
+.nav__icon--settings{
+  div{
+    background-image: url('../images/icons/settings-yellow.svg');
+  }
+  &:hover{
+    div{
+      background-image: url('../images/icons/settings-black.svg');
+      transition-duration: .5s;
+    }
+    color: $black;
+    transition-duration: .5s;
+  }
+}
