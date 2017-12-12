@@ -3,7 +3,7 @@ import { Route, Redirect, withRouter } from 'react-router-dom';
 import { connect } from 'react-redux';
 
 const mapStateToProps = state => ({
-  loggedIn: Boolean(state.session.currentUser)
+  loggedIn: Boolean(state.user)
 });
 
 // Users who are ALREADY logged in can't see auth routes
