@@ -33,6 +33,7 @@
     background-repeat: no-repeat;
     background-size: contain;
     transition-duration: .5s;
+    margin: 0 auto;
   }
   img{
     height: 100%;
@@ -49,6 +50,9 @@
     text-decoration: none;
     color: $yell;
     font-size: 24px;
+    div{
+      margin: 0;
+    }
     p{
       color: inherit;
       display: block;
