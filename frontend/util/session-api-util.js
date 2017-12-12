@@ -1,3 +1,5 @@
+import $ from 'jquery';
+
 export const login = user => (
   $.ajax({
     method: 'POST',
