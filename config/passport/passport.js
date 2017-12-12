@@ -1,10 +1,22 @@
 const bCrypt = require('bcrypt-nodejs');
 
 
-module.exports = (passport, user) => {
+module.exports = (passport, User) => {
 
-  const User = user;
+  // const User = user;
   const LocalStrategy = require('passport-local').Strategy;
+
+  passport.serializeUser((user, cb) => {
+    cb(null, user.id);
+  });
+
+  passport.deserializeUser((id, cb) => {
+    User.findById(id, (err, user) => {
+      if (err) { return cb(err); }
+      cb(null, user);
+    });
+  });
+
 
   passport.use('local-signup', new LocalStrategy(
     {
@@ -13,10 +25,6 @@ module.exports = (passport, user) => {
       passReqToCallback: true
     },
     (req, email, password, done) => {
-      console.log('TOP');
-      console.log('asdgkjasdglkhjas');
-      console.log(req, email, password);
-      console.log(done);
       const generateHash = (pw) => {
         return bCrypt.hashSync(pw, bCrypt.genSaltSync(8));
       };
@@ -39,7 +47,6 @@ module.exports = (passport, user) => {
 
           User.create(data).then((newUser, created) => {
             if (!newUser) {
-              // what's happening here?
               return done(null, false);
             } else {
               return done(null, newUser);
