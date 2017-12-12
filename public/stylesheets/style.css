@@ -3,7 +3,7 @@ body {
   margin: 0;
   padding: 0;
   font-family: Arial, Helvetica, sans-serif;
-  font-size: 16px;
+  font-size: 32px;
 }
 body h1 {
   margin: 0;
@@ -89,6 +89,25 @@ body h1 {
 
 .auth__title {
   color: #e4a312;
+}
+
+.auth__login-signup {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.auth__login-signup p {
+  color: #0b101a;
+}
+.auth__login-signup p a {
+  font-weight: bold;
+}
+.auth__login-signup p a:hover {
+  color: #6285db;
+}
+.auth__login-signup p a:visited {
+  color: inherit;
 }
 
 .auth__submit {

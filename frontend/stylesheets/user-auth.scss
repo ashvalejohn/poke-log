@@ -37,6 +37,25 @@
   @extend .page-title;
 }
 
+.auth__login-signup{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  p {
+    color: $black;
+    a {
+      font-weight: bold;
+      &:hover{
+        color: $blue;
+      }
+      &:visited{
+        color: inherit;
+      }
+    }
+  }
+}
+
 .auth__submit{
   background-color: $dkyell;
   border: 0px;
