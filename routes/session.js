@@ -1,11 +1,10 @@
 var express = require('express');
 var router = express.Router();
+const passport = require('passport');
+const SessionsController = require('../controllers/sessions_controller');
 
 
-router.post('/', (req, res, next) => {
-  // console.log('request for /api/users');
-  // res.send('This is the user INDEX page');
-});
+router.post('/', passport.authenticate('local-signin'), SessionsController.create);
 
 router.delete('/', (req, res, next) => {
   // console.log('request for /api/users/:id');

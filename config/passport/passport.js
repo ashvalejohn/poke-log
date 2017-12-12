@@ -57,4 +57,37 @@ module.exports = (passport, User) => {
     }
   ));
 
+
+  passport.use('local-signin', new LocalStrategy(
+    {
+      usernameField: 'email',
+      passwordField: 'password',
+      passReqToCallback: true
+    },
+    (req, email, password, done) => {
+
+      const isValidPassword = (realPw, pw) => {
+        return bCrypt.compareSync(realPw, pw);
+      };
+
+      User.findOne({
+        where: {
+          email: email
+        }
+      }).then(user => () => {
+        if (!user) {
+          return done(null, false, { message: 'Invalid email'});
+        } else if (!isValidPassword(user.password, password)) {
+          return done(null, false, { message: 'Invalid password'});
+        } else {
+          const userInfo = user.get();
+          return done(null, userInfo);
+        }
+      }).catch(err => {
+        console.log(err);
+        return done(null, false, { message: 'Something went wrong!'});
+      });
+    }
+  ));
+
 };
