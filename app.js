@@ -9,7 +9,7 @@ const session = require('express-session');
 var bodyParser = require('body-parser');
 
 const models = require('./models/index');
-require('./config/passport/passport')(passport, models.user);
+require('./config/passport/passport')(passport, models.User);
 
 models.sequelize.sync()
   .then(() => { console.log('DB connected! :)'); })
@@ -28,6 +28,17 @@ app.use(cookieParser());
 app.use(session({ secret: "Cat pokes hurt the most.", resave: true, saveUninitialized: true }));
 app.use(passport.initialize());
 app.use(passport.session());
+
+passport.serializeUser(function(user, cb) {
+  cb(null, user.id);
+});
+
+passport.deserializeUser(function(id, cb) {
+  models.User.findById(id, function (err, user) {
+    if (err) { return cb(err); }
+    cb(null, user);
+  });
+});
 
 // serve static assets
 app.use('/', express.static(path.join(__dirname, 'public')));

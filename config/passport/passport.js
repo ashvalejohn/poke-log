@@ -13,10 +13,6 @@ module.exports = (passport, user) => {
       passReqToCallback: true
     },
     (req, email, password, done) => {
-      console.log('TOP');
-      console.log('asdgkjasdglkhjas');
-      console.log(req, email, password);
-      console.log(done);
       const generateHash = (pw) => {
         return bCrypt.hashSync(pw, bCrypt.genSaltSync(8));
       };
@@ -39,7 +35,6 @@ module.exports = (passport, user) => {
 
           User.create(data).then((newUser, created) => {
             if (!newUser) {
-              // what's happening here?
               return done(null, false);
             } else {
               return done(null, newUser);
