@@ -13,11 +13,7 @@ module.exports = {
         unique: true,
         type: Sequelize.STRING
       },
-      passwordDigest: {
-        allowNull: false,
-        type: Sequelize.STRING
-      },
-      sessionToken: {
+      password: {
         allowNull: false,
         type: Sequelize.STRING
       },

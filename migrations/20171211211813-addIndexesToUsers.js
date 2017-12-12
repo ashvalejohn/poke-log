@@ -3,7 +3,7 @@
 module.exports = {
   up: (queryInterface, Sequelize) => {
 
-    return queryInterface.addIndex('Users', ['email', 'sessionToken']);
+    return queryInterface.addIndex('Users', ['email']);
     /*
       Add altering commands here.
       Return a promise to correctly handle asynchronicity.
@@ -22,6 +22,6 @@ module.exports = {
       return queryInterface.dropTable('users');
     */
 
-    return queryInterface.removeIndex('Users', ['email', 'sessionToken']);
+    return queryInterface.removeIndex('Users', ['email']);
   }
 };
