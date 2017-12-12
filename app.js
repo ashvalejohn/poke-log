@@ -19,9 +19,9 @@ var app = express();
 
 app.use('/api/session', (req, res, next) => {
   console.log('signed in????');
-  console.log(req.user);
-  console.log(req.session);
-  if (!req.user) { next(); }
+  console.log('req user:', req.user);
+  console.log('req session:', req.session);
+  if (true) { next(); }
 });
 
 // uncomment after placing your favicon in /public
