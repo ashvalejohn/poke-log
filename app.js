@@ -29,16 +29,6 @@ app.use(session({ secret: "Cat pokes hurt the most.", resave: true, saveUninitia
 app.use(passport.initialize());
 app.use(passport.session());
 
-passport.serializeUser(function(user, cb) {
-  cb(null, user.id);
-});
-
-passport.deserializeUser(function(id, cb) {
-  models.User.findById(id, function (err, user) {
-    if (err) { return cb(err); }
-    cb(null, user);
-  });
-});
 
 // serve static assets
 app.use('/', express.static(path.join(__dirname, 'public')));
