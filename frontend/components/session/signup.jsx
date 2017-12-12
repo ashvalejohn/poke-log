@@ -11,7 +11,7 @@ class Signup extends Component {
             <input type="email" className='auth__form-input' pattern="[a-z0-9!#$%&'*+/=?^_`{|}~-]+(?:\.[a-z0-9!#$%&'*+/=?^_`{|}~-]+)*@(?:[a-z0-9](?:[a-z0-9-]*[a-z0-9])?\.)+[a-z0-9](?:[a-z0-9-]*[a-z0-9])?" required />
           </label>
           <label htmlFor="" className='auth__form-field'>Password
-            <input type="password" className='auth__form-input' minlength='6' required />
+            <input type="password" className='auth__form-input' minLength='6' required />
           </label>
         </form>
         <div className='auth__login-signup'>

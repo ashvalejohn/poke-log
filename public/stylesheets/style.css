@@ -3,24 +3,49 @@ body {
   margin: 0;
   padding: 0;
   font-family: Arial, Helvetica, sans-serif;
-  font-size: 32px;
 }
-body h1 {
+body h1, body p {
   margin: 0;
 }
 
 #root {
   display: flex;
   flex-direction: column;
-  height: 100vh;
+  height: 90vh;
+}
+@media screen and (min-width: 1000px) {
+  #root {
+    margin-top: 10vh;
+  }
 }
 
 .page-title, .auth__title {
-  font-size: 5rem;
+  font-size: 32px;
   text-align: center;
+  color: blue;
+}
+@media screen and (min-width: 500px) {
+  .page-title, .auth__title {
+    font-size: 3rem;
+  }
 }
 
-.mobile-nav {
+.button, .auth__submit {
+  border-radius: 5px;
+  font-size: 1.5rem;
+  height: 80px;
+  text-transform: uppercase;
+  width: 50vw;
+}
+@media screen and (min-width: 500px) {
+  .button, .auth__submit {
+    font-size: 1.5rem;
+    height: 75px;
+    width: 200px;
+  }
+}
+
+.nav {
   background-color: white;
   border-top: 2px solid #F7DA99;
   height: 10vh;
@@ -30,27 +55,101 @@ body h1 {
   display: flex;
   justify-content: space-around;
   align-items: center;
+  padding: 2%;
+  width: 100%;
+  transition-duration: .5s;
+}
+@media screen and (min-width: 1000px) {
+  .nav {
+    top: 0;
+    margin-bottom: 10vh;
+    border-top: none;
+    border-bottom: 2px solid #F7DA99;
+  }
 }
 
-.mobile-nav__icon {
+.nav__icon {
   background-size: contain;
   background-repeat: no-repeat;
   background-position: center;
-  padding: 2%;
   flex: 1;
-  height: 50%;
+  height: 60%;
+  text-align: center;
+  transition-duration: .5s;
+}
+.nav__icon div {
+  height: 100%;
+  width: 60px;
+  background-repeat: no-repeat;
+  background-size: contain;
+  transition-duration: .5s;
+}
+.nav__icon img {
+  height: 100%;
+}
+.nav__icon p {
+  display: none;
+}
+@media screen and (min-width: 1000px) {
+  .nav__icon {
+    background-position: left;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    text-decoration: none;
+    color: #F7DA99;
+    font-size: 24px;
+  }
+  .nav__icon p {
+    color: inherit;
+    display: block;
+    text-align: center;
+    margin-left: 2%;
+  }
+  .nav__icon:visited {
+    color: inherit;
+    text-decoration: none;
+  }
+}
+.nav__icon:hover div {
+  transition-duration: .5s;
 }
 
-.calendar--inactive {
+.nav__icon--calendar div {
   background-image: url("../images/icons/calendar-yellow.svg");
 }
-
-.droplet--inactive {
-  background-image: url("../images/icons/droplet-yellow.svg");
+.nav__icon--calendar:hover {
+  color: #6285db;
+  transition-duration: .5s;
+}
+.nav__icon--calendar:hover div {
+  background-image: url("../images/icons/calendar-blue.svg");
+  transition-duration: .5s;
 }
 
-.settings--inactive {
+.nav__icon--droplet div {
+  background-image: url("../images/icons/droplet-yellow.svg");
+}
+.nav__icon--droplet:hover {
+  color: #D25737;
+  transition-duration: .5s;
+}
+.nav__icon--droplet:hover div {
+  background-image: url("../images/icons/droplet-red.svg");
+  transition-duration: .5s;
+}
+
+.nav__icon--settings div {
   background-image: url("../images/icons/settings-yellow.svg");
+}
+.nav__icon--settings:hover {
+  color: #0b101a;
+  transition-duration: .5s;
+}
+.nav__icon--settings:hover div {
+  background-image: url("../images/icons/settings-black.svg");
+  transition-duration: .5s;
 }
 
 .auth {
@@ -68,8 +167,14 @@ body h1 {
   display: flex;
   flex-direction: column;
   justify-content: center;
-  font-size: 3.5rem;
+  font-size: 24px;
   width: 80%;
+}
+@media screen and (min-width: 500px) {
+  .auth__form {
+    align-items: center;
+    font-size: 2rem;
+  }
 }
 
 .auth__form-field {
@@ -86,7 +191,7 @@ body h1 {
 .auth__form-input {
   border: 2px solid #e4a312;
   border-radius: 5px;
-  height: 100px;
+  height: 50px;
   padding-left: 2%;
   font-size: inherit;
   color: #0b101a;
@@ -94,6 +199,11 @@ body h1 {
 .auth__form-input:valid {
   border: 2px solid #0a814f;
   outline-color: #0a814f;
+}
+@media screen and (min-width: 500px) {
+  .auth__form-input {
+    width: 350px;
+  }
 }
 
 .auth__title {
@@ -108,7 +218,8 @@ body h1 {
 }
 .auth__login-signup p {
   color: #0b101a;
-  font-size: 1.1em;
+  font-size: 16px;
+  margin-top: 2%;
 }
 .auth__login-signup p a {
   font-weight: bold;
@@ -124,9 +235,4 @@ body h1 {
   background-color: #e4a312;
   border: 0px;
   color: white;
-  border-radius: 5px;
-  font-size: 4rem;
-  height: 10vh;
-  text-transform: uppercase;
-  width: 60vw;
 }

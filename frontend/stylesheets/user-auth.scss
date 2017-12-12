@@ -13,8 +13,12 @@
   display: flex;
   flex-direction: column;
   justify-content: center;
-  font-size: 3.5rem;
+  font-size: 24px;
   width: 80%;
+  @media screen and (min-width: $tablet){
+    align-items: center;
+    font-size: 2rem;
+  }
 }
 
 .auth__form-field{
@@ -26,18 +30,22 @@
   &:last-of-type{
     margin-top: 2vh;
   }
+  
 }
 
 .auth__form-input{
   border: 2px solid $dkyell;
   border-radius: $button-border;
-  height: 100px;
+  height: 50px;
   padding-left: 2%;
   font-size: inherit;
   color: $black;
   &:valid{
     border: 2px solid $green;
     outline-color: $green;
+  }
+  @media screen and (min-width: $tablet){
+    width: 350px;
   }
 }
 
@@ -53,7 +61,8 @@
   align-items: center;
   p {
     color: $black;
-    font-size: 1.1em;
+    font-size: 16px;
+    margin-top: 2%;
     a {
       font-weight: bold;
       &:hover{
@@ -70,9 +79,5 @@
   background-color: $dkyell;
   border: 0px;
   color: $white;
-  border-radius: $button-border;
-  font-size: 4rem;
-  height: 10vh;
-  text-transform: uppercase;
-  width: 60vw;
+  @extend .button;
 }
