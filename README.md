@@ -3,10 +3,10 @@ PokeLog is a Progressive Web App (PWA) that allows hemophilia patients to log an
 
 PokeLog is built for hemophilia patients to consolidate infusion and bleed information.
 
+[See it live](poke-log.herokuapp.com)
+
 ## Team Members
-- Matthew Buckner
-- Ashley Johnson
-- Nicholas Williams
+PokeLog is built by [Matthew Buckner](https://github.com/bucknermr), [Ashley Johnson](https://github.com/ashvalejohn), and [Nicholas Williams](https://github.com/nwilliams770).
 
 ## Functionality & MVP
 - [ ] Hosted on Heroku
@@ -35,19 +35,6 @@ Users will be able to:
 - Responsive Web Design
 - Socket.io: to alert shared users after an infusion or bleed
 
-## Wireframes
-### App Shell
-![App Shell](http://res.cloudinary.com/ashvalejohn/image/upload/bo_1px_solid_rgb:000000,r_5/v1512873077/MobileAppShell_bbrjgh.png)
-
-### Log a Poke (Landing Page)
-![Log a Poke](http://res.cloudinary.com/ashvalejohn/image/upload/bo_1px_solid_rgb:000000,r_5/v1512873077/MobileLog_p2ouom.png)
-
-### Poke Log (Calendar View)
-![Poke Log](http://res.cloudinary.com/ashvalejohn/image/upload/bo_1px_solid_rgb:000000,r_5/v1512873077/MobileCalendar_flwcdd.png)
-
-### Settings
-![Settings](http://res.cloudinary.com/ashvalejohn/image/upload/bo_1px_solid_rgb:000000,r_5/v1512873077/MobileSettings_rls5af.png)
-
 ## To Dos
 ### Weekend 1
 - Objective: All members will use the weekend to familiarize themselves with the new elements of the stack (Node.js, Express, PWA, JSON Web Tokens). 
@@ -64,11 +51,11 @@ Users will be able to:
 
 #### Monday
 - Objective: Users should be able to login
-- [ ] Create App Shell
-- [ ] Users table in DB
+- [x] Create App Shell
+- [x] Users table in DB
 - [ ] Send user info via Express/Node to frontend
-- [ ] Login React Component
-- [ ] Signup React Component
+- [x] Login React Component
+- [x] Signup React Component
 
 ### Phase Two: Infusion Log & User Settings
 - [ ] User can read/update dosage
@@ -129,4 +116,15 @@ Users will be able to:
 - 9:00 am: 🕊🍻✨
 
 
+## Wireframes
+### App Shell
+![App Shell](http://res.cloudinary.com/ashvalejohn/image/upload/bo_1px_solid_rgb:000000,r_5/v1512873077/MobileAppShell_bbrjgh.png)
 
+### Log a Poke (Landing Page)
+![Log a Poke](http://res.cloudinary.com/ashvalejohn/image/upload/bo_1px_solid_rgb:000000,r_5/v1512873077/MobileLog_p2ouom.png)
+
+### Poke Log (Calendar View)
+![Poke Log](http://res.cloudinary.com/ashvalejohn/image/upload/bo_1px_solid_rgb:000000,r_5/v1512873077/MobileCalendar_flwcdd.png)
+
+### Settings
+![Settings](http://res.cloudinary.com/ashvalejohn/image/upload/bo_1px_solid_rgb:000000,r_5/v1512873077/MobileSettings_rls5af.png)
