@@ -19,13 +19,13 @@ body h1, body p {
   }
 }
 
-.page-title, .auth__title {
+.page-title, .auth__title, .settings-title {
   font-size: 32px;
   text-align: center;
   color: blue;
 }
 @media screen and (min-width: 500px) {
-  .page-title, .auth__title {
+  .page-title, .auth__title, .settings-title {
     font-size: 3rem;
   }
 }
@@ -241,4 +241,8 @@ body h1, body p {
   background-color: #e4a312;
   border: 0px;
   color: white;
+}
+
+.settings-title {
+  color: #0b101a;
 }
