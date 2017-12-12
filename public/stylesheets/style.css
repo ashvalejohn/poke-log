@@ -68,7 +68,7 @@ body h1 {
   display: flex;
   flex-direction: column;
   justify-content: center;
-  font-size: 4rem;
+  font-size: 3.5rem;
   width: 80%;
 }
 
@@ -79,12 +79,21 @@ body h1 {
   margin: 0 2%;
   color: #e4a312;
 }
-.auth__form-field input {
-  border: 2px solid #e4a312;
-  height: 100px;
-}
 .auth__form-field:last-of-type {
   margin-top: 2vh;
+}
+
+.auth__form-input {
+  border: 2px solid #e4a312;
+  border-radius: 5px;
+  height: 100px;
+  padding-left: 2%;
+  font-size: inherit;
+  color: #0b101a;
+}
+.auth__form-input:valid {
+  border: 2px solid #0a814f;
+  outline-color: #0a814f;
 }
 
 .auth__title {
@@ -99,6 +108,7 @@ body h1 {
 }
 .auth__login-signup p {
   color: #0b101a;
+  font-size: 1.1em;
 }
 .auth__login-signup p a {
   font-weight: bold;

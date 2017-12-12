@@ -8,10 +8,10 @@ class Signup extends Component {
         <h1 className='auth__title'>Sign Up</h1>
         <form action="" className='auth__form'>
           <label htmlFor="" className='auth__form-field'>Email Address
-            <input type="email" />
+            <input type="email" className='auth__form-input' pattern="[a-z0-9!#$%&'*+/=?^_`{|}~-]+(?:\.[a-z0-9!#$%&'*+/=?^_`{|}~-]+)*@(?:[a-z0-9](?:[a-z0-9-]*[a-z0-9])?\.)+[a-z0-9](?:[a-z0-9-]*[a-z0-9])?" required />
           </label>
           <label htmlFor="" className='auth__form-field'>Password
-            <input type="password" />
+            <input type="password" className='auth__form-input' minlength='6' required />
           </label>
         </form>
         <div className='auth__login-signup'>

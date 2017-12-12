@@ -13,7 +13,7 @@
   display: flex;
   flex-direction: column;
   justify-content: center;
-  font-size: 4rem;
+  font-size: 3.5rem;
   width: 80%;
 }
 
@@ -23,12 +23,21 @@
   justify-content: center;
   margin: 0 2%;
   color: $dkyell;
-  input{
-    border: 2px solid $dkyell;
-    height: 100px;
-  }
   &:last-of-type{
     margin-top: 2vh;
+  }
+}
+
+.auth__form-input{
+  border: 2px solid $dkyell;
+  border-radius: $button-border;
+  height: 100px;
+  padding-left: 2%;
+  font-size: inherit;
+  color: $black;
+  &:valid{
+    border: 2px solid $green;
+    outline-color: $green;
   }
 }
 
@@ -44,6 +53,7 @@
   align-items: center;
   p {
     color: $black;
+    font-size: 1.1em;
     a {
       font-weight: bold;
       &:hover{
