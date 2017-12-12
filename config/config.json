@@ -1,6 +1,6 @@
 {
   "development": {
-    "username": "root",
+    "username": null,
     "password": null,
     "database": "poke-log-dev",
     "host": "127.0.0.1",
