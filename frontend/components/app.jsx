@@ -8,8 +8,8 @@ const App = () => (
   <div>
     <Route path='/login' component={LoginContainer} />
     <Route path='/signup' component={SignupContainer} />
-    <Route path='/logpoke' component={LogPokeContainer} />
+    <Route path='/log-a-poke' component={LogPokeContainer} />
   </div>
-)
+);
 
 export default App;

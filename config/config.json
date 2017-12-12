@@ -1,8 +1,8 @@
-// While in development, change username and password to your computer's username and password
+
 {
   "development": {
-    "username": "mac.me",
-    "password": "123",
+    "username": null,
+    "password": null,
     "database": "poke-log-dev",
     "host": "127.0.0.1",
     "dialect": "postgres"
