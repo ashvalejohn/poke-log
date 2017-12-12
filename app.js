@@ -17,20 +17,27 @@ models.sequelize.sync()
 
 var app = express();
 
+app.use('/api/session', (req, res, next) => {
+  console.log('signed in????');
+  console.log(req.user);
+  console.log(req.session);
+  if (!req.user) { next(); }
+});
+
 // uncomment after placing your favicon in /public
 //app.use(favicon(path.join(__dirname, 'public', 'favicon.ico')));
 app.use(logger('dev'));
 app.use(bodyParser.json());
+app.use(session({ secret: "Cat pokes hurt the most.", resave: false, saveUninitialized: false }));
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(cookieParser());
 
-
-app.use(session({ secret: "Cat pokes hurt the most.", resave: true, saveUninitialized: true }));
 app.use(passport.initialize());
 app.use(passport.session());
 
 
 // serve static assets
+app.delete('/api/hello', (req, res) => { res.send("hello to you too"); });
 app.use('/', express.static(path.join(__dirname, 'public')));
 
 // router
