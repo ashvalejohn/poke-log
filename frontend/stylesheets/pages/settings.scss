@@ -1,4 +1,8 @@
-.settings-title{
-  @extend .page-title;
+.settings{
+  @extend .page;
+}
+
+.settings__title{
   color: $black;
+  @extend .page-title;
 }
