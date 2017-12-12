@@ -66,18 +66,21 @@ module.exports = (passport, User) => {
     },
     (req, email, password, done) => {
 
-      const isValidPassword = (realPw, pw) => {
-        return bCrypt.compareSync(realPw, pw);
+      const isValidPassword = (pw, pwHash) => {
+        return bCrypt.compareSync(pw, pwHash);
       };
+
+      console.log('searching......');
+
 
       User.findOne({
         where: {
           email: email
         }
-      }).then(user => () => {
+      }).then(user => {
         if (!user) {
           return done(null, false, { message: 'Invalid email'});
-        } else if (!isValidPassword(user.password, password)) {
+        } else if (!isValidPassword(password, user.password)) {
           return done(null, false, { message: 'Invalid password'});
         } else {
           const userInfo = user.get();
