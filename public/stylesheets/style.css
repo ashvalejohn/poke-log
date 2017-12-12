@@ -19,13 +19,23 @@ body h1, body p {
   }
 }
 
-.page-title, .auth__title, .settings-title {
+.page, .auth, .settings {
+  height: 90vh;
+  width: 90%;
+  margin: 0 auto;
+}
+@media screen and (min-width: 1000px) {
+  .page, .auth, .settings {
+    margin-top: 10vh;
+  }
+}
+
+.page-title, .auth__title, .settings__title {
   font-size: 32px;
   text-align: center;
-  color: blue;
 }
 @media screen and (min-width: 500px) {
-  .page-title, .auth__title, .settings-title {
+  .page-title, .auth__title, .settings__title {
     font-size: 3rem;
   }
 }
@@ -159,13 +169,10 @@ body h1, body p {
 }
 
 .auth {
-  height: 90vh;
   display: flex;
   flex-direction: column;
   justify-content: space-evenly;
   align-items: center;
-  width: 90%;
-  margin: 0 auto;
 }
 
 .auth__form {
@@ -243,6 +250,6 @@ body h1, body p {
   color: white;
 }
 
-.settings-title {
+.settings__title {
   color: #0b101a;
 }
