@@ -40,14 +40,6 @@ class Settings extends Component {
         <div className='settings__fields'>
           <SettingsName name={this.state.name} update={this.updateUser}/>
           <SettingsDose dose={this.state.dose} update={this.updateUser}/>
-          {/* <SettingsShares shares={this.state.shares}/>
-          
-          
-          <label className='settings__label' htmlFor="">Schedule</label>
-          <label id='schedule' className='settings__input'>
-            <p>{this.state.schedule}</p>
-            <img className='settings__input--edit' src="../images/icons/pencil-edit.svg" alt="" />
-          </label> */}
         </div>
         <button className='settings__sign-out'>Sign Out</button>
       </form>
