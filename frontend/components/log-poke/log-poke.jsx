@@ -5,21 +5,22 @@ class LogPoke extends React.Component {
     render() {
         return(
         <div className= "log-poke">
-            <h1> knick-knack patty-whack we're connected!</h1>
             <h1 className= "log-poke__title"> Log a Poke </h1>
-            <form action="" className= "log-poke__form"> Poke Date
-                <label htmlFor=""  className="log-poke__form-field">
+            <form action="" className= "log-poke__form"> 
+                <label className="log-poke__form-field"> Poke Date
                     <input type="date" className="log-poke__form-input"/>
                 </label>
-                <label htmlFor="" className="log-poke__form-field">Dose
-                    <input type="radio" id="switch_left" name="switch_2" value="yes" checked />
-                    <label for="switch_left">Yes</label>
+                <label className="log-poke__form-field">Dose
+                    <div className="log-poke___toggle-bttn">
+                    <input type="radio" id="switch_left" name="switch_2" value="yes" />
+                    <label for="switch_left">Single</label>
                     <input type="radio" id="switch_right" name="switch_2" value="no" />
-                    <label for="switch_right">No</label>
+                    <label for="switch_right">Double</label>
+                    </div>
                 </label>
-                <label htmlFor="" className="log-poke__form-field">Bleed Location (if applicable)
+                <label className="log-poke__form-field">Bleed Location (if applicable)
                     <select className="logpoke___form-field">
-                        <option disabled selected value> -- Select Bleed Location -- </option>
+                        <option disabled selected> -- Select Bleed Location -- </option>
                         <optgroup label="Lower Extremities">
                             <option value="left-foot"> Left Foot </option>
                             <option value="right-foot"> Right Foot </option>
