@@ -19,21 +19,52 @@
 
 .settings__label{
   margin-top: 5%;;
-}
-
-.settings__input{
   @extend .input;
   background-color: $white;
   border: $input-border $black;
-  padding-right: 2%;
+  padding: 0;
   display: flex;
   align-items: center;
   justify-content: space-between;
   min-width: 350px;
 }
 
-.settings__input--edit{
+.settings__input{
+  height: 90%;
+  border: 0px;
+  padding-left: 2%;
+  color: $black;
+  &::placeholder{
+    color: $black;
+  }
+}
+
+.settings__input--save{
+  &::placeholder{
+    color: $gray;
+  }
+}
+
+.settings__input__button{
+  background-position: center;
+  background-size: contain;
+  background-repeat: no-repeat;
   height: 80%;
+  width: 50px;
+  border: 0px;
+  &:hover{
+    cursor: pointer;
+  }
+}
+
+.settings__input__button--edit{
+  @extend .settings__input__button;
+  background-image: url(../images/icons/pencil-edit.svg);
+}
+
+.settings__input__button--save{
+  @extend .settings__input__button;
+  background-image: url(../images/icons/save-black.svg);
 }
 
 .settings__input--new{

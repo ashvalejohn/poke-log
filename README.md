@@ -12,7 +12,7 @@ PokeLog is built by [Matthew Buckner](https://github.com/bucknermr), [Ashley Joh
 - [ ] Hosted on Heroku
 
 Users will be able to:
-- [ ] Log in/Log out
+- [x] Log in/Log out
 - [ ] Schedule a reminder to infuse
 - [ ] Log an infusion (including date, dose, and whether it was in response to a bleed)
 - [ ] See a calendar view of infusions
@@ -53,7 +53,7 @@ Users will be able to:
 - Objective: Users should be able to login
 - [x] Create App Shell
 - [x] Users table in DB
-- [ ] Send user info via Express/Node to frontend
+- [x] Send user info via Express/Node to frontend
 - [x] Login React Component
 - [x] Signup React Component
 

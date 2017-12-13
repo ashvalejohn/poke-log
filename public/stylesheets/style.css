@@ -63,7 +63,7 @@ body ul {
   cursor: pointer;
 }
 
-.input, .auth__form-input, .settings__input {
+.input, .auth__form-input, .settings__label {
   border-radius: 5px;
   height: 50px;
   padding-left: 2%;
@@ -71,9 +71,13 @@ body ul {
   color: #0b101a;
 }
 @media screen and (min-width: 500px) {
-  .input, .auth__form-input, .settings__input {
+  .input, .auth__form-input, .settings__label {
     width: 350px;
   }
+}
+
+.hidden {
+  display: none;
 }
 
 .nav {
@@ -287,20 +291,47 @@ body ul {
 
 .settings__label {
   margin-top: 5%;
-}
-
-.settings__input {
   background-color: white;
   border: 2px solid #0b101a;
-  padding-right: 2%;
+  padding: 0;
   display: flex;
   align-items: center;
   justify-content: space-between;
   min-width: 350px;
 }
 
-.settings__input--edit {
+.settings__input {
+  height: 90%;
+  border: 0px;
+  padding-left: 2%;
+  color: #0b101a;
+}
+.settings__input::placeholder {
+  color: #0b101a;
+}
+
+.settings__input--save::placeholder {
+  color: #95989A;
+}
+
+.settings__input__button, .settings__input__button--edit, .settings__input__button--save {
+  background-position: center;
+  background-size: contain;
+  background-repeat: no-repeat;
   height: 80%;
+  width: 50px;
+  border: 0px;
+}
+.settings__input__button:hover, .settings__input__button--edit:hover, .settings__input__button--save:hover {
+  cursor: pointer;
+}
+
+.settings__input__button--edit {
+  background-image: url(../images/icons/pencil-edit.svg);
+}
+
+.settings__input__button--save {
+  background-image: url(../images/icons/save-black.svg);
 }
 
 .settings__input--new {
