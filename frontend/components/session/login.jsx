@@ -39,11 +39,11 @@ class Login extends Component {
           <label htmlFor="" className='auth__form-field'>Password
             <input onChange={this.handleChange} type="password" className='auth__form-input' minLength='6' required/>
           </label>
+          <div className='auth__login-signup'>
+            <button className='auth__submit' onClick={this.handleSubmit}>Log In</button>
+            <p>Don’t have an account? <Link to='/signup'>Sign Up</Link></p>
+          </div>
         </form>
-        <div className='auth__login-signup'>
-          <button className='auth__submit' onClick={this.handleSubmit}>Log In</button>
-          <p>Don’t have an account? <Link to='/signup'>Sign Up</Link></p>
-        </div>
       </div>
     );
   }
