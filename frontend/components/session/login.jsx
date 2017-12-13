@@ -7,8 +7,8 @@ class Login extends Component {
 
     this.state = {
       email: '',
-      password: '',
-    }
+      password: ''
+    };
 
     this.handleSubmit = this.handleSubmit.bind(this);
     this.handleChange = this.handleChange.bind(this);
@@ -17,14 +17,14 @@ class Login extends Component {
   handleChange(e){
     this.setState({
       [e.target.type]: e.target.value
-    })
+    });
   }
 
   handleSubmit(e){
     e.preventDefault();
     this.props.login({
       email: this.state.email,
-      password: this.state.password,
+      password: this.state.password
     });
   }
 
@@ -45,7 +45,7 @@ class Login extends Component {
           <p>Don’t have an account? <Link to='/signup'>Sign Up</Link></p>
         </div>
       </div>
-    )
+    );
   }
 }
 

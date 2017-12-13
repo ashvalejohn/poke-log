@@ -17,8 +17,12 @@ module.exports = {
         allowNull: false,
         type: Sequelize.STRING
       },
-      dosage: {
+      name: {
         allowNull: false,
+        defaultValue: '',
+        type: Sequelize.STRING
+      },
+      dosage: {
         type: Sequelize.INTEGER
       },
       createdAt: {
