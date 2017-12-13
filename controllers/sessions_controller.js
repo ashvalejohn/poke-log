@@ -1,11 +1,11 @@
 const SessionsController = {
-  create: (req, res) => {
-    res.json({ id: req.user.id, email: req.user.email });
+  create: ({id, email, name, dosage}, res) => {
+    res.json({ id, email, name, dosage });
   },
   destroy: (req, res) => {
-    const { id, email } = req.user;
+    const { id, email, name, dosage } = req.user;
     req.logout();
-    res.json({ id, email, signedIn: false });
+    res.json({ id, email, name, dosage, signedIn: false });
   }
 };
 

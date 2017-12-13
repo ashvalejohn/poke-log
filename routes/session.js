@@ -4,7 +4,21 @@ const passport = require('passport');
 const { create, destroy } = require('../controllers/sessions_controller');
 
 
-router.post('/', passport.authenticate('local-signin'), create);
+router.post('/', (req, res, next) => {
+  passport.authenticate('local-signin', (err, user, info) => {
+    if (err) { return next(err); }
+    if (!user) {
+      console.log(info);
+      res.status(401).json([info.message]);
+    } else {
+      req.login(user, error => {
+        if (error) { next(error); }
+        create(user, res);
+      });
+    }
+  })(req, res, next);
+});
+
 router.delete('/', destroy);
 
 
