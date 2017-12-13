@@ -30,7 +30,6 @@ class LogPoke extends React.Component {
         this.setState({
             date: e.currentTarget.value
         });
-        console.log(this.state);
         
     }
 
@@ -38,8 +37,6 @@ class LogPoke extends React.Component {
         this.setState({
             bleed: e.currentTarget.value
         });
-        console.log(this.state);
-        
     }
 
     handleSubmit(e) {
