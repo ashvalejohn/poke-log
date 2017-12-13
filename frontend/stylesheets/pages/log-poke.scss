@@ -52,20 +52,20 @@
     align-items: center;
     justify-content: center;
     width: 60px;
-    background-color: $red;
-    color: white;
+    background-color: $white;
+    color: $red;
     font-size: 14px;
     text-align: center;
     border-radius: $button-border;
     font-size: 1.25rem;
-    height: 60px;
+    height: 55px;
     margin-bottom: 2%;
     &:last-of-type{
         margin-left: 5px;
     }
     @media screen and (min-width: $tablet){
     font-size: 1.5rem;
-    height: 75px;
+    height: 55px;
     width: 200px;
     }
  }
@@ -76,8 +76,8 @@
 }
 
 .log-poke___toggle-bttn input:checked + label {
-  background-color: $white;
-  color: $red;
+  background-color: $red;
+  color: $white;
 }
 
 .log-poke___toggle-bttn {
@@ -85,7 +85,6 @@
     display: flex;
     flex-direction: row;
     justify-content: space-between;
-    
 }
 
 .log-poke__form-input{
@@ -100,7 +99,7 @@
     }
 }
 
-.logpoke___form-select {
+.log-poke___form-select {
     text-align-last: center;
     border: 2px solid $red;
     border-radius: $button-border;
@@ -110,6 +109,18 @@
     color: $black;
     @media screen and (min-width: $tablet){
         width: 350px;
+    }
+}
+
+.log-poke__submit {
+    background-color: $red;
+    border: 0px;
+    margin-top: 5%;
+    color: $white;
+    transition-duration: .25s;
+    @extend .button;
+    &:hover{
+    background-color: $ltred;
     }
 }
 

@@ -1,7 +1,51 @@
 import React, { Component } from 'react';
+import { Link, withRouter } from 'react-router-dom';
 
 
 class LogPoke extends React.Component {
+    constructor(props) {
+        super(props);
+        this.state = {
+                    date: "",
+                    double: false,
+                    bleed: null       
+        };
+
+        this.handleSubmit = this.handleSubmit.bind(this);
+        this.handleDosageChange = this.handleDosageChange.bind(this);
+        this.handleDateChange = this.handleDateChange.bind(this);
+        this.handleBleedChange = this.handleBleedChange.bind(this);
+    }
+
+    componentDidMount() {
+        document.title = "Log A Poke";
+    }
+    
+    handleDosageChange(e) {
+        this.setState({
+            double: e.target.value
+        });
+    }
+
+    handleDateChange(e) {
+        this.setState({
+            date: e.target.value
+        });
+    }
+
+    handleBleedChange(e) {
+        this.setState({
+            bleed: e.target.value
+        });
+    }
+
+    handleSubmit(e) {
+        e.preventDefault();
+        const poke = this.state;
+        this.props.logPoke(poke);
+    }
+
+
     render() {
         return(
         <div className= "log-poke">
@@ -12,15 +56,16 @@ class LogPoke extends React.Component {
                 </label>
                 <label className="log-poke__form-field">Dose
                     <div className="log-poke___toggle-bttn">
-                    <input type="radio" id="switch_left" name="switch_2" value="1" checked />
-                    <label for="switch_left">SINGLE</label>
-                    <input type="radio" id="switch_right" name="switch_2" value="2" />
-                    <label for="switch_right">DOUBLE</label>
+                    <input type="radio" id="switch_left" value="false" checked={this.state.double === false} onChange={this.handleDosageChange}/>
+                    <label htmlFor="switch_left">SINGLE</label>
+                    <input type="radio" id="switch_right" name="switch_2" value="true" checked={this.state.double === true} onChange={this.handleDosageChange} />
+                    <label htmlFor="switch_right">DOUBLE</label>
                     </div>
                 </label>
                 <label className="log-poke__form-field">Bleed?
-                    <select className="logpoke___form-select">
-                        <option disabled selected> -- Select Bleed Location -- </option>
+                    <select defaultValue="-- Select Bleed Location --" className="log-poke___form-select"
+                            onChange = {this.handleBleedChange}>
+                        <option disabled> -- Select Bleed Location -- </option>
                         <optgroup label="Lower Extremities">
                             <option value="left-foot"> Left Foot </option>
                             <option value="right-foot"> Right Foot </option>
@@ -66,6 +111,7 @@ class LogPoke extends React.Component {
                         
                     </select>
                 </label>
+                <button className="log-poke__submit" onClick= {this.handleSubmit}>LOG</button>
             </form>
         </div>
         );
