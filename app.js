@@ -29,13 +29,10 @@ app.use(session({ secret: "Cat pokes hurt the most.", resave: false, saveUniniti
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(cookieParser());
 
-app.use('/*', (req, res, next) => { console.log(req.body); next();});
-
 app.use(passport.initialize());
 app.use(passport.session());
 
 // serve static assets
-app.delete('/api/hello', (req, res) => { res.send("hello to you too"); });
 app.use(express.static(path.join(__dirname, 'public')));
 // app.use('/', express.static(path.join(__dirname, 'public')));
 

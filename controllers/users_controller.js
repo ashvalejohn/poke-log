@@ -4,7 +4,18 @@ const UsersController = {
   },
   update: ({ user, body }, res) => {
     if (user) {
-      console.log('blah');
+      user.updateAttributes(body.user)
+        .then( updatedUser => {
+          res.json(require('../views/currentUser')(updatedUser));
+        })
+        .catch( errors => {
+          console.log(errors);
+          res.status(500).json(["Something went wrong when updating settings"]);
+        }
+      );
+    }
+    else {
+      res.status(401).json(["Can't update settings if not logged in"]);
     }
   }
 };

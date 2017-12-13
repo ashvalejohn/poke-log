@@ -16,7 +16,6 @@ router.get('/:id', (req, res, next) => {
 router.patch('/', update);
 
 router.post('/', (req, res, next) => {
-  console.log('in route.......', req.body);
   passport.authenticate('local-signup', (err, user, info) => {
     if (err) {
       console.log(err);
