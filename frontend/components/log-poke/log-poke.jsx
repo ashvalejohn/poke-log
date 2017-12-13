@@ -2,6 +2,10 @@ import React, { Component } from 'react';
 
 
 class LogPoke extends React.Component {
+    constructor() {
+        super();
+        
+    }
     render() {
         return(
         <div className= "log-poke">
@@ -13,14 +17,14 @@ class LogPoke extends React.Component {
                 <label className="log-poke__form-field">Dose
                     <div className="log-poke___toggle-bttn">
                     <input type="radio" id="switch_left" name="switch_2" value="1" checked />
-                    <label for="switch_left">SINGLE</label>
+                    <label htmlFor="switch_left">SINGLE</label>
                     <input type="radio" id="switch_right" name="switch_2" value="2" />
-                    <label for="switch_right">DOUBLE</label>
+                    <label htmlFor="switch_right">DOUBLE</label>
                     </div>
                 </label>
                 <label className="log-poke__form-field">Bleed?
                     <select className="logpoke___form-select">
-                        <option disabled selected> -- Select Bleed Location -- </option>
+                        <option disabled defaultChecked> -- Select Bleed Location -- </option>
                         <optgroup label="Lower Extremities">
                             <option value="left-foot"> Left Foot </option>
                             <option value="right-foot"> Right Foot </option>
