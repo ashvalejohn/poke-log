@@ -1,7 +1,7 @@
 const jbuilder = require('jbuilder');
 module.exports = (user) => {
   const output = jbuilder.encode(json => {
-    json.extract(user, 'id', 'email');
+    json.extract(user, 'id', 'email', 'name');
   });
   return output;
 };

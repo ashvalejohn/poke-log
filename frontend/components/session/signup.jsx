@@ -7,8 +7,8 @@ class Signup extends Component {
 
     this.state = {
       email: '',
-      password: '',
-    }
+      password: ''
+    };
 
     this.handleSubmit = this.handleSubmit.bind(this);
     this.handleChange = this.handleChange.bind(this);
@@ -18,7 +18,7 @@ class Signup extends Component {
   handleChange(e) {
     this.setState({
       [e.target.type]: e.target.value
-    })
+    });
   }
 
   handleSubmit(e) {
@@ -26,7 +26,6 @@ class Signup extends Component {
     this.props.signup({
       email: this.state.email,
       password: this.state.password,
-      dosage: 500
     });
   }
 
@@ -47,7 +46,7 @@ class Signup extends Component {
           </div>
         </form>
       </div>
-    )
+    );
   }
 }
 

@@ -42,8 +42,6 @@ module.exports = (passport, User) => {
           const data = {
             email,
             password: userPassword,
-            name: req.body.name,
-            dosage: parseInt(req.body.dosage)
           };
 
           User.create(data).then((newUser, created) => {
