@@ -12,14 +12,14 @@ class LogPoke extends React.Component {
                 </label>
                 <label className="log-poke__form-field">Dose
                     <div className="log-poke___toggle-bttn">
-                    <input type="radio" id="switch_left" name="switch_2" value="yes" />
-                    <label for="switch_left">Single</label>
-                    <input type="radio" id="switch_right" name="switch_2" value="no" />
-                    <label for="switch_right">Double</label>
+                    <input type="radio" id="switch_left" name="switch_2" value="1" checked />
+                    <label for="switch_left">SINGLE</label>
+                    <input type="radio" id="switch_right" name="switch_2" value="2" />
+                    <label for="switch_right">DOUBLE</label>
                     </div>
                 </label>
-                <label className="log-poke__form-field">Bleed Location (if applicable)
-                    <select className="logpoke___form-field">
+                <label className="log-poke__form-field">Bleed?
+                    <select className="logpoke___form-select">
                         <option disabled selected> -- Select Bleed Location -- </option>
                         <optgroup label="Lower Extremities">
                             <option value="left-foot"> Left Foot </option>

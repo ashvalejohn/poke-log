@@ -244,7 +244,6 @@ body h1, body p {
 }
 
 .log-poke {
-  background-color: ghostwhite;
   height: 90vh;
   display: flex;
   flex-direction: column;
@@ -255,7 +254,7 @@ body h1, body p {
 }
 
 .log-poke__title {
-  color: #e4a312;
+  color: #D25737;
 }
 
 .log-poke__form {
@@ -278,14 +277,14 @@ body h1, body p {
   flex-direction: column;
   justify-content: center;
   margin: 0 2%;
-  color: #e4a312;
+  color: #D25737;
 }
-.log-poke__form-field:last-of-type {
+.log-poke__form-field:not(:first-child) {
   margin-top: 2vh;
 }
 
 .log-poke___toggle-bttn input {
-  position: absolute !important;
+  position: absolute;
   clip: rect(0, 0, 0, 0);
   height: 1px;
   width: 1px;
@@ -294,20 +293,29 @@ body h1, body p {
 }
 
 .log-poke__form-field label {
-  display: inline-block;
+  border: 2px solid #D25737;
+  display: flex;
+  align-items: center;
+  justify-content: center;
   width: 60px;
-  background-color: #e4e4e4;
-  color: rgba(0, 0, 0, 0.6);
+  background-color: #D25737;
+  color: white;
   font-size: 14px;
-  font-weight: normal;
   text-align: center;
-  text-shadow: none;
-  padding: 6px 14px;
-  -webkit-transition: all 0.1s ease-in-out;
-  -moz-transition: all 0.1s ease-in-out;
-  -ms-transition: all 0.1s ease-in-out;
-  -o-transition: all 0.1s ease-in-out;
-  transition: all 0.1s ease-in-out;
+  border-radius: 5px;
+  font-size: 1.25rem;
+  height: 60px;
+  margin-bottom: 2%;
+}
+.log-poke__form-field label:last-of-type {
+  margin-left: 5px;
+}
+@media screen and (min-width: 500px) {
+  .log-poke__form-field label {
+    font-size: 1.5rem;
+    height: 75px;
+    width: 200px;
+  }
 }
 
 .log-poke__form-field label:hover {
@@ -315,12 +323,42 @@ body h1, body p {
 }
 
 .log-poke___toggle-bttn input:checked + label {
-  background-color: #A5DC86;
-  -webkit-box-shadow: none;
-  box-shadow: none;
+  background-color: white;
+  color: #D25737;
 }
 
 .log-poke___toggle-bttn {
+  width: 360px;
   display: flex;
   flex-direction: row;
+  justify-content: space-between;
+}
+
+.log-poke__form-input {
+  border: 2px solid #D25737;
+  border-radius: 5px;
+  height: 50px;
+  padding-left: 2%;
+  font-size: inherit;
+  color: #0b101a;
+}
+@media screen and (min-width: 500px) {
+  .log-poke__form-input {
+    width: 350px;
+  }
+}
+
+.logpoke___form-select {
+  text-align-last: center;
+  border: 2px solid #D25737;
+  border-radius: 5px;
+  height: 50px;
+  padding-left: 2%;
+  font-size: 1.5rem;
+  color: #0b101a;
+}
+@media screen and (min-width: 500px) {
+  .logpoke___form-select {
+    width: 350px;
+  }
 }

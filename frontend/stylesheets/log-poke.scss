@@ -1,5 +1,4 @@
 .log-poke {
-    background-color: ghostwhite;
     height: 90vh;
     display: flex;
     flex-direction: column;
@@ -10,7 +9,7 @@
 }
 
 .log-poke__title {
-  color: $dkyell;
+  color: $red;
   @extend .page-title;
 }
 
@@ -32,14 +31,14 @@
     flex-direction: column;
     justify-content: center;
     margin: 0 2%;
-    color: $dkyell;
-    &:last-of-type{
+    color: $red;
+    &:not(:first-child){
     margin-top: 2vh;
   }
 }
 
 .log-poke___toggle-bttn input {
-    position: absolute !important;
+    position: absolute;
     clip: rect(0, 0, 0, 0);
     height: 1px;
     width: 1px;
@@ -48,34 +47,69 @@
 }
 
 .log-poke__form-field label {
-  display: inline-block;
-  width: 60px;
-  background-color: #e4e4e4;
-  color: rgba(0, 0, 0, 0.6);
-  font-size: 14px;
-  font-weight: normal;
-  text-align: center;
-  text-shadow: none;
-  padding: 6px 14px;
-  -webkit-transition: all 0.1s ease-in-out;
-  -moz-transition:    all 0.1s ease-in-out;
-  -ms-transition:     all 0.1s ease-in-out;
-  -o-transition:      all 0.1s ease-in-out;
-  transition:         all 0.1s ease-in-out;
-}
+    border: 2px solid $red;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 60px;
+    background-color: $red;
+    color: white;
+    font-size: 14px;
+    text-align: center;
+    border-radius: $button-border;
+    font-size: 1.25rem;
+    height: 60px;
+    margin-bottom: 2%;
+    &:last-of-type{
+        margin-left: 5px;
+    }
+    @media screen and (min-width: $tablet){
+    font-size: 1.5rem;
+    height: 75px;
+    width: 200px;
+    }
+ }
+
 
 .log-poke__form-field label:hover {
 	cursor: pointer;
 }
 
 .log-poke___toggle-bttn input:checked + label {
-  background-color: #A5DC86;
-  -webkit-box-shadow: none;
-  box-shadow: none;
+  background-color: $white;
+  color: $red;
 }
 
 .log-poke___toggle-bttn {
+    width: 360px;
     display: flex;
     flex-direction: row;
+    justify-content: space-between;
     
 }
+
+.log-poke__form-input{
+    border: 2px solid $red;
+    border-radius: $button-border;
+    height: 50px;
+    padding-left: 2%;
+    font-size: inherit;
+    color: $black;
+    @media screen and (min-width: $tablet){
+        width: 350px;
+    }
+}
+
+.logpoke___form-select {
+    text-align-last: center;
+    border: 2px solid $red;
+    border-radius: $button-border;
+    height: 50px;
+    padding-left: 2%;
+    font-size: 1.5rem;
+    color: $black;
+    @media screen and (min-width: $tablet){
+        width: 350px;
+    }
+}
+
