@@ -14,6 +14,11 @@ class Settings extends Component {
     super(props);
   }
 
+  handleSignout(e){
+    e.preventDefault();
+    // ADD this.props.logout
+  }  
+
   render(){
     return (
       <section className='settings'>
@@ -49,8 +54,8 @@ class Settings extends Component {
             <p>{this.state.schedule}</p>
             <img className='settings__input--edit' src="../images/icons/pencil-edit.svg" alt="" />
           </label>
-          <button className='settings__sign-out'>Sign Out</button>
         </div>
+        <button className='settings__sign-out'>Sign Out</button>
       </section>
     )
   }

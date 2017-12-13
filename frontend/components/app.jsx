@@ -3,12 +3,12 @@ import { Route } from 'react-router-dom';
 import { AuthRoute, ProtectedRoute } from '../util/route-util';
 import LoginContainer from './session/login-container';
 import SignupContainer from './session/signup-container';
-import Settings from './settings/settings';
+import SettingsContainer from './settings/settings';
 import Nav from './nav';
 
 const App = () => (
   <div>
-    <Route path='/settings' component={Settings} />
+    <Route path='/settings' component={SettingsContainer} />
     <AuthRoute path='/login' component={LoginContainer} />
     <AuthRoute path='/signup' component={SignupContainer} />
     <Route path='/' component={Nav} />
