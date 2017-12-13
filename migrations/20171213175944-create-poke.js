@@ -8,6 +8,10 @@ module.exports = {
         primaryKey: true,
         type: Sequelize.INTEGER
       },
+      userId: {
+        allowNull: false,
+        type: Sequelize.INTEGER
+      },
       date: {
         allowNull: false,
         type: Sequelize.DATEONLY
@@ -15,6 +19,10 @@ module.exports = {
       dose: {
         allowNull: false,
         type: Sequelize.INTEGER
+      },
+      double: {
+        allowNull: false,
+        type: Sequelize.BOOLEAN
       },
       bleed: {
         type: Sequelize.STRING
