@@ -18,10 +18,18 @@ body{
   }
 }
 
+.page{
+  height: 90vh;
+  width: 90%;
+  margin: 0 auto;
+  @media screen and (min-width: $desktop){
+    margin-top: 10vh;
+  }
+}
+
 .page-title {
   font-size: 32px;
   text-align: center;
-  color: blue;
   @media screen and (min-width: $tablet){
     font-size: 3rem;
   }
@@ -38,5 +46,8 @@ body{
     font-size: 1.5rem;
     height: 75px;
     width: 200px;
+  }
+  &:hover{
+    cursor: pointer;
   }
 }

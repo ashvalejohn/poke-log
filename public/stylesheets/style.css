@@ -55,6 +55,9 @@ body h1, body p {
     width: 200px;
   }
 }
+.button:hover, .auth__submit:hover {
+  cursor: pointer;
+}
 
 .nav {
   background-color: white;
@@ -248,6 +251,10 @@ body h1, body p {
   background-color: #e4a312;
   border: 0px;
   color: white;
+  transition-duration: .25s;
+}
+.auth__submit:hover {
+  background-color: #f0b83a;
 }
 
 .settings__title {
