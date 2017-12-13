@@ -1,0 +1,115 @@
+.log-poke {
+    height: 90vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-items: center;
+    width: 90%;
+    margin: 0 auto;
+}
+
+.log-poke__title {
+  color: $red;
+  @extend .page-title;
+}
+
+.log-poke__form {
+    color: $black;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  font-size: 24px;
+  width: 80%;
+  @media screen and (min-width: $tablet){
+    align-items: center;
+    font-size: 2rem;
+  }
+}
+
+.log-poke__form-field {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    margin: 0 2%;
+    color: $red;
+    &:not(:first-child){
+    margin-top: 2vh;
+  }
+}
+
+.log-poke___toggle-bttn input {
+    position: absolute;
+    clip: rect(0, 0, 0, 0);
+    height: 1px;
+    width: 1px;
+    border: 0;
+    overflow: hidden;
+}
+
+.log-poke__form-field label {
+    border: 2px solid $red;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 60px;
+    background-color: $red;
+    color: white;
+    font-size: 14px;
+    text-align: center;
+    border-radius: $button-border;
+    font-size: 1.25rem;
+    height: 60px;
+    margin-bottom: 2%;
+    &:last-of-type{
+        margin-left: 5px;
+    }
+    @media screen and (min-width: $tablet){
+    font-size: 1.5rem;
+    height: 75px;
+    width: 200px;
+    }
+ }
+
+
+.log-poke__form-field label:hover {
+	cursor: pointer;
+}
+
+.log-poke___toggle-bttn input:checked + label {
+  background-color: $white;
+  color: $red;
+}
+
+.log-poke___toggle-bttn {
+    width: 360px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    
+}
+
+.log-poke__form-input{
+    border: 2px solid $red;
+    border-radius: $button-border;
+    height: 50px;
+    padding-left: 2%;
+    font-size: inherit;
+    color: $black;
+    @media screen and (min-width: $tablet){
+        width: 350px;
+    }
+}
+
+.logpoke___form-select {
+    text-align-last: center;
+    border: 2px solid $red;
+    border-radius: $button-border;
+    height: 50px;
+    padding-left: 2%;
+    font-size: 1.5rem;
+    color: $black;
+    @media screen and (min-width: $tablet){
+        width: 350px;
+    }
+}
+
