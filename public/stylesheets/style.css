@@ -76,6 +76,10 @@ body ul {
   }
 }
 
+.hidden {
+  display: none;
+}
+
 .nav {
   box-sizing: border-box;
   background-color: white;
@@ -310,14 +314,20 @@ body ul {
   color: #95989A;
 }
 
-.settings__input__button--edit {
-  background-image: url(../images/icons/pencil-edit.svg);
+.settings__input__button, .settings__input__button--edit, .settings__input__button--save {
   background-position: center;
   background-size: contain;
   background-repeat: no-repeat;
   height: 80%;
   width: 50px;
   border: 0px;
+}
+.settings__input__button:hover, .settings__input__button--edit:hover, .settings__input__button--save:hover {
+  cursor: pointer;
+}
+
+.settings__input__button--edit {
+  background-image: url(../images/icons/pencil-edit.svg);
 }
 
 .settings__input__button--save {

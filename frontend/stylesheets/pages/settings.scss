@@ -45,17 +45,25 @@
   }
 }
 
-.settings__input__button--edit{
-  background-image: url(../images/icons/pencil-edit.svg);
+.settings__input__button{
   background-position: center;
   background-size: contain;
   background-repeat: no-repeat;
   height: 80%;
   width: 50px;
   border: 0px;
+  &:hover{
+    cursor: pointer;
+  }
+}
+
+.settings__input__button--edit{
+  @extend .settings__input__button;
+  background-image: url(../images/icons/pencil-edit.svg);
 }
 
 .settings__input__button--save{
+  @extend .settings__input__button;
   background-image: url(../images/icons/save-black.svg);
 }
 

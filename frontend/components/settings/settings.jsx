@@ -15,7 +15,7 @@ class Settings extends Component {
       showModal: false,
     }
 
-    super(props);
+    this.updateUser = this.updateUser.bind(this);
   }
 
   handleSignout(e){
@@ -23,8 +23,14 @@ class Settings extends Component {
     // ADD this.props.logout
   }  
 
-  updateUser(e){
-    // TODO : send whole user object to DB, rerender
+  updateUser(newState){
+    // setState with child component info, cb to action
+    // TODO : send whole user object to DB, rerende
+    console.log(newState);
+    this.setState({
+      newState
+    }, console.log(this.state));
+
   }
 
   render(){
@@ -32,8 +38,8 @@ class Settings extends Component {
       <form className='settings'>
         <h1 className='settings__title'>Settings</h1>
         <div className='settings__fields'>
-          <SettingsName name={this.state.name}/>
-          <SettingsDose dose={this.state.dose}/>
+          <SettingsName name={this.state.name} update={this.updateUser}/>
+          <SettingsDose dose={this.state.dose} update={this.updateUser}/>
           {/* <SettingsShares shares={this.state.shares}/>
           
           
