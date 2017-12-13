@@ -1,11 +1,9 @@
 .auth{
-  height: 90vh;
   display: flex;
   flex-direction: column;
   justify-content: space-evenly;
   align-items: center;
-  width: 90%;
-  margin: 0 auto;
+  @extend .page;
 }
 
 .auth__form{
@@ -35,17 +33,10 @@
 
 .auth__form-input{
   border: 2px solid $dkyell;
-  border-radius: $button-border;
-  height: 50px;
-  padding-left: 2%;
-  font-size: inherit;
-  color: $black;
+  @extend .input;
   &:valid{
     border: 2px solid $green;
     outline-color: $green;
-  }
-  @media screen and (min-width: $tablet){
-    width: 350px;
   }
 }
 
@@ -79,5 +70,9 @@
   background-color: $dkyell;
   border: 0px;
   color: $white;
+  transition-duration: .25s;
   @extend .button;
+  &:hover{
+    background-color: $mdyell;
+  }
 }

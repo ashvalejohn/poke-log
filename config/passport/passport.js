@@ -3,7 +3,6 @@ const bCrypt = require('bcrypt-nodejs');
 
 module.exports = (passport, User) => {
 
-  // const User = user;
   const LocalStrategy = require('passport-local').Strategy;
 
   passport.serializeUser((user, cb) => {
@@ -11,9 +10,11 @@ module.exports = (passport, User) => {
   });
 
   passport.deserializeUser((id, cb) => {
-    User.findById(id, (err, user) => {
-      if (err) { return cb(err); }
+    User.findById(id).then(user => {
       cb(null, user);
+    }).catch(err => {
+      console.log(err);
+      return cb(err);
     });
   });
 
@@ -41,8 +42,6 @@ module.exports = (passport, User) => {
           const data = {
             email,
             password: userPassword,
-            name: req.body.name,
-            dosage: parseInt(req.body.dosage)
           };
 
           User.create(data).then((newUser, created) => {
@@ -53,6 +52,39 @@ module.exports = (passport, User) => {
             }
           });
         }
+      });
+    }
+  ));
+
+
+  passport.use('local-signin', new LocalStrategy(
+    {
+      usernameField: 'email',
+      passwordField: 'password',
+      passReqToCallback: true
+    },
+    (req, email, password, done) => {
+
+      const isValidPassword = (pw, pwHash) => {
+        return bCrypt.compareSync(pw, pwHash);
+      };
+
+      User.findOne({
+        where: {
+          email: email
+        }
+      }).then(user => {
+        if (!user) {
+          return done(null, false, { message: 'Invalid email'});
+        } else if (!isValidPassword(password, user.password)) {
+          return done(null, false, { message: 'Invalid password'});
+        } else {
+          const userInfo = user.get();
+          return done(null, userInfo);
+        }
+      }).catch(err => {
+        console.log(err);
+        return done(null, false, { message: 'Something went wrong!'});
       });
     }
   ));
