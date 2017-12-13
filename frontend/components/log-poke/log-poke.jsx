@@ -1,5 +1,4 @@
 import React, { Component } from 'react';
-import { Link, withRouter } from 'react-router-dom';
 
 
 class LogPoke extends React.Component {
@@ -29,14 +28,18 @@ class LogPoke extends React.Component {
 
     handleDateChange(e) {
         this.setState({
-            date: e.target.value
+            date: e.currentTarget.value
         });
+        console.log(this.state);
+        
     }
 
     handleBleedChange(e) {
         this.setState({
-            bleed: e.target.value
+            bleed: e.currentTarget.value
         });
+        console.log(this.state);
+        
     }
 
     handleSubmit(e) {
@@ -52,19 +55,18 @@ class LogPoke extends React.Component {
             <h1 className= "log-poke__title"> Log a Poke </h1>
             <form action="" className= "log-poke__form"> 
                 <label className="log-poke__form-field"> Poke Date
-                    <input type="date" className="log-poke__form-input"/>
+                    <input type="date" className="log-poke__form-input" onChange={this.handleDateChange}/>
                 </label>
                 <label className="log-poke__form-field">Dose
                     <div className="log-poke___toggle-bttn">
-                    <input type="radio" id="switch_left" value="false" checked={this.state.double === false} onChange={this.handleDosageChange}/>
+                    <input type="radio" id="switch_left" name="switch_2" value={false} defaultChecked={true} onClick={this.handleDosageChange}/>
                     <label htmlFor="switch_left">SINGLE</label>
-                    <input type="radio" id="switch_right" name="switch_2" value="true" checked={this.state.double === true} onChange={this.handleDosageChange} />
+                    <input type="radio" id="switch_right" name="switch_2" value={true} onClick={this.handleDosageChange} />
                     <label htmlFor="switch_right">DOUBLE</label>
                     </div>
                 </label>
                 <label className="log-poke__form-field">Bleed?
-                    <select defaultValue="-- Select Bleed Location --" className="log-poke___form-select"
-                            onChange = {this.handleBleedChange}>
+                    <select defaultValue="-- Select Bleed Location --" className="log-poke___form-select" onChange = {this.handleBleedChange}>
                         <option disabled> -- Select Bleed Location -- </option>
                         <optgroup label="Lower Extremities">
                             <option value="left-foot"> Left Foot </option>
