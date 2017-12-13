@@ -21,8 +21,8 @@ module.exports = (passport, User) => {
 
   passport.use('local-signup', new LocalStrategy(
     {
-      usernameField: 'email',
-      passwordField: 'password',
+      usernameField: 'user[email]',
+      passwordField: 'user[password]',
       passReqToCallback: true
     },
     (req, email, password, done) => {
@@ -59,8 +59,8 @@ module.exports = (passport, User) => {
 
   passport.use('local-signin', new LocalStrategy(
     {
-      usernameField: 'email',
-      passwordField: 'password',
+      usernameField: 'user[email]',
+      passwordField: 'user[password]',
       passReqToCallback: true
     },
     (req, email, password, done) => {
