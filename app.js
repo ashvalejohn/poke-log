@@ -17,12 +17,9 @@ models.sequelize.sync()
 
 var app = express();
 
-app.use('/api/*', (req, res, next) => {
-  console.log('signed in????');
-  console.log('req user:', req.user);
-  console.log('req session:', req.session);
-  if (true) { next(); }
-});
+// view engine setup
+app.set('views', path.join(__dirname, 'views'));
+app.set('view engine', 'ejs');
 
 // uncomment after placing your favicon in /public
 //app.use(favicon(path.join(__dirname, 'public', 'favicon.ico')));
@@ -32,17 +29,22 @@ app.use(session({ secret: "Cat pokes hurt the most.", resave: false, saveUniniti
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(cookieParser());
 
-app.use('/api/*', (req, res, next) => { console.log('req body: ', req.body); next(); });
-
 app.use(passport.initialize());
 app.use(passport.session());
 
-
 // serve static assets
 app.delete('/api/hello', (req, res) => { res.send("hello to you too"); });
-app.use('/', express.static(path.join(__dirname, 'public')));
+app.use(express.static(path.join(__dirname, 'public')));
+// app.use('/', express.static(path.join(__dirname, 'public')));
 
 // router
+app.get('/', (req, res) => {
+  let currentUser = null;
+  if (req.user) {
+    currentUser = require('./views/currentUser')(req.user);
+  }
+  res.render('index', { currentUser });
+});
 app.use('/api', require('./routes/api'));
 
 // catch 404 and forward to error handler
