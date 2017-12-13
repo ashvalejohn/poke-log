@@ -5,27 +5,36 @@ class SettingsName extends Component {
     super(props);
 
     this.state = {
-      name: '',
-      showModal: false,
+      name: this.props.name,
     }
 
     this.handleChange = this.handleChange.bind(this);
-    this.handleSubmit = this.handleSubmit.bind(this);
-    this.toggleEdit = this.toggleEdit.bind(this);
+    this.makeEdit = this.makeEdit.bind(this);
+    this.saveEdit = this.saveEdit.bind(this);
   }
 
-  toggleEdit(){
+  makeEdit() {
+    console.log("Make changes");
     const inputTag = document.getElementById('settingsName');
-    const button = document.getElementById('toggleEditName');
-    if (inputTag.readOnly) {
-      inputTag.readOnly = false;
-      inputTag.classList.add('settings__input--save');
-      button.classList.add('settings__input__button--save');
-    } else {
-      inputTag.readOnly = true;
-      inputTag.classList.remove('settings__input--save');
-      button.classList.remove('settings__input__button--save');
-    }
+    const saveButton = document.getElementById('saveName');
+    const editButton = document.getElementById('editName');
+    inputTag.readOnly = false;
+    inputTag.classList.add('settings__input--save');
+    editButton.classList.add('hidden');
+    saveButton.classList.remove('hidden');
+  }
+
+  saveEdit() {
+    console.log("Save changes");
+    const inputTag = document.getElementById('settingsName');
+    const saveButton = document.getElementById('saveName');
+    const editButton = document.getElementById('editName');
+    inputTag.readOnly = true;
+    inputTag.classList.remove('settings__input--save');
+    saveButton.classList.add('hidden');
+    editButton.classList.remove('hidden');
+    // call this.props.update() to send new dose to settings parent
+    this.props.update(this.state);
   }
 
 
@@ -36,19 +45,14 @@ class SettingsName extends Component {
     })
   }
 
-  handleSubmit(e){
-    e.preventDefault();
-    alert(this.state.name);
-    // TODO: Insert action to update user name
-  }
-
   render(){
     return (
       <div>
         <p>Name</p>
-        <label className='settings__label' htmlFor="singleDose">
-          <input id='settingsName' className='settings__input' placeholder={this.props.name} readOnly/>
-          <button id='toggleEditName' onClick={this.toggleEdit} className='settings__input__button--edit'></button>
+        <label className='settings__label'>
+          <input id='settingsName' className='settings__input' placeholder={this.props.name} onChange={this.handleChange} readOnly/>
+          <button id='editName' onClick={this.makeEdit} className='settings__input__button--edit'></button>
+          <button id='saveName' onClick={this.saveEdit} className='settings__input__button--save hidden'></button>
         </label>
       </div>
     )

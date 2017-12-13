@@ -49,7 +49,7 @@ class SettingsDose extends Component {
     return (
       <div>
         <p>Single Dose in mL</p>
-        <label className='settings__label' htmlFor="singleDose">
+        <label className='settings__label'>
           <input id='settingsDose' className='settings__input' placeholder={this.props.dose} onChange={this.handleChange} readOnly />
           <button id='editDose' onClick={this.makeEdit} className='settings__input__button--edit'></button>
           <button id='saveDose' onClick={this.saveEdit} className='settings__input__button--save hidden'></button>
