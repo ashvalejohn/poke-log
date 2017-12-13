@@ -36,7 +36,7 @@ module.exports = (passport, User) => {
         }
       }).then((foundUser) => {
         if (foundUser) {
-          return done(null, false, { message: 'That email is already taken' });
+          return done(null, false, { message: ['That email is already taken'] });
         } else {
           const userPassword = generateHash(password);
           const data = {
@@ -75,16 +75,16 @@ module.exports = (passport, User) => {
         }
       }).then(user => {
         if (!user) {
-          return done(null, false, { message: 'Invalid email'});
+          return done(null, false, { message: ['Invalid email']});
         } else if (!isValidPassword(password, user.password)) {
-          return done(null, false, { message: 'Invalid password'});
+          return done(null, false, { message: ['Invalid password']});
         } else {
           const userInfo = user.get();
           return done(null, userInfo);
         }
       }).catch(err => {
         console.log(err);
-        return done(null, false, { message: 'Something went wrong!'});
+        return done(null, false, { message: ['Something went wrong!']});
       });
     }
   ));

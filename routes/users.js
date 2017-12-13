@@ -1,7 +1,7 @@
 var express = require('express');
 var router = express.Router();
 const passport = require('passport');
-const UsersController = require('../controllers/users_controller');
+const { create } = require('../controllers/users_controller');
 
 router.get('/', (req, res, next) => {
   console.log('request for /api/users');
@@ -13,6 +13,18 @@ router.get('/:id', (req, res, next) => {
   res.send(`This is the user SHOW page for ${req.params.id}`);
 });
 
-router.post('/', passport.authenticate('local-signup'), UsersController.create);
+router.post('/', (req, res, next) => {
+  passport.authenticate('local-signup', (err, user, info) => {
+    if (err) { next(err); }
+    if (!user) {
+      res.status(401).json(info.message);
+    } else {
+      req.login(user, loginErr => {
+        if (loginErr) { next(loginErr); }
+      });
+      create(user, res);
+    }
+  })(req, res, next);
+});
 
 module.exports = router;
