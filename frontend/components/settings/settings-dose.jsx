@@ -15,7 +15,7 @@ class SettingsDose extends Component {
   }
 
   toggleEdit() {
-    const inputTag = document.getElementById('settingsName');
+    const inputTag = document.getElementById('settingsDose');
     const button = document.getElementById('toggleEditDose');
     if (inputTag.readOnly) {
       inputTag.readOnly = false;
@@ -39,7 +39,7 @@ class SettingsDose extends Component {
   handleSubmit(e) {
     e.preventDefault();
     alert(this.state.name);
-    // TODO: Insert action to update user name
+    // TODO: Insert action to update user dose
   }
 
   render() {
@@ -47,7 +47,7 @@ class SettingsDose extends Component {
       <div>
         <p>Single Dose in mL</p>
         <label className='settings__label' htmlFor="singleDose">
-          <input id='settingsName' className='settings__input' placeholder={this.props.dose} readOnly />
+          <input id='settingsDose' className='settings__input' placeholder={this.props.dose} readOnly />
           <button id='toggleEditDose' onClick={this.toggleEdit} className='settings__input__button--edit'></button>
         </label>
       </div>

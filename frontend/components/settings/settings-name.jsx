@@ -20,11 +20,11 @@ class SettingsName extends Component {
     if (inputTag.readOnly) {
       inputTag.readOnly = false;
       inputTag.classList.add('settings__input--save');
-      toggleEdit.classList.add('settings__input__button--save');
+      button.classList.add('settings__input__button--save');
     } else {
       inputTag.readOnly = true;
       inputTag.classList.remove('settings__input--save');
-      toggleEdit.classList.remove('settings__input__button--save');
+      button.classList.remove('settings__input__button--save');
     }
   }
 
