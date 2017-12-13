@@ -4,6 +4,12 @@
     <meta charset="utf-8">
     <title>PokeLog</title>
     <link rel="stylesheet" href="stylesheets/style.css">
+    <script type="text/javascript" src='./javascripts/bundle.js'></script>
+    <script type="text/javascript">
+          <% if (currentUser) { %>
+            window.currentUser = <%- (currentUser) %>
+          <% } %>
+    </script>
   </head>
   <body>
     <main id="root">
@@ -13,15 +19,14 @@
         <div class=''></div>
         <p>Poke Log</p>
       </a>
-      <a href='/log-a-poke' class='nav__icon nav__icon--droplet'>
+      <a href='/#/log-a-poke' class='nav__icon nav__icon--droplet'>
         <div class=''></div>
         <p>Log A Poke</p>
       </a>
-      <a href='/settings' class='nav__icon nav__icon--settings'>
+      <a href='/#/settings' class='nav__icon nav__icon--settings'>
         <div class=''></div>
         <p>Settings</p>
       </a>
     </div>
-    <script type="text/javascript" src='./javascripts/bundle.js'></script>
   </body>
 </html>
