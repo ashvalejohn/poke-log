@@ -1,6 +1,6 @@
 const UsersController = {
-  create: (req, res) => {
-    res.json({ id: req.user.id, email: req.user.email });
+  create: ({id, email, name, dosage}, res) => {
+    res.json({ id, email, name, dosage });
   }
 };
 

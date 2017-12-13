@@ -8,8 +8,7 @@ router.post('/', (req, res, next) => {
   passport.authenticate('local-signin', (err, user, info) => {
     if (err) { return next(err); }
     if (!user) {
-      console.log(info);
-      res.status(401).json([info.message]);
+      res.status(401).json(info.message);
     } else {
       req.login(user, error => {
         if (error) { next(error); }
