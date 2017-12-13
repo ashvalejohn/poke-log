@@ -44,7 +44,7 @@ body ul {
   }
 }
 
-.button, .auth__submit, .settings__sign-out {
+.button, .auth__submit, .settings__sign-out, .log-poke__submit {
   border-radius: 5px;
   font-size: 1.25rem;
   height: 60px;
@@ -53,13 +53,13 @@ body ul {
   margin-bottom: 2%;
 }
 @media screen and (min-width: 500px) {
-  .button, .auth__submit, .settings__sign-out {
+  .button, .auth__submit, .settings__sign-out, .log-poke__submit {
     font-size: 1.5rem;
     height: 75px;
     width: 200px;
   }
 }
-.button:hover, .auth__submit:hover, .settings__sign-out:hover {
+.button:hover, .auth__submit:hover, .settings__sign-out:hover, .log-poke__submit:hover {
   cursor: pointer;
 }
 
@@ -377,7 +377,7 @@ body ul {
   text-align: center;
   border-radius: 5px;
   font-size: 1.25rem;
-  height: 60px;
+  height: 55px;
   margin-bottom: 2%;
 }
 .log-poke__form-field label:last-of-type {
@@ -386,7 +386,7 @@ body ul {
 @media screen and (min-width: 500px) {
   .log-poke__form-field label {
     font-size: 1.5rem;
-    height: 75px;
+    height: 55px;
     width: 200px;
   }
 }
@@ -421,7 +421,7 @@ body ul {
   }
 }
 
-.logpoke___form-select {
+.log-poke___form-select {
   text-align-last: center;
   border: 2px solid #D25737;
   border-radius: 5px;
@@ -431,7 +431,18 @@ body ul {
   color: #0b101a;
 }
 @media screen and (min-width: 500px) {
-  .logpoke___form-select {
+  .log-poke___form-select {
     width: 350px;
   }
+}
+
+.log-poke__submit {
+  background-color: #D25737;
+  border: 0px;
+  margin-top: 5%;
+  color: white;
+  transition-duration: .25s;
+}
+.log-poke__submit:hover {
+  background-color: #d66447;
 }

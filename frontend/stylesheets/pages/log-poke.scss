@@ -58,14 +58,14 @@
     text-align: center;
     border-radius: $button-border;
     font-size: 1.25rem;
-    height: 60px;
+    height: 55px;
     margin-bottom: 2%;
     &:last-of-type{
         margin-left: 5px;
     }
     @media screen and (min-width: $tablet){
     font-size: 1.5rem;
-    height: 75px;
+    height: 55px;
     width: 200px;
     }
  }
@@ -99,7 +99,7 @@
     }
 }
 
-.logpoke___form-select {
+.log-poke___form-select {
     text-align-last: center;
     border: 2px solid $red;
     border-radius: $button-border;
@@ -109,6 +109,18 @@
     color: $black;
     @media screen and (min-width: $tablet){
         width: 350px;
+    }
+}
+
+.log-poke__submit {
+    background-color: $red;
+    border: 0px;
+    margin-top: 5%;
+    color: $white;
+    transition-duration: .25s;
+    @extend .button;
+    &:hover{
+    background-color: $ltred;
     }
 }
 
