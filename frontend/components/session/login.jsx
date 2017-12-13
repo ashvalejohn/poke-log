@@ -40,8 +40,8 @@ class Login extends Component {
             <input onChange={this.handleChange} type="password" className='auth__form-input' minLength='6' required/>
           </label>
         </form>
-        <div className='auth__login-signup' onClick={this.handleSubmit}>
-          <button className='auth__submit'>Log In</button>
+        <div className='auth__login-signup'>
+          <button className='auth__submit' onClick={this.handleSubmit}>Log In</button>
           <p>Don’t have an account? <Link to='/signup'>Sign Up</Link></p>
         </div>
       </div>
