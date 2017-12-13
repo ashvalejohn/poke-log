@@ -1,11 +1,27 @@
 import React, { Component } from 'react';
+import { Link, withRouter } from 'react-router-dom';
 
 
 class LogPoke extends React.Component {
-    constructor() {
-        super();
-        
+    constructor(props) {
+        super(props);
+        this.state = {
+                    date: "",
+                    double: false,
+                    bleed: null       
+        };
     }
+
+    componentDidMount() {
+        document.title = "Log A Poke";
+    }
+
+    handleSubmit(e) {
+        e.preventDefault();
+        const poke = this.state;
+        this.props.logPoke(poke);
+    }
+
     render() {
         return(
         <div className= "log-poke">
