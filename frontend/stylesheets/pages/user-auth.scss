@@ -33,17 +33,10 @@
 
 .auth__form-input{
   border: 2px solid $dkyell;
-  border-radius: $button-border;
-  height: 50px;
-  padding-left: 2%;
-  font-size: inherit;
-  color: $black;
+  @extend .input;
   &:valid{
     border: 2px solid $green;
     outline-color: $green;
-  }
-  @media screen and (min-width: $tablet){
-    width: 350px;
   }
 }
 
