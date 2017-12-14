@@ -1,0 +1,70 @@
+.calendar {
+  @extend .page;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+}
+
+.calendar {
+  @extend .page-title;
+  color: $blue;
+}
+
+.calendar__select-month{
+  @extend .input;
+  border: 2px solid $blue;
+  font-size: 1rem;
+}
+
+.calendar__grid{
+  background-color: $white;
+  border-radius: $button-border;
+
+  margin-top: 2%;
+  width: 50vh;
+  border: 2px solid $blue;
+  display: flex;
+  flex-direction: column;
+}
+
+.grid__days{
+  background-color: $blue;
+  color: $white;
+  width: 100%;
+  height: 5vh;
+  border-bottom: 2px solid $blue;
+  font-size: 14px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.day-name{
+  width: 14%;
+}
+
+.days__container{
+  flex: 1;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: flex-start;
+}
+
+.day{
+  min-height: 130px;
+  flex-basis: 14%;
+  &:not(:nth-of-type(7n)){
+    border-right: 1px solid $blue;
+  }
+  &:not(:nth-of-type(n + 29)){
+    border-bottom: 1px solid $blue;
+  }
+}
+
+.day__date{
+  font-size: 14px;
+  text-align: left;
+  padding: 3% 0 0 3%;
+}

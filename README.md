@@ -14,7 +14,7 @@ PokeLog is built by [Matthew Buckner](https://github.com/bucknermr), [Ashley Joh
 Users will be able to:
 - [x] Log in/Log out
 - [ ] Schedule a reminder to infuse
-- [ ] Log an infusion (including date, dose, and whether it was in response to a bleed)
+- [x] Log an infusion (including date, dose, and whether it was in response to a bleed)
 - [ ] See a calendar view of infusions
 - [ ] Save the app to their home screen and log infusions while offline
 
@@ -45,8 +45,8 @@ Users will be able to:
   - [x] setup Node/Express backend
   
 ### Phase One: Login
-- [ ] User can create account
-- [ ] User can log into account
+- [x] User can create account
+- [x] User can log into account
 - [ ] Initial host on Heroku
 
 #### Monday
@@ -60,26 +60,21 @@ Users will be able to:
 ### Phase Two: Infusion Log & User Settings
 - [ ] User can read/update dosage
 - [ ] User can read/update shared users
-- [ ] User can create an infusion
-- [ ] User can update an infusion
+- [x] User can create an infusion
 - [ ] Implement Service Worker
 
 #### Tuesday
 - Objective: Complete log component
-- [ ] Responsive design
-- [ ] Log React Component (form, submit)
-- [ ] Infusion table in DB
-- [ ] Send infusion data to DB
+- [x] Responsive design
+- [x] Log React Component (form, submit)
+- [x] Infusion table in DB
+- [x] Send infusion data to DB
 
 #### Wednesday
 - Objective: Integrate service worker for infusion log
 - Objective: Allow user to update settings
-- [ ] Send infusion data to service worker
-- [ ] Send infusion data from service worker to DB
-- [ ] Settings React Component
+- [x] Settings React Component
 - [ ] Send user settings data to DB
-- [ ] Send user settings data to service worker
-- [ ] Send user settings data from service worker to DB
 
 ### Phase Three: Review Infusion (Index Views)
 - [ ] User can see calendar view of past infusions (infusion index)
