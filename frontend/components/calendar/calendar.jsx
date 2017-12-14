@@ -4,10 +4,11 @@ import Days from './calendar-days';
 class Calendar extends Component {
   constructor(props){
     super(props);
-    
-    const date = new Date(), locale = "en-us", month = date.toLocaleString(locale, { month: "long" });
+
+    const date = new Date(), locale = "en-us";
+    const month = date.toLocaleString(locale, { month: "long" });
     const year = date.getFullYear();
-    const monthNum = date.getMonth() + 1;
+    const monthNum = date.getMonth();
     const today = date.getDate();
 
     this.state = {
@@ -19,6 +20,7 @@ class Calendar extends Component {
 
     this.handleChangeMonth = this.handleChangeMonth.bind(this);
     this.getDaysInMonth = this.getDaysInMonth.bind(this);
+    this.getFirstDayOfMonth = this.getFirstDayOfMonth.bind(this);
   }
 
   handleChangeMonth(e){
@@ -30,6 +32,11 @@ class Calendar extends Component {
 
   getDaysInMonth(){
     return new Date(this.state.year, this.state.monthNum, 0).getDate();
+  }
+
+  getFirstDayOfMonth(){
+    return new Date(this.state.year, this.state.monthNum).getDay();
+
   }
 
   render(){
@@ -61,7 +68,7 @@ class Calendar extends Component {
             <span className="dayName">Sat</span>
           </div>
 
-          <Days days={this.getDaysInMonth()} today={this.state.today} date={this.state.date} month={this.state.month} />
+          <Days days={this.getDaysInMonth()} today={this.state.today} date={this.state.date} month={this.state.month} firstDay={this.getFirstDayOfMonth()}/>
         </div>
       </div>
     )

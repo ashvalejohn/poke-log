@@ -21,6 +21,15 @@ class Days extends Component {
 
   render(){
     let days = [];
+
+    for (var i = 0; i < this.props.firstDay; i ++) {
+      days.push({
+        date: null,
+        poke: false,
+        bleed: false,
+      });
+    }
+
     for (var i = 1; i < this.props.days; i++) {
       const day = {
         date: i,
@@ -38,6 +47,7 @@ class Days extends Component {
       }
       days.push(day);
     }
+
 
     return (
       <div className='days__container'>
