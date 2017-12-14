@@ -20,12 +20,13 @@ class Login extends Component {
     });
   }
 
-  handleSubmit(e){
+  handleSubmit(e) {
     e.preventDefault();
     this.props.login({
       email: this.state.email,
       password: this.state.password
-    });
+    })
+      .then(() => (this.props.history.push('/log-a-poke')));
   }
 
   render(){
