@@ -38,9 +38,6 @@
     transition-duration: .5s;
     margin: 0 auto;
   }
-  img{
-    height: 100%;
-  }
   p{
     display: none;
   }
@@ -80,41 +77,64 @@
     background-image: url('../images/icons/calendar-yellow.svg');
   }
   &:hover{
-    div{
-      background-image: url('../images/icons/calendar-blue.svg');
-      transition-duration: .5s;
-    }
-    color: $blue;
-    transition-duration: .5s;
+    @extend .nav__icon--calendar--selected;
   }
 }
 
+.nav__icon--calendar--selected{
+  div{
+    background-image: url('../images/icons/calendar-blue.svg');
+    transition-duration: .5s;
+  }
+  color: $blue;
+  transition-duration: .5s;
+}
 
 .nav__icon--droplet{
   div{
     background-image: url('../images/icons/droplet-yellow.svg');
   }
   &:hover{
-    div{
+    @extend .nav__icon--droplet--selected;
+  }
+}
+
+.nav__icon--droplet--selected{
+  div{
       background-image: url('../images/icons/droplet-red.svg');
       transition-duration: .5s;
     }
     color: $red;
     transition-duration: .5s;
-  }
 }
-
 
 .nav__icon--settings{
   div{
     background-image: url('../images/icons/settings-yellow.svg');
   }
   &:hover{
-    div{
+    @extend .nav__icon--settings--selected;
+  }
+}
+
+.nav__icon--settings--selected{
+  color: $black;
+  transition-duration: .5s;
+  div{
       background-image: url('../images/icons/settings-black.svg');
       transition-duration: .5s;
     }
-    color: $black;
-    transition-duration: .5s;
+}
+
+.nav__shell{
+  z-index: -1;
+  .nav__icon--calendar{
+    @extend .nav__icon--calendar--selected;
+  }
+  .nav__icon--droplet{
+    @extend .nav__icon--droplet--selected;
+  }
+  .nav__icon--settings{
+    @extend .nav__icon--settings--selected;
   }
 }

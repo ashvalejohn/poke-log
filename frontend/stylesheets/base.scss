@@ -6,6 +6,7 @@ body{
   
   h1, p, ul{
     margin: 0;
+    font-size: inherit;
   }
 
   ul{
@@ -35,9 +36,6 @@ body{
 .page-title {
   font-size: 32px;
   text-align: center;
-  @media screen and (min-width: $tablet){
-    font-size: 3rem;
-  }
 }
 
 .button{
@@ -58,9 +56,11 @@ body{
 }
 
 .input{
+  background-color: $white;
   border-radius: $button-border;
   height: 50px;
   padding-left: 2%;
+  font-family: inherit;
   font-size: inherit;
   color: $black;
    @media screen and (min-width: $tablet){

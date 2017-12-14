@@ -6,6 +6,7 @@ body {
 }
 body h1, body p, body ul {
   margin: 0;
+  font-size: inherit;
 }
 body ul {
   padding: 0;
@@ -22,26 +23,21 @@ body ul {
   }
 }
 
-.page, .auth, .settings {
+.page, .auth, .settings, .calendar {
   height: 90vh;
   width: 90%;
   margin: 0 auto;
   box-sizing: border-box;
 }
 @media screen and (min-width: 1000px) {
-  .page, .auth, .settings {
+  .page, .auth, .settings, .calendar {
     margin-top: 10vh;
   }
 }
 
-.page-title, .auth__title, .settings__title, .log-poke__title {
+.page-title, .auth__title, .settings__title, .log-poke__title, .calendar {
   font-size: 32px;
   text-align: center;
-}
-@media screen and (min-width: 500px) {
-  .page-title, .auth__title, .settings__title, .log-poke__title {
-    font-size: 3rem;
-  }
 }
 
 .button, .auth__submit, .settings__sign-out, .log-poke__submit {
@@ -63,15 +59,17 @@ body ul {
   cursor: pointer;
 }
 
-.input, .auth__form-input, .settings__label {
+.input, .auth__form-input, .settings__label, .log-poke__form-input, .calendar__select-month {
+  background-color: white;
   border-radius: 5px;
   height: 50px;
   padding-left: 2%;
+  font-family: inherit;
   font-size: inherit;
   color: #0b101a;
 }
 @media screen and (min-width: 500px) {
-  .input, .auth__form-input, .settings__label {
+  .input, .auth__form-input, .settings__label, .log-poke__form-input, .calendar__select-month {
     width: 350px;
   }
 }
@@ -123,9 +121,6 @@ body ul {
   transition-duration: .5s;
   margin: 0 auto;
 }
-.nav__icon img {
-  height: 100%;
-}
 .nav__icon p {
   display: none;
 }
@@ -162,11 +157,12 @@ body ul {
 .nav__icon--calendar div {
   background-image: url("../images/icons/calendar-yellow.svg");
 }
-.nav__icon--calendar:hover {
+
+.nav__icon--calendar--selected, .nav__icon--calendar:hover, .nav__shell .nav__icon--calendar {
   color: #6285db;
   transition-duration: .5s;
 }
-.nav__icon--calendar:hover div {
+.nav__icon--calendar--selected div, .nav__icon--calendar:hover div, .nav__shell .nav__icon--calendar div {
   background-image: url("../images/icons/calendar-blue.svg");
   transition-duration: .5s;
 }
@@ -174,11 +170,12 @@ body ul {
 .nav__icon--droplet div {
   background-image: url("../images/icons/droplet-yellow.svg");
 }
-.nav__icon--droplet:hover {
+
+.nav__icon--droplet--selected, .nav__icon--droplet:hover, .nav__shell .nav__icon--droplet {
   color: #D25737;
   transition-duration: .5s;
 }
-.nav__icon--droplet:hover div {
+.nav__icon--droplet--selected div, .nav__icon--droplet:hover div, .nav__shell .nav__icon--droplet div {
   background-image: url("../images/icons/droplet-red.svg");
   transition-duration: .5s;
 }
@@ -186,13 +183,18 @@ body ul {
 .nav__icon--settings div {
   background-image: url("../images/icons/settings-yellow.svg");
 }
-.nav__icon--settings:hover {
+
+.nav__icon--settings--selected, .nav__icon--settings:hover, .nav__shell .nav__icon--settings {
   color: #0b101a;
   transition-duration: .5s;
 }
-.nav__icon--settings:hover div {
+.nav__icon--settings--selected div, .nav__icon--settings:hover div, .nav__shell .nav__icon--settings div {
   background-image: url("../images/icons/settings-black.svg");
   transition-duration: .5s;
+}
+
+.nav__shell {
+  z-index: -1;
 }
 
 .auth {
@@ -275,7 +277,7 @@ body ul {
 .settings {
   font-size: 24px;
   display: flex;
-  justify-content: space-around;
+  justify-content: flex-start;
   flex-direction: column;
   align-items: center;
 }
@@ -440,16 +442,6 @@ body ul {
 
 .log-poke__form-input {
   border: 2px solid #D25737;
-  border-radius: 5px;
-  height: 50px;
-  padding-left: 2%;
-  font-size: inherit;
-  color: #0b101a;
-}
-@media screen and (min-width: 500px) {
-  .log-poke__form-input {
-    width: 350px;
-  }
 }
 
 .log-poke___form-select {
@@ -476,4 +468,71 @@ body ul {
 }
 .log-poke__submit:hover {
   background-color: #d66447;
+}
+
+.calendar {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+}
+
+.calendar {
+  color: #6285db;
+}
+
+.calendar__select-month {
+  border: 2px solid #6285db;
+  font-size: 1rem;
+}
+
+.calendar__grid {
+  background-color: white;
+  border-radius: 5px;
+  margin-top: 2%;
+  width: 50vh;
+  border: 2px solid #6285db;
+  display: flex;
+  flex-direction: column;
+}
+
+.grid__days {
+  background-color: #6285db;
+  color: white;
+  width: 100%;
+  height: 5vh;
+  border-bottom: 2px solid #6285db;
+  font-size: 14px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.day-name {
+  width: 14%;
+}
+
+.days__container {
+  flex: 1;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: flex-start;
+}
+
+.day {
+  min-height: 130px;
+  flex-basis: 14%;
+}
+.day:not(:nth-of-type(7n)) {
+  border-right: 1px solid #6285db;
+}
+.day:not(:nth-of-type(n + 29)) {
+  border-bottom: 1px solid #6285db;
+}
+
+.day__date {
+  font-size: 14px;
+  text-align: left;
+  padding: 3% 0 0 3%;
 }
