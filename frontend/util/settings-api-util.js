@@ -7,3 +7,4 @@ export const updateUser = payload => (
         data: { payload }
     })
 );
+

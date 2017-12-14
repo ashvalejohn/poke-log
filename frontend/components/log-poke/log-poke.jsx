@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import { withRouter } from 'react-router-dom';
 
 
 class LogPoke extends React.Component {
@@ -30,7 +31,6 @@ class LogPoke extends React.Component {
         this.setState({
             date: e.currentTarget.value
         });
-        
     }
 
     handleBleedChange(e) {
@@ -43,6 +43,7 @@ class LogPoke extends React.Component {
         e.preventDefault();
         const poke = this.state;
         this.props.logPoke(poke);
+        document.getElementById('log-poke-form').reset();
     }
 
 
@@ -50,7 +51,7 @@ class LogPoke extends React.Component {
         return(
         <div className= "log-poke">
             <h1 className= "log-poke__title"> Log a Poke </h1>
-            <form action="" className= "log-poke__form"> 
+            <form id="log-poke-form" action="" className= "log-poke__form"> 
                 <label className="log-poke__form-field"> Poke Date
                     <input type="date" className="log-poke__form-input" onChange={this.handleDateChange}/>
                 </label>
@@ -117,4 +118,4 @@ class LogPoke extends React.Component {
     }
 }
 
-export default LogPoke;
+export default withRouter(LogPoke);
