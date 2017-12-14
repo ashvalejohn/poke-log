@@ -5,7 +5,7 @@ class SettingsDose extends Component {
     super(props);
 
     this.state = {
-      dose: this.props.dose,
+      dosage: this.props.dosage,
     }
 
     this.handleChange = this.handleChange.bind(this);
@@ -41,7 +41,7 @@ class SettingsDose extends Component {
   handleChange(e) {
     e.preventDefault();
     this.setState({
-      dose: e.target.value,
+      dosage: e.target.value,
     });
   }
 
@@ -50,7 +50,7 @@ class SettingsDose extends Component {
       <div>
         <p>Single Dose in mL</p>
         <label className='settings__label'>
-          <input id='settingsDose' className='settings__input' placeholder={this.props.dose} onChange={this.handleChange} readOnly />
+          <input id='settingsDose' className='settings__input' placeholder={this.props.dosage} onChange={this.handleChange} readOnly />
           <button id='editDose' onClick={this.makeEdit} className='settings__input__button--edit'></button>
           <button id='saveDose' onClick={this.saveEdit} className='settings__input__button--save hidden'></button>
         </label>
