@@ -159,40 +159,51 @@ body ul {
   transition-duration: .5s;
 }
 
-.nav__icon--calendar div {
-  background-image: url("../images/icons/calendar-yellow.svg");
-}
-.nav__icon--calendar:hover {
+.nav__icon--calendar--selected, .nav__icon--calendar:hover, .nav__icon--droplet:hover, .nav__shell .nav__icon--calendar {
   color: #6285db;
   transition-duration: .5s;
 }
-.nav__icon--calendar:hover div {
+.nav__icon--calendar--selected div, .nav__icon--calendar:hover div, .nav__icon--droplet:hover div, .nav__shell .nav__icon--calendar div {
   background-image: url("../images/icons/calendar-blue.svg");
+  transition-duration: .5s;
+}
+
+.nav__icon--calendar div {
+  background-image: url("../images/icons/calendar-yellow.svg");
+}
+
+.nav__icon--droplet--selected, .nav__shell .nav__icon--droplet {
+  color: #D25737;
+  transition-duration: .5s;
+}
+.nav__icon--droplet--selected div, .nav__shell .nav__icon--droplet div {
+  background-image: url("../images/icons/droplet-red.svg");
   transition-duration: .5s;
 }
 
 .nav__icon--droplet div {
   background-image: url("../images/icons/droplet-yellow.svg");
 }
-.nav__icon--droplet:hover {
-  color: #D25737;
+
+.nav__icon--settings--selected, .nav__icon--settings:hover, .nav__shell .nav__icon--settings {
+  color: #0b101a;
   transition-duration: .5s;
 }
-.nav__icon--droplet:hover div {
-  background-image: url("../images/icons/droplet-red.svg");
+.nav__icon--settings--selected div, .nav__icon--settings:hover div, .nav__shell .nav__icon--settings div {
+  background-image: url("../images/icons/settings-black.svg");
   transition-duration: .5s;
 }
 
 .nav__icon--settings div {
   background-image: url("../images/icons/settings-yellow.svg");
 }
-.nav__icon--settings:hover {
-  color: #0b101a;
-  transition-duration: .5s;
+
+.red {
+  background-color: #D25737;
 }
-.nav__icon--settings:hover div {
-  background-image: url("../images/icons/settings-black.svg");
-  transition-duration: .5s;
+
+.nav__shell {
+  z-index: -1;
 }
 
 .auth {
