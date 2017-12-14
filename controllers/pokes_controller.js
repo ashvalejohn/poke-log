@@ -23,14 +23,11 @@ const PokesController = {
     }
   },
   index: (req, res, next) => {
-    // console.log(req.user);
     req.user.getPokes({where: {
       date: { $like: req.body.query + '%' }
     }}).then(pokes => {
-      res.json(pokes);
+      res.json(require('../views/pokes')(pokes));
     });
-    // res.json(req.user.Poke);
-    // res.send('index...');
   }
 };
 

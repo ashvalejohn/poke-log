@@ -2,7 +2,7 @@ const jbuilder = require('jbuilder');
 
 module.exports = (poke) => {
   const output = jbuilder.encode(json => {
-    json.extract(poke, 'id', 'date', 'dose', 'bleed');
+    json.extract(poke, 'id', 'date', 'dose', 'bleed', 'double');
   });
   return output;
 };
