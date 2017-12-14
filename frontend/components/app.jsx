@@ -4,7 +4,7 @@ import { AuthRoute, ProtectedRoute } from '../util/route-util';
 import LoginContainer from './session/login-container';
 import SignupContainer from './session/signup-container';
 import LogPokeContainer from './log-poke/log-poke-container';
-import SettingsContainer from './settings/settings';
+import SettingsContainer from './settings/settings-container';
 import Nav from './nav';
 
 const App = () => (
