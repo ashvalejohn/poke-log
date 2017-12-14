@@ -1,16 +1,24 @@
 import React, { Component } from 'react';
+import Days from './calendar-days';
 
 class Calendar extends Component {
   constructor(props){
     super(props);
-
+    console.log(this.props);
     const date = new Date(), locale = "en-us", month = date.toLocaleString(locale, { month: "long" });
+    const year = date.getFullYear();
+    const monthNum = date.getMonth() + 1;
+    const today = date.getDate();
 
     this.state = {
+      date: date,
       month: month,
+      monthNum: monthNum,
+      year: year,
     }
 
     this.handleChangeMonth = this.handleChangeMonth.bind(this);
+    this.getDaysInMonth = this.getDaysInMonth.bind(this);
   }
 
   handleChangeMonth(e){
@@ -18,7 +26,10 @@ class Calendar extends Component {
     this.setState({
       month: e.target.value,
     }, () => (console.log(`Please fetch infusion info for ${this.state.month}`)));
-    
+  }
+
+  getDaysInMonth(){
+    return new Date(this.state.year, this.state.monthNum, 0).getDate();
   }
 
   render(){
@@ -41,8 +52,16 @@ class Calendar extends Component {
         </select>
         <div className='calendar__grid'>
           <div className='grid__days'>
-            <span></span>
+            <span className="dayName">Sun</span>
+            <span className="dayName">Mon</span>
+            <span className="dayName">Tue</span>
+            <span className="dayName">Wed</span>
+            <span className="dayName">Thu</span>
+            <span className="dayName">Fri</span>
+            <span className="dayName">Sat</span>
           </div>
+
+          <Days days={this.getDaysInMonth()} today={this.state.today} date={this.state.date} month={this.state.month} />
         </div>
       </div>
     )
