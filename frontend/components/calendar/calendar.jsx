@@ -36,7 +36,10 @@ class Calendar extends Component {
 
   getFirstDayOfMonth(){
     return new Date(this.state.year, this.state.monthNum).getDay();
+  }
 
+  getNewMonth(){
+    // send string "2017-12"
   }
 
   render(){
