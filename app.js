@@ -33,7 +33,6 @@ app.use(passport.initialize());
 app.use(passport.session());
 
 // serve static assets
-app.delete('/api/hello', (req, res) => { res.send("hello to you too"); });
 app.use(express.static(path.join(__dirname, 'public')));
 // app.use('/', express.static(path.join(__dirname, 'public')));
 
