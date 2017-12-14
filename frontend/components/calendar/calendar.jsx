@@ -59,13 +59,13 @@ class Calendar extends Component {
         </select>
         <div className='calendar__grid'>
           <div className='grid__days'>
-            <span className="dayName">Sun</span>
-            <span className="dayName">Mon</span>
-            <span className="dayName">Tue</span>
-            <span className="dayName">Wed</span>
-            <span className="dayName">Thu</span>
-            <span className="dayName">Fri</span>
-            <span className="dayName">Sat</span>
+            <span className="day-name">Sun</span>
+            <span className="day-name">Mon</span>
+            <span className="day-name">Tue</span>
+            <span className="day-name">Wed</span>
+            <span className="day-name">Thu</span>
+            <span className="day-name">Fri</span>
+            <span className="day-name">Sat</span>
           </div>
 
           <Days days={this.getDaysInMonth()} today={this.state.today} date={this.state.date} month={this.state.month} firstDay={this.getFirstDayOfMonth()}/>
