@@ -1,0 +1,8 @@
+.calendar {
+  @extend .page;
+}
+
+.calendar {
+  @extend .page-title;
+  color: $blue;
+}

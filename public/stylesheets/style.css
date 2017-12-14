@@ -6,6 +6,7 @@ body {
 }
 body h1, body p, body ul {
   margin: 0;
+  font-size: inherit;
 }
 body ul {
   padding: 0;
@@ -22,24 +23,24 @@ body ul {
   }
 }
 
-.page, .auth, .settings {
+.page, .auth, .settings, .calendar {
   height: 90vh;
   width: 90%;
   margin: 0 auto;
   box-sizing: border-box;
 }
 @media screen and (min-width: 1000px) {
-  .page, .auth, .settings {
+  .page, .auth, .settings, .calendar {
     margin-top: 10vh;
   }
 }
 
-.page-title, .auth__title, .settings__title, .log-poke__title {
+.page-title, .auth__title, .settings__title, .log-poke__title, .calendar {
   font-size: 32px;
   text-align: center;
 }
 @media screen and (min-width: 500px) {
-  .page-title, .auth__title, .settings__title, .log-poke__title {
+  .page-title, .auth__title, .settings__title, .log-poke__title, .calendar {
     font-size: 3rem;
   }
 }
@@ -123,9 +124,6 @@ body ul {
   transition-duration: .5s;
   margin: 0 auto;
 }
-.nav__icon img {
-  height: 100%;
-}
 .nav__icon p {
   display: none;
 }
@@ -159,30 +157,34 @@ body ul {
   transition-duration: .5s;
 }
 
-.nav__icon--calendar--selected, .nav__icon--calendar:hover, .nav__icon--droplet:hover, .nav__shell .nav__icon--calendar {
-  color: #6285db;
-  transition-duration: .5s;
-}
-.nav__icon--calendar--selected div, .nav__icon--calendar:hover div, .nav__icon--droplet:hover div, .nav__shell .nav__icon--calendar div {
-  background-image: url("../images/icons/calendar-blue.svg");
-  transition-duration: .5s;
-}
-
 .nav__icon--calendar div {
   background-image: url("../images/icons/calendar-yellow.svg");
 }
 
-.nav__icon--droplet--selected, .nav__shell .nav__icon--droplet {
-  color: #D25737;
+.nav__icon--calendar--selected, .nav__icon--calendar:hover, .nav__shell .nav__icon--calendar {
+  color: #6285db;
   transition-duration: .5s;
 }
-.nav__icon--droplet--selected div, .nav__shell .nav__icon--droplet div {
-  background-image: url("../images/icons/droplet-red.svg");
+.nav__icon--calendar--selected div, .nav__icon--calendar:hover div, .nav__shell .nav__icon--calendar div {
+  background-image: url("../images/icons/calendar-blue.svg");
   transition-duration: .5s;
 }
 
 .nav__icon--droplet div {
   background-image: url("../images/icons/droplet-yellow.svg");
+}
+
+.nav__icon--droplet--selected, .nav__icon--droplet:hover, .nav__shell .nav__icon--droplet {
+  color: #D25737;
+  transition-duration: .5s;
+}
+.nav__icon--droplet--selected div, .nav__icon--droplet:hover div, .nav__shell .nav__icon--droplet div {
+  background-image: url("../images/icons/droplet-red.svg");
+  transition-duration: .5s;
+}
+
+.nav__icon--settings div {
+  background-image: url("../images/icons/settings-yellow.svg");
 }
 
 .nav__icon--settings--selected, .nav__icon--settings:hover, .nav__shell .nav__icon--settings {
@@ -192,14 +194,6 @@ body ul {
 .nav__icon--settings--selected div, .nav__icon--settings:hover div, .nav__shell .nav__icon--settings div {
   background-image: url("../images/icons/settings-black.svg");
   transition-duration: .5s;
-}
-
-.nav__icon--settings div {
-  background-image: url("../images/icons/settings-yellow.svg");
-}
-
-.red {
-  background-color: #D25737;
 }
 
 .nav__shell {
@@ -487,4 +481,8 @@ body ul {
 }
 .log-poke__submit:hover {
   background-color: #d66447;
+}
+
+.calendar {
+  color: #6285db;
 }
