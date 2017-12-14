@@ -33,7 +33,6 @@ app.use(passport.initialize());
 app.use(passport.session());
 
 // serve static assets
-app.delete('/api/hello', (req, res) => { res.send("hello to you too"); });
 app.use(express.static(path.join(__dirname, 'public')));
 // app.use('/', express.static(path.join(__dirname, 'public')));
 
@@ -46,6 +45,8 @@ app.get('/', (req, res) => {
   res.render('index', { currentUser });
 });
 app.use('/api', require('./routes/api'));
+
+app.use('/*', (req, res) => { res.redirect('/'); });
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {

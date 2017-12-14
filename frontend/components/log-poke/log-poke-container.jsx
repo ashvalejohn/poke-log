@@ -1,7 +1,7 @@
 import { connect } from 'react-redux';
 import { withRouter } from 'react-router-dom';
 
-import logPoke from '../../actions/log-poke-actions';
+import { logPoke } from '../../actions/log-poke-actions';
 import LogPoke from './log-poke';
 
 
