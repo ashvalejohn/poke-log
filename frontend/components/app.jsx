@@ -12,9 +12,9 @@ import Nav from './nav';
 
 const App = () => (
   <div>
-    <Route path='/log-a-poke' component={LogPokeContainer} />
-    <Route path='/poke-log' component={CalendarContainer} />
-    <Route path='/settings' component={SettingsContainer} />
+    <ProtectedRoute path='/log-a-poke' component={LogPokeContainer} />
+    <ProtectedRoute path='/poke-log' component={CalendarContainer} />
+    <ProtectedRoute path='/settings' component={SettingsContainer} />
     <AuthRoute path='/login' component={LoginContainer} />
     <AuthRoute path='/signup' component={SignupContainer} />
     <Route path='/' component={Nav} />
