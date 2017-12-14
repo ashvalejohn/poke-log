@@ -1,20 +1,28 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
+import { NavLink, withRouter } from 'react-router-dom';
 
 const Nav = () => (
   <div className='nav'>
-    <Link to='/poke-log' className='nav__icon nav__icon--calendar'>
+    <NavLink 
+      to='/poke-log' 
+      className='nav__icon nav__icon--calendar' activeClassName='nav__icon--calendar--selected'>
       <div className=''></div>
       <p>Poke Log</p>
-    </Link>
-    <Link to='/log-a-poke' className='nav__icon nav__icon--droplet'>
+    </NavLink>
+    <NavLink 
+      to='/log-a-poke' 
+      className='nav__icon nav__icon--droplet' 
+      activeClassName='nav__icon--droplet--selected'>
       <div className=''></div>
       <p>Log A Poke</p>
-    </Link>
-    <Link to='/settings' className='nav__icon nav__icon--settings'>
+    </NavLink>
+    <NavLink 
+      to='/settings' 
+      className='nav__icon nav__icon--settings' 
+      activeClassName='nav__icon--settings--selected'>
       <div className=''></div>
       <p>Settings</p>
-    </Link>
+    </NavLink>
   </div>
 )
 

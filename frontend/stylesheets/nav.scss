@@ -38,9 +38,6 @@
     transition-duration: .5s;
     margin: 0 auto;
   }
-  img{
-    height: 100%;
-  }
   p{
     display: none;
   }
@@ -75,6 +72,15 @@
   }
 }
 
+.nav__icon--calendar{
+  div{
+    background-image: url('../images/icons/calendar-yellow.svg');
+  }
+  &:hover{
+    @extend .nav__icon--calendar--selected;
+  }
+}
+
 .nav__icon--calendar--selected{
   div{
     background-image: url('../images/icons/calendar-blue.svg');
@@ -84,12 +90,12 @@
   transition-duration: .5s;
 }
 
-.nav__icon--calendar{
+.nav__icon--droplet{
   div{
-    background-image: url('../images/icons/calendar-yellow.svg');
+    background-image: url('../images/icons/droplet-yellow.svg');
   }
   &:hover{
-    @extend .nav__icon--calendar--selected;
+    @extend .nav__icon--droplet--selected;
   }
 }
 
@@ -102,12 +108,12 @@
     transition-duration: .5s;
 }
 
-.nav__icon--droplet{
+.nav__icon--settings{
   div{
-    background-image: url('../images/icons/droplet-yellow.svg');
+    background-image: url('../images/icons/settings-yellow.svg');
   }
   &:hover{
-    @extend .nav__icon--calendar--selected;
+    @extend .nav__icon--settings--selected;
   }
 }
 
@@ -118,19 +124,6 @@
       background-image: url('../images/icons/settings-black.svg');
       transition-duration: .5s;
     }
-}
-
-.nav__icon--settings{
-  div{
-    background-image: url('../images/icons/settings-yellow.svg');
-  }
-  &:hover{
-    @extend .nav__icon--settings--selected;
-  }
-}
-
-.red{
-  background-color: $red;
 }
 
 .nav__shell{
