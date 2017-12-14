@@ -8,13 +8,17 @@ module.exports = {
         primaryKey: true,
         type: Sequelize.INTEGER
       },
-      userId: {
+      UserId: {
         allowNull: false,
-        type: Sequelize.INTEGER
+        type: Sequelize.INTEGER,
+        references: {
+          model: 'Users',
+          key: 'id'
+        }
       },
       date: {
         allowNull: false,
-        type: Sequelize.DATEONLY
+        type: Sequelize.STRING
       },
       dose: {
         allowNull: false,
