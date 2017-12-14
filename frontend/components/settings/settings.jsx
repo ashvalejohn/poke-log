@@ -17,6 +17,7 @@ class Settings extends React.Component {
     };
 
     this.updateUser = this.updateUser.bind(this);
+    this.handleLogout = this.handleLogout.bind(this);
   }
 
   updateUser(newState){
@@ -28,6 +29,11 @@ class Settings extends React.Component {
     this.props.updateUser(this.state);
   }
 
+  handleLogout(){
+    this.props.logout()
+      .then(() => this.props.history.push('/login'));
+  }
+
   render(){
     return (
       <form className='settings'>
@@ -36,7 +42,7 @@ class Settings extends React.Component {
           <SettingsName name={this.state.name} update={this.updateUser}/>
           <SettingsDose dose={this.state.dosage} update={this.updateUser}/>
         </div>
-        <button className='settings__sign-out' onClick={this.props.logout} >Sign Out</button>
+        <button className='settings__sign-out' onClick={this.handleLogout} >Sign Out</button>
       </form>
     );
   }
