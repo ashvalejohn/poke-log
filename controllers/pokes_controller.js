@@ -4,7 +4,11 @@ const Poke = require('../models/index').Poke;
 const PokesController = {
   create: ({ body, user }, res, next) => {
     if (user) {
-      const poke = Object.assign({}, body, { userId: user.id });
+      
+      const poke = Object.assign(
+        {}, body.poke, { userId: user.id, dose: user.dosage }
+      );
+
       Poke.create(poke)
           .then(newPoke => { res.json(require('../views/poke')(newPoke)); })
           .catch(({ original }) => {
