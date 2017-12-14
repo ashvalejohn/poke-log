@@ -1,5 +1,4 @@
 import React, { Component } from 'react';
-import Calendar from 'react-calendar-mobile';
 
 class Days extends Component {
   constructor(props){
@@ -16,7 +15,7 @@ class Days extends Component {
         12 : { double: false },
         13 : { double: true },
       },
-      bleeds: [1, 4, 5, 6, 13],
+      bleeds: [1, 4, 5, 13],
     }
   }
 
@@ -33,9 +32,11 @@ class Days extends Component {
       if (pokeDays.includes(i.toString())) {
         this.state.pokes[i].double == true ? day.poke = 'double' : day.poke = 'single';
       }
-      
+      const bleedDays = this.state.bleeds;
+      if (bleedDays.includes(i)) {
+        day.bleed = true;
+      }
       days.push(day);
-      
     }
 
     return (
@@ -44,6 +45,7 @@ class Days extends Component {
           days.map(day => (
             <div key={day.date} className='day'>
               <p className='day__date'>{day.date}</p>
+              <p>{day.bleed ? "🔺" : null}</p>
               <p>{day.poke ? (day.poke == 'single' ? "🔵" : "🔵🔵") : null}</p>
             </div>
             )

@@ -4,7 +4,7 @@ import Days from './calendar-days';
 class Calendar extends Component {
   constructor(props){
     super(props);
-    console.log(this.props);
+    
     const date = new Date(), locale = "en-us", month = date.toLocaleString(locale, { month: "long" });
     const year = date.getFullYear();
     const monthNum = date.getMonth() + 1;
