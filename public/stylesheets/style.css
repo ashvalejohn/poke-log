@@ -39,11 +39,6 @@ body ul {
   font-size: 32px;
   text-align: center;
 }
-@media screen and (min-width: 500px) {
-  .page-title, .auth__title, .settings__title, .log-poke__title, .calendar {
-    font-size: 3rem;
-  }
-}
 
 .button, .auth__submit, .settings__sign-out, .log-poke__submit {
   border-radius: 5px;
@@ -64,15 +59,17 @@ body ul {
   cursor: pointer;
 }
 
-.input, .auth__form-input, .settings__label {
+.input, .auth__form-input, .settings__label, .log-poke__form-input, .calendar__select-month {
+  background-color: white;
   border-radius: 5px;
   height: 50px;
   padding-left: 2%;
+  font-family: inherit;
   font-size: inherit;
   color: #0b101a;
 }
 @media screen and (min-width: 500px) {
-  .input, .auth__form-input, .settings__label {
+  .input, .auth__form-input, .settings__label, .log-poke__form-input, .calendar__select-month {
     width: 350px;
   }
 }
@@ -280,7 +277,7 @@ body ul {
 .settings {
   font-size: 24px;
   display: flex;
-  justify-content: space-around;
+  justify-content: flex-start;
   flex-direction: column;
   align-items: center;
 }
@@ -445,16 +442,6 @@ body ul {
 
 .log-poke__form-input {
   border: 2px solid #D25737;
-  border-radius: 5px;
-  height: 50px;
-  padding-left: 2%;
-  font-size: inherit;
-  color: #0b101a;
-}
-@media screen and (min-width: 500px) {
-  .log-poke__form-input {
-    width: 350px;
-  }
 }
 
 .log-poke___form-select {
@@ -484,5 +471,26 @@ body ul {
 }
 
 .calendar {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+}
+
+.calendar {
   color: #6285db;
+}
+
+.calendar__select-month {
+  border: 2px solid #6285db;
+  font-size: 1rem;
+}
+
+.calendar__grid {
+  background-color: white;
+  border-radius: 5px;
+  height: 50vh;
+  margin-top: 2%;
+  width: 50vh;
+  border: 2px solid #6285db;
 }

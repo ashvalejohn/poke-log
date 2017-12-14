@@ -17,14 +17,15 @@ class Calendar extends Component {
     e.preventDefault();
     this.setState({
       month: e.target.value,
-    });
+    }, () => (console.log(`Please fetch infusion info for ${this.state.month}`)));
+    
   }
 
   render(){
     return (
       <div className='calendar'>
         <h1 className='calendar__title'>Calendar</h1>
-        <select defaultValue={this.state.month} onChange={this.handleChangeMonth}>
+        <select defaultValue={this.state.month} onChange={this.handleChangeMonth} className='calendar__select-month'>
           <option value="January">January</option>
           <option value="February">February</option>
           <option value="March">March</option>
@@ -38,8 +39,10 @@ class Calendar extends Component {
           <option value="November">November</option>
           <option value="December">December</option>
         </select>
-        <div className='calendar__log'>
-
+        <div className='calendar__grid'>
+          <div className='grid__days'>
+            <span></span>
+          </div>
         </div>
       </div>
     )

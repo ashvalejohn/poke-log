@@ -2,7 +2,7 @@
   @extend .page;
   font-size: 24px;
   display: flex;
-  justify-content: space-around;
+  justify-content: flex-start;
   flex-direction: column;
   align-items: center;
 }

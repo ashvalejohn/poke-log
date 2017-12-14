@@ -89,14 +89,7 @@
 
 .log-poke__form-input{
     border: 2px solid $red;
-    border-radius: $button-border;
-    height: 50px;
-    padding-left: 2%;
-    font-size: inherit;
-    color: $black;
-    @media screen and (min-width: $tablet){
-        width: 350px;
-    }
+    @extend .input;
 }
 
 .log-poke___form-select {

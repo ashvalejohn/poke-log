@@ -1,8 +1,27 @@
 .calendar {
   @extend .page;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
 }
 
 .calendar {
   @extend .page-title;
   color: $blue;
+}
+
+.calendar__select-month{
+  @extend .input;
+  border: 2px solid $blue;
+  font-size: 1rem;
+}
+
+.calendar__grid{
+  background-color: $white;
+  border-radius: $button-border;
+  height: 50vh;
+  margin-top: 2%;
+  width: 50vh;
+  border: 2px solid $blue;
 }
