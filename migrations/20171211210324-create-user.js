@@ -23,6 +23,7 @@ module.exports = {
         type: Sequelize.STRING
       },
       dosage: {
+        defaultValue: 0,
         type: Sequelize.INTEGER
       },
       createdAt: {
