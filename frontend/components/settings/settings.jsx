@@ -8,19 +8,19 @@ class Settings extends Component {
   constructor(props){
     super(props);
     this.state = {
-      name: 'John Smith',
-      dose: '250',
+      // name: this.state.name,
+      // dose: this.state.dosage,
       shares: ['Susan Smith', 'Dr. Ortega'],
       schedule: 'Every other day',
       showModal: false,
-    }
+    };
 
-    this.updateUser = this.updateUser.bind(this);
+    this.updateUser = this.props.updateUser.bind(this);
   }
 
   handleSignout(e){
     e.preventDefault();
-    // ADD this.props.logout
+    this.props.logout();
   }  
 
   updateUser(newState){
@@ -43,7 +43,7 @@ class Settings extends Component {
         </div>
         <button className='settings__sign-out'>Sign Out</button>
       </form>
-    )
+    );
   }
 }
 

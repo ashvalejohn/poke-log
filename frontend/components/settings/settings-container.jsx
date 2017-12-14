@@ -3,6 +3,7 @@ import { withRouter } from 'react-router-dom';
 import Settings from './settings';
 
 import { logout } from '../../actions/session-actions';
+import { updateUser } from '../../actions/settings-actions';
 
 const mapStateToProps = state => ({
   dosage: state.session.currentUser.dosage,
@@ -10,8 +11,9 @@ const mapStateToProps = state => ({
 });
 
 const mapDispatchToProps = (dispatch) => ({
-  logout: () => dispatch(logout())
+  logout: () => dispatch(logout()),
+  updateUser: (user) => dispatch(updateUser(user))
   
 });
 
-export default withRouter(connect(null, null)(Settings));
+export default withRouter(connect(mapStateToProps, mapDispatchToProps)(Settings));
