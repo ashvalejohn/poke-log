@@ -35,7 +35,7 @@ export const signupUser = user => dispatch => (
   )
 );
 
-export const logoutUser = dispatch => (
+export const logoutUser = () => dispatch => (
   logout().then(
     () => dispatch(receiveCurrentUser(null))
   )
