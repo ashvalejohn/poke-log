@@ -8,7 +8,7 @@ class LogPoke extends React.Component {
         this.state = {
                     date: "",
                     double: false,
-                    bleed: null       
+                    bleed: null
         };
 
         this.handleSubmit = this.handleSubmit.bind(this);
@@ -42,11 +42,12 @@ class LogPoke extends React.Component {
     handleSubmit(e) {
         e.preventDefault();
         const poke = this.state;
-        this.props.logPoke(poke);
-        document.getElementById('log-poke-form').reset();
-        this.props.history.push('/settings');
+        this.props.logPoke(poke).then(action => {
+          if (action.type === 'RECEIVE_POKE') {
+            this.props.history.push('/settings');
+          }
+        });
     }
-
 
     render() {
         return(
