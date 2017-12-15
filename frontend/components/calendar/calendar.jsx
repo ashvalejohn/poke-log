@@ -5,7 +5,6 @@ class Calendar extends Component {
   constructor(props){
     super(props);
 
-    console.log(this.props);
     const date = new Date(), locale = "en-us";
     const month = date.toLocaleString(locale, { month: "long" });
     const year = date.getFullYear();
@@ -32,7 +31,6 @@ class Calendar extends Component {
   }
 
   componentWillReceiveProps(nextProps){
-    console.log(nextProps);
     this.setState({
       pokes: nextProps.pokes,
     });

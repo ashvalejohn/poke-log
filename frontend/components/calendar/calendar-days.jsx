@@ -10,6 +10,10 @@ class Days extends Component {
     }
   }
 
+  componentWillReceiveProps(nextProps) {
+    console.log(nextProps);
+  }
+
   render(){
     let days = [];
 
@@ -27,6 +31,7 @@ class Days extends Component {
       }
 
       const pokeDays = Object.keys(this.state.pokes);
+      console.log(pokeDays);
       if (pokeDays.includes(i.toString())) {
         this.state.pokes[i].double == true ? day.poke = 'double' : day.poke = 'single';
       }
