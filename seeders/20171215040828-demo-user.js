@@ -18,8 +18,8 @@ module.exports = {
       password: 'password',
       name: 'Demo User',
       dosage: 250,
-      createdAt: '2017-12-13 13:08:51.427-07',
-      updatedAt: '2017 - 12 - 13 13: 08: 51.427-07',
+      createdAt: 'Thu Dec 14 2017 20:16:37',
+      updatedAt: 'Thu Dec 14 2017 20:16:37',
     }], {});
     
   },
