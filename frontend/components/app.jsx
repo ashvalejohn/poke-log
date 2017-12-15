@@ -10,8 +10,10 @@ import CalendarContainer from './calendar/calendar-container';
 
 import Nav from './nav';
 
-const defaultRedirect = (state) => {
 
+// If User is not loggedin (e.g. state.session === undefined) redirect to "login" when navigating to "/"
+// Else, redirect to "log-a-poke"
+const defaultRedirect = (state) => {
   const loggedIn = typeof state.session !== undefined ? false : true;
   return loggedIn ? <Redirect to='/log-a-poke' /> : <Redirect to='/login' />;
 };
