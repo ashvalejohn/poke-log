@@ -18,7 +18,6 @@ const PokesController = {
         });
       }
     } else {
-      console.log('not a user!');
       res.status(401)
         .json({ errors: ["Can't log a poke without being logged in!"] });
     }

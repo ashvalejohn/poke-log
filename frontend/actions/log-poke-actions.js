@@ -4,10 +4,9 @@ export const RECEIVE_POKE = 'RECEIVE_POKE';
 export const RECEIVE_POKE_ERRORS = 'RECEIVE_POKE_ERRORS';
 
 
-// TODO: This is not right, how to parse
 const receivePokeErrors = errors => ({
     type: RECEIVE_POKE_ERRORS,
-    errors: errors.responseJSON
+    errors: errors
 });
 
 const receivePoke = poke => ({
@@ -19,9 +18,6 @@ export const logPoke = (params) => dispatch => (
     APIUTIL.logPoke(params).then(
         poke => dispatch(receivePoke(poke)),
         errors => {
-          console.log('inside logpoke action........');
-          console.log(errors);
-          console.log(errors.responseJSON);
           return dispatch(receivePokeErrors(errors.responseJSON));
         }
     )
