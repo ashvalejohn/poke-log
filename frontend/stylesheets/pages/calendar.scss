@@ -68,3 +68,20 @@
   text-align: left;
   padding: 3% 0 0 3%;
 }
+
+.red-drop {
+  background-image: url("/images/icons/droplet-red.svg");
+  background-size: contain;
+  background-position: center;
+  background-repeat: no-repeat;
+  height: 26%;
+}
+
+.single-poke {
+  text-align: center;
+}
+
+.double-poke {
+  display: flex;
+  flex-direction: row;
+}
