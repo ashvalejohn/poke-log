@@ -4,9 +4,12 @@ const _poke = require('./poke');
 module.exports = (pokes) => {
 
   const output = jbuilder.encode(json => {
-    json.set('pokes', json => {
-      pokes.forEach(poke => {
-        json.set(poke.id, _poke(poke));
+    pokes.forEach(poke => {
+      json.set(poke.id, (json) => {
+        json.set('id', poke.id);
+        json.set('double', poke.double);
+        json.set('bleed', poke.bleed);
+        json.set('date', poke.date);
       });
     });
   });
