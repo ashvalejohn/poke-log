@@ -1,5 +1,5 @@
 import React from 'react';
-import { Route } from 'react-router-dom';
+import { Route, Redirect } from 'react-router-dom';
 import { AuthRoute, ProtectedRoute } from '../util/route-util';
 import LoginContainer from './session/login-container';
 import SignupContainer from './session/signup-container';
@@ -10,6 +10,11 @@ import CalendarContainer from './calendar/calendar-container';
 
 import Nav from './nav';
 
+const defaultRedirect = (state) => {
+  const loggedIn = typeof state !== undefined ? false : true;
+  return loggedIn ? <Redirect to='/log-a-poke' /> : <Redirect to='/login' />;
+};
+
 const App = () => (
   <div>
     <ProtectedRoute path='/log-a-poke' component={LogPokeContainer} />
@@ -18,6 +23,7 @@ const App = () => (
     <AuthRoute path='/login' component={LoginContainer} />
     <AuthRoute path='/signup' component={SignupContainer} />
     <Route path='/' component={Nav} />
+    <Route exact path ='/' component={defaultRedirect} />
   </div>
 );
 
