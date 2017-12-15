@@ -9,10 +9,6 @@ const receivePokeErrors = errors => {
     errors: errors
   };
 };
-// const receivePokeErrors = errors => ({
-//     type: RECEIVE_POKE_ERRORS,
-//     errors: errors
-// });
 
 const receivePoke = poke => ({
     type: RECEIVE_POKE,
