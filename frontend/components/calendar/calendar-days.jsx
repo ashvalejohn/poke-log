@@ -5,17 +5,8 @@ class Days extends Component {
     super(props);
 
     this.state = {
-      pokes: {
-        1 : { double: false },
-        3 : { double: false },
-        4 : { double: true },
-        5 : { double: false },
-        8 : { double: false },
-        10 : { double: false },
-        12 : { double: false },
-        13 : { double: true },
-      },
-      bleeds: [1, 4, 5, 13],
+      pokes: this.props.pokes,
+      // bleeds: [1, 4, 5, 13],
     }
   }
 
@@ -26,7 +17,6 @@ class Days extends Component {
       days.push({
         date: null,
         poke: false,
-        bleed: false,
       });
     }
 
@@ -34,17 +24,16 @@ class Days extends Component {
       const day = {
         date: i,
         poke: false,
-        bleed: false,
       }
 
       const pokeDays = Object.keys(this.state.pokes);
       if (pokeDays.includes(i.toString())) {
         this.state.pokes[i].double == true ? day.poke = 'double' : day.poke = 'single';
       }
-      const bleedDays = this.state.bleeds;
-      if (bleedDays.includes(i)) {
-        day.bleed = true;
-      }
+      // const bleedDays = this.state.bleeds;
+      // if (bleedDays.includes(i)) {
+      //   day.bleed = true;
+      // }
       days.push(day);
     }
 
@@ -55,7 +44,7 @@ class Days extends Component {
           days.map((day, index) => (
             <div key={`${index}${day.date}`} className='day'>
               <p className='day__date'>{day.date}</p>
-              <p>{day.bleed ? "🔺" : null}</p>
+              {/* <p>{day.bleed ? "🔺" : null}</p> */}
               <p>{day.poke ? (day.poke == 'single' ? "🔵" : "🔵🔵") : null}</p>
             </div>
             )
