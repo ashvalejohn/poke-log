@@ -6,62 +6,67 @@ class Days extends Component {
 
     this.state = {
       pokes: {},
+      days: []
     }
+
+    this.makeDays = this.makeDays.bind(this);
   }
 
-  componentWillReceiveProps(nextProps) {
-    console.log(nextProps);
-    this.setState({
-      pokes: nextProps.pokes,
-    })
-  }
-
-  render(){
+  makeDays(){
     console.log(this.props);
     let days = {};
+    const pokes = this.props.pokes;
+    const pokeDays = {};
+    const offset = this.props.firstDay;
 
-    for (var i = 0; i < this.props.firstDay; i ++) {
+    for (const poke in pokes) {
+      const date = parseInt(pokes[poke].date.slice(-2));
+      pokeDays[date] = {
+        poke: pokes[poke].double ? "double" : "single",
+        bleed: false
+      };
+    }
+
+    // make nil days
+    for (var i = 0; i < offset; i++){
       days[i] = {
         date: null,
       };
     }
 
-    for (var i = this.props.firstDay; i < this.props.days; i++) {
-      days[i] = {
-        date: i,
-        poke: null,
+    // make days for lengthOfMonth
+    for (var i = offset; i < this.props.daysInMonth + offset; i++) {
+      const date = i - offset + 1;
+      if (pokeDays[date]) {
+        days[i] = {
+          date: date,
+          poke: pokeDays[date].poke,
+          bleed: pokeDays[date].bleed,
+        }
+      } else {
+        days[i] = {
+          date: date,
+        }
       }
     }
 
-    // loop through max days in month
-    const pokes = this.state.pokes;
-    for (const poke in pokes) {
-      const date = parseInt(pokes[poke].date.slice(-2));
+    console.log(days);
+    return days;
+  }
 
-      days[date] = {
-        date: date,
-        poke: pokes[poke].double ? "double" : "single",
-      }
-    };
-    
-      
-      // let pokeDays = [];
-     
-      // console.log(pokeDays);
-      // const bleedDays = this.state.bleeds;
-      // if (bleedDays.includes(i)) {
-      //   day.bleed = true;
-      // }
-
-      console.log(days);
-
+  render(){
+    console.log(this.props);
+    const days = this.makeDays();
+    console.log(days);
     return (
       <div className='days__container'>
         {
-          // days.map((day, index) => (
-          //   <div key={`${index}${day.date}`} className='day'>
-          //   </div>
-          //   )
+          // days.map((day, index) => {
+          //   console.log(day);
+          //   // <div key={`${index}${day.date}`} className='day'>
+          //   //   <p>{day.date}</p>
+          //   // </div>
+          //   }
           // )
         }
       </div>

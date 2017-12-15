@@ -45,7 +45,8 @@ class Calendar extends Component {
   }
 
   getDaysInMonth(){
-    return new Date(this.state.year, this.state.monthNum, 0).getDate();
+    const zeroDays = new Date(this.state.year, this.state.monthNum, 0).getDate();
+    return zeroDays + 1;
   }
 
   getFirstDayOfMonth(){
@@ -57,6 +58,7 @@ class Calendar extends Component {
   }
 
   render(){
+    console.log(this.state.pokes);
     return (
       <div className='calendar'>
         <h1 className='calendar__title'>Calendar</h1>
@@ -85,7 +87,13 @@ class Calendar extends Component {
             <span className="day-name">Sat</span>
           </div>
 
-          <Days days={this.getDaysInMonth()} today={this.state.today} date={this.state.date} month={this.state.month} firstDay={this.getFirstDayOfMonth()} pokes={this.state.pokes}/>
+          <Days 
+            daysInMonth={this.getDaysInMonth()} 
+            today={this.state.today} 
+            date={this.state.date} 
+            month={this.state.month} 
+            firstDay={this.getFirstDayOfMonth()} 
+            pokes={this.state.pokes}/>
         </div>
       </div>
     )
