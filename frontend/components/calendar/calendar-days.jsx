@@ -13,7 +13,6 @@ class Days extends Component {
   }
 
   makeDays(){
-    console.log(this.props);
     let days = {};
     const pokes = this.props.pokes;
     const pokeDays = {};
@@ -23,7 +22,7 @@ class Days extends Component {
       const date = parseInt(pokes[poke].date.slice(-2));
       pokeDays[date] = {
         poke: pokes[poke].double ? "double" : "single",
-        bleed: false
+        bleed: pokes[poke].bleed
       };
     }
 
@@ -49,25 +48,24 @@ class Days extends Component {
         }
       }
     }
-
-    console.log(days);
     return days;
   }
 
   render(){
-    console.log(this.props);
-    const days = this.makeDays();
+    const makeDays = this.makeDays();
+    const days = Object.values(makeDays);
     console.log(days);
     return (
       <div className='days__container'>
         {
-          // days.map((day, index) => {
-          //   console.log(day);
-          //   // <div key={`${index}${day.date}`} className='day'>
-          //   //   <p>{day.date}</p>
-          //   // </div>
-          //   }
-          // )
+          days.map((day, index) => (
+            <div key={`${index}${day.date}`} className='day'>
+              <p>{day.date}</p>
+              <p>{day.bleed ? "🔺" : null}</p>
+              <p>{day.poke ? (day.poke === 'single' ? '🔵' : '🔵🔵') : null}</p>
+            </div>
+            )
+          )
         }
       </div>
     )
