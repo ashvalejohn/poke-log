@@ -40,7 +40,7 @@ app.use(express.static(path.join(__dirname, 'public')));
 app.get('/', (req, res) => {
   let currentUser = null;
   if (req.user) {
-    currentUser = require('./views/currentUser')(req.user);
+    currentUser = JSON.stringify(require('./views/currentUser')(req.user));
   }
   res.render('index', { currentUser });
 });

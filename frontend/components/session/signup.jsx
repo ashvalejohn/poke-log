@@ -27,7 +27,11 @@ class Signup extends Component {
       email: this.state.email,
       password: this.state.password,
     })
-      .then(() => (this.props.history.push('/settings')));
+      .then(action => {
+        if (action.type === 'RECEIVE_CURRENT_USER') {
+          this.props.history.push('/settings');
+        }
+      });
   }
 
   render() {

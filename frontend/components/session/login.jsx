@@ -25,8 +25,7 @@ class Login extends Component {
     this.props.login({
       email: this.state.email,
       password: this.state.password
-    })
-      .then(() => (this.props.history.push('/log-a-poke')));
+    });
   }
 
   render(){
