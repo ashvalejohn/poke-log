@@ -37,12 +37,6 @@ app.use(express.static(path.join(__dirname, 'public')));
 // app.use('/', express.static(path.join(__dirname, 'public')));
 
 // router
-// TODO
-app.get('/*', (req, res, next) => {
-  models.Poke.findAll().then(pokes => console.log(pokes));
-  next();
-});
-
 app.get('/', (req, res) => {
   let currentUser = null;
   if (req.user) {

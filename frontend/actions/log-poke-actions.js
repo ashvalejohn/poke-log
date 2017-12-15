@@ -21,9 +21,3 @@ export const logPoke = (params) => dispatch => (
         }
     )
 );
-// export const logPoke = (params) => dispatch => (
-//     APIUTIL.logPoke(params).then(
-//         poke => dispatch(receivePoke(poke)),
-//         errors => dispatch(receivePokeErrors(errors.responseJSON))
-//     )
-// );
