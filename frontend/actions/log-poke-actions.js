@@ -21,6 +21,7 @@ export const logPoke = (params) => dispatch => (
         errors => {
           console.log('inside logpoke action........');
           console.log(errors);
+          console.log(errors.responseJSON);
           return dispatch(receivePokeErrors(errors.responseJSON));
         }
     )

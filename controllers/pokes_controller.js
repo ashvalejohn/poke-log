@@ -3,22 +3,18 @@ const Poke = require('../models/index').Poke;
 
 const PokesController = {
   create: ({ body, user }, res, next) => {
-    console.log('in create.......');
     if (user) {
       if (!user.dosage) { return res.status(422).json(
         ["We need a dosage in order to log your pokes. Please set a dosage in settings."]
       );} else {
-
         const poke = Object.assign(
           {}, body.poke, { UserId: user.id, dose: user.dosage }
         );
         Poke.create(poke)
         .then(newPoke => { res.json(require('../views/poke')(newPoke)); })
-        .catch(({ original }) => {
-          console.log(original);
-          res.status(500).json(
-            { errors: ['Something went wrong while logging this poke'] }
-          );
+        .catch(({ errors }) => {
+          console.log(errors);
+          res.status(422).json([errors[0].message]);
         });
       }
     } else {
