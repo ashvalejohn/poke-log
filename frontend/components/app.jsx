@@ -12,9 +12,9 @@ import Nav from './nav';
 
 const App = () => (
   <div>
-    <Route path='/log-a-poke' component={LogPokeContainer} />
+    {/* <Route path='/log-a-poke' component={LogPokeContainer} /> */}
     <Route path='/poke-log' component={CalendarContainer} />
-    <Route path='/settings' component={SettingsContainer} />
+    {/* <Route path='/settings' component={SettingsContainer} /> */}
     <AuthRoute path='/login' component={LoginContainer} />
     <AuthRoute path='/signup' component={SignupContainer} />
     <Route path='/' component={Nav} />

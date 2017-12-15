@@ -18,9 +18,14 @@ class Calendar extends Component {
       year: year,
     }
 
+
     this.handleChangeMonth = this.handleChangeMonth.bind(this);
     this.getDaysInMonth = this.getDaysInMonth.bind(this);
     this.getFirstDayOfMonth = this.getFirstDayOfMonth.bind(this);
+  }
+
+  componentDidMount(){
+    // dispatch 
   }
 
   handleChangeMonth(e){
