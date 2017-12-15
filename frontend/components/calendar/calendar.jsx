@@ -5,6 +5,7 @@ class Calendar extends Component {
   constructor(props){
     super(props);
 
+    console.log(this.props);
     const date = new Date(), locale = "en-us";
     const month = date.toLocaleString(locale, { month: "long" });
     const year = date.getFullYear();
@@ -23,6 +24,10 @@ class Calendar extends Component {
     this.getFirstDayOfMonth = this.getFirstDayOfMonth.bind(this);
   }
 
+  componentDidMount(){
+    // dispatch 
+  }
+
   handleChangeMonth(e){
     e.preventDefault();
     this.setState({
@@ -36,7 +41,10 @@ class Calendar extends Component {
 
   getFirstDayOfMonth(){
     return new Date(this.state.year, this.state.monthNum).getDay();
+  }
 
+  getNewMonth(){
+    // send string "2017-12"
   }
 
   render(){

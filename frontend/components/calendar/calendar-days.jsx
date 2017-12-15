@@ -52,8 +52,8 @@ class Days extends Component {
     return (
       <div className='days__container'>
         {
-          days.map(day => (
-            <div key={day.date} className='day'>
+          days.map((day, index) => (
+            <div key={`${index}${day.date}`} className='day'>
               <p className='day__date'>{day.date}</p>
               <p>{day.bleed ? "🔺" : null}</p>
               <p>{day.poke ? (day.poke == 'single' ? "🔵" : "🔵🔵") : null}</p>
