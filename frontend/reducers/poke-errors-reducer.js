@@ -1,4 +1,4 @@
-import RECEIVE_POKE_ERRORS from '../actions/log-poke-actions';
+import { RECEIVE_POKE_ERRORS } from '../actions/log-poke-actions';
 
 const pokeErrorsReducer = (state = [], action) => {
   Object.freeze(state);

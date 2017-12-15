@@ -44,7 +44,7 @@ class LogPoke extends React.Component {
         const poke = this.state;
         this.props.logPoke(poke).then(action => {
           if (action.type === 'RECEIVE_POKE') {
-            this.props.history.push('/settings');
+            this.props.history.push('/poke-log');
           }
         });
     }
