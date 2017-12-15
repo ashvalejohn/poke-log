@@ -39,7 +39,7 @@ class Settings extends React.Component {
         <h1 className='settings__title'>Settings</h1>
         <div className='settings__fields'>
           <SettingsName name={this.state.name} update={this.updateUser}/>
-          <SettingsDose dose={this.state.dosage} update={this.updateUser}/>
+          <SettingsDose dosage= {this.state.dosage} update={this.updateUser}/>
         </div>
         <button className='settings__sign-out' onClick={this.handleLogout} >Sign Out</button>
       </form>
