@@ -34,6 +34,7 @@ class SettingsDose extends Component {
     saveButton.classList.add('hidden');
     editButton.classList.remove('hidden');
     // call this.props.update() to send new dose to settings parent
+    console.log(this.state);
     this.props.update(this.state);
   }
 
