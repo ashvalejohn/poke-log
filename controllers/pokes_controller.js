@@ -12,7 +12,6 @@ const PokesController = {
         const poke = Object.assign(
           {}, body.poke, { UserId: user.id, dose: user.dosage }
         );
-
         Poke.create(poke)
         .then(newPoke => { res.json(require('../views/poke')(newPoke)); })
         .catch(({ original }) => {

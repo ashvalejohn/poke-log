@@ -4,7 +4,7 @@ export const RECEIVE_POKE = 'RECEIVE_POKE';
 export const RECEIVE_POKE_ERRORS = 'RECEIVE_POKE_ERRORS';
 
 
-// This is not right, how to parse
+// TODO: This is not right, how to parse
 const receivePokeErrors = errors => ({
     type: RECEIVE_POKE_ERRORS,
     errors: errors.responseJSON
