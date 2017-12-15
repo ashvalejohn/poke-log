@@ -10,7 +10,6 @@ const receivePokes = pokes => ({
 export const fetchPokes = date => dispatch => (
   getPokes(date).then(
     pokes => {
-      console.log(pokes);
       dispatch(receivePokes(JSON.parse(pokes)));
     }
   )

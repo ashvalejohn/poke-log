@@ -10,6 +10,7 @@ module.exports = (pokes) => {
         json.set('double', poke.double);
         json.set('bleed', poke.bleed);
         json.set('date', poke.date);
+        json.set('dose', poke.dose);
       });
     });
   });
