@@ -16,11 +16,24 @@ class Calendar extends Component {
       month: month,
       monthNum: monthNum,
       year: year,
+      pokes: this.props.pokes,
     }
 
     this.handleChangeMonth = this.handleChangeMonth.bind(this);
     this.getDaysInMonth = this.getDaysInMonth.bind(this);
     this.getFirstDayOfMonth = this.getFirstDayOfMonth.bind(this);
+  }
+
+  componentDidMount(){
+    const query = `${this.state.year}-${this.state.monthNum + 1}`;
+    console.log(query);
+    this.props.fetchPokes(query);
+  }
+
+  componentWillReceiveProps(nextProps){
+    this.setState({
+      pokes: nextProps.pokes,
+    });
   }
 
   handleChangeMonth(e){
@@ -36,7 +49,10 @@ class Calendar extends Component {
 
   getFirstDayOfMonth(){
     return new Date(this.state.year, this.state.monthNum).getDay();
+  }
 
+  getNewMonth(){
+    // send string "2017-12"
   }
 
   render(){
@@ -68,7 +84,7 @@ class Calendar extends Component {
             <span className="day-name">Sat</span>
           </div>
 
-          <Days days={this.getDaysInMonth()} today={this.state.today} date={this.state.date} month={this.state.month} firstDay={this.getFirstDayOfMonth()}/>
+          <Days days={this.getDaysInMonth()} today={this.state.today} date={this.state.date} month={this.state.month} firstDay={this.getFirstDayOfMonth()} pokes={this.state.pokes}/>
         </div>
       </div>
     )

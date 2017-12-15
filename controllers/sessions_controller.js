@@ -5,7 +5,7 @@ const SessionsController = {
   destroy: (req, res) => {
     const { id, email, name, dosage } = req.user;
     req.logout();
-    res.json({ id, email, name, dosage, signedIn: false });
+    res.json({ id, email, name, dosage });
   }
 };
 

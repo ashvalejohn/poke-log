@@ -8,7 +8,7 @@ class LogPoke extends React.Component {
         this.state = {
                     date: "",
                     double: false,
-                    bleed: null       
+                    bleed: null
         };
 
         this.handleSubmit = this.handleSubmit.bind(this);
@@ -20,7 +20,7 @@ class LogPoke extends React.Component {
     componentDidMount() {
         document.title = "Log A Poke";
     }
-    
+
     handleDosageChange(e) {
         this.setState({
             double: e.target.value
@@ -42,17 +42,18 @@ class LogPoke extends React.Component {
     handleSubmit(e) {
         e.preventDefault();
         const poke = this.state;
-        this.props.logPoke(poke);
-        document.getElementById('log-poke-form').reset();
-        this.props.history.push('/settings');
+        this.props.logPoke(poke).then(action => {
+          if (action.type === 'RECEIVE_POKE') {
+            this.props.history.push('/settings');
+          }
+        });
     }
-
 
     render() {
         return(
         <div className= "log-poke">
             <h1 className= "log-poke__title"> Log a Poke </h1>
-            <form id="log-poke-form" action="" className= "log-poke__form"> 
+            <form id="log-poke-form" action="" className= "log-poke__form">
                 <label className="log-poke__form-field"> Poke Date
                     <input type="date" className="log-poke__form-input" onChange={this.handleDateChange}/>
                 </label>
@@ -109,7 +110,7 @@ class LogPoke extends React.Component {
                             <option value="nose"> Nose </option>
                             <option value="mouth"> Mouth </option>
                         </optgroup>
-                        
+
                     </select>
                 </label>
                 <button className="log-poke__submit" onClick= {this.handleSubmit}>LOG</button>

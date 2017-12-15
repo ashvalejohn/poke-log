@@ -1,8 +1,3 @@
-const jbuilder = require('jbuilder');
-
-module.exports = (poke) => {
-  const output = jbuilder.encode(json => {
-    json.extract(poke, 'id', 'date', 'dose', 'bleed', 'double');
-  });
-  return output;
+module.exports = ({ id, date, dose, bleed, double }) => {
+  return { id, date, dose, bleed, double };
 };
