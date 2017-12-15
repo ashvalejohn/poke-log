@@ -12,6 +12,7 @@ class Days extends Component {
     this.makeDays = this.makeDays.bind(this);
   }
 
+
   makeDays(){
     let days = {};
     const pokes = this.props.pokes;
@@ -51,18 +52,34 @@ class Days extends Component {
     return days;
   }
 
+
   render(){
     const makeDays = this.makeDays();
     const days = Object.values(makeDays);
-    console.log(days);
+  
+    const singlePoke =
+      <div className="single-poke">
+      <svg height= "50" width= "50" >
+        <circle cx="50%" cy="50%" r="28%" fill="rgba(98, 133, 219, 0.8)"></circle>
+      </svg >
+      </div>;
+
+    const doublePoke = 
+      <div className="double-poke">
+        <svg height="50" width="50" >
+          <circle cx="40%" cy="50%" r="25%" fill="rgba(98, 133, 219, 0.8)"></circle>
+          <circle cx="60%" cy="50%" r="25%" fill="rgba(98, 133, 219, 0.8)"></circle>
+        </svg >
+      </div>;
+    
     return (
       <div className='days__container'>
         {
           days.map((day, index) => (
             <div key={`${index}${day.date}`} className='day'>
-              <p>{day.date}</p>
-              <p>{day.bleed ? "🔺" : null}</p>
-              <p>{day.poke ? (day.poke === 'single' ? '🔵' : '🔵🔵') : null}</p>
+              <p className='day__date'>{day.date}</p>
+              <div className={day.bleed ? "red-drop" : null}></div>
+              <p>{day.poke ? (day.poke == 'single' ? singlePoke : doublePoke) : null}</p>
             </div>
             )
           )
