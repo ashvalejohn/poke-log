@@ -5,17 +5,58 @@ class Days extends Component {
     super(props);
 
     this.state = {
-      pokes: this.props.pokes,
-      // bleeds: [1, 4, 5, 13],
+      pokes: {},
+      days: []
     }
+
+    this.makeDays = this.makeDays.bind(this);
   }
 
-  componentWillReceiveProps(nextProps) {
-    console.log(nextProps);
+
+  makeDays(){
+    let days = {};
+    const pokes = this.props.pokes;
+    const pokeDays = {};
+    const offset = this.props.firstDay;
+
+    for (const poke in pokes) {
+      const date = parseInt(pokes[poke].date.slice(-2));
+      pokeDays[date] = {
+        poke: pokes[poke].double ? "double" : "single",
+        bleed: pokes[poke].bleed
+      };
+    }
+
+    // make nil days
+    for (var i = 0; i < offset; i++){
+      days[i] = {
+        date: null,
+      };
+    }
+
+    // make days for lengthOfMonth
+    for (var i = offset; i < this.props.daysInMonth + offset; i++) {
+      const date = i - offset + 1;
+      if (pokeDays[date]) {
+        days[i] = {
+          date: date,
+          poke: pokeDays[date].poke,
+          bleed: pokeDays[date].bleed,
+        }
+      } else {
+        days[i] = {
+          date: date,
+        }
+      }
+    }
+    return days;
   }
+
 
   render(){
-    let days = [];
+    const makeDays = this.makeDays();
+    const days = Object.values(makeDays);
+  
     const singlePoke =
       <div className="single-poke">
       <svg height= "50" width= "50" >
@@ -30,34 +71,7 @@ class Days extends Component {
           <circle cx="60%" cy="50%" r="25%" fill="rgba(98, 133, 219, 0.8)"></circle>
         </svg >
       </div>;
-
-
-    for (var i = 0; i < this.props.firstDay; i ++) {
-      days.push({
-        date: null,
-        poke: false,
-      });
-    }
-
-    for (var i = 1; i < this.props.days; i++) {
-      const day = {
-        date: i,
-        poke: false,
-      }
-
-      const pokeDays = Object.keys(this.state.pokes);
-      console.log(pokeDays);
-      if (pokeDays.includes(i.toString())) {
-        this.state.pokes[i].double == true ? day.poke = 'double' : day.poke = 'single';
-      }
-      // const bleedDays = this.state.bleeds;
-      // if (bleedDays.includes(i)) {
-      //   day.bleed = true;
-      // }
-      days.push(day);
-    }
-
-
+    
     return (
       <div className='days__container'>
         {
@@ -66,7 +80,6 @@ class Days extends Component {
               <p className='day__date'>{day.date}</p>
               <div className={day.bleed ? "red-drop" : null}></div>
               <p>{day.poke ? (day.poke == 'single' ? singlePoke : doublePoke) : null}</p>
-
             </div>
             )
           )
