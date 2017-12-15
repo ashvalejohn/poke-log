@@ -11,7 +11,8 @@ import CalendarContainer from './calendar/calendar-container';
 import Nav from './nav';
 
 const defaultRedirect = (state) => {
-  const loggedIn = typeof state !== undefined ? false : true;
+
+  const loggedIn = typeof state.session !== undefined ? false : true;
   return loggedIn ? <Redirect to='/log-a-poke' /> : <Redirect to='/login' />;
 };
 
