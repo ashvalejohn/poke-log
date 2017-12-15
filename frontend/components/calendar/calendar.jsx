@@ -5,7 +5,6 @@ class Calendar extends Component {
   constructor(props){
     super(props);
 
-    console.log(this.props);
     const date = new Date(), locale = "en-us";
     const month = date.toLocaleString(locale, { month: "long" });
     const year = date.getFullYear();
@@ -17,6 +16,7 @@ class Calendar extends Component {
       month: month,
       monthNum: monthNum,
       year: year,
+      pokes: this.props.pokes,
     }
 
     this.handleChangeMonth = this.handleChangeMonth.bind(this);
@@ -25,7 +25,15 @@ class Calendar extends Component {
   }
 
   componentDidMount(){
-    // dispatch 
+    const query = `${this.state.year}-${this.state.monthNum + 1}`;
+    console.log(query);
+    this.props.fetchPokes(query);
+  }
+
+  componentWillReceiveProps(nextProps){
+    this.setState({
+      pokes: nextProps.pokes,
+    });
   }
 
   handleChangeMonth(e){
@@ -76,7 +84,7 @@ class Calendar extends Component {
             <span className="day-name">Sat</span>
           </div>
 
-          <Days days={this.getDaysInMonth()} today={this.state.today} date={this.state.date} month={this.state.month} firstDay={this.getFirstDayOfMonth()}/>
+          <Days days={this.getDaysInMonth()} today={this.state.today} date={this.state.date} month={this.state.month} firstDay={this.getFirstDayOfMonth()} pokes={this.state.pokes}/>
         </div>
       </div>
     )
