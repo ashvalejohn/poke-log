@@ -5,55 +5,64 @@ class Days extends Component {
     super(props);
 
     this.state = {
-      pokes: this.props.pokes,
-      // bleeds: [1, 4, 5, 13],
+      pokes: {},
     }
   }
 
   componentWillReceiveProps(nextProps) {
     console.log(nextProps);
+    this.setState({
+      pokes: nextProps.pokes,
+    })
   }
 
   render(){
-    let days = [];
+    console.log(this.props);
+    let days = {};
 
     for (var i = 0; i < this.props.firstDay; i ++) {
-      days.push({
+      days[i] = {
         date: null,
-        poke: false,
-      });
+      };
     }
 
-    for (var i = 1; i < this.props.days; i++) {
-      const day = {
+    for (var i = this.props.firstDay; i < this.props.days; i++) {
+      days[i] = {
         date: i,
-        poke: false,
+        poke: null,
       }
+    }
 
-      const pokeDays = Object.keys(this.state.pokes);
-      console.log(pokeDays);
-      if (pokeDays.includes(i.toString())) {
-        this.state.pokes[i].double == true ? day.poke = 'double' : day.poke = 'single';
+    // loop through max days in month
+    const pokes = this.state.pokes;
+    for (const poke in pokes) {
+      const date = parseInt(pokes[poke].date.slice(-2));
+
+      days[date] = {
+        date: date,
+        poke: pokes[poke].double ? "double" : "single",
       }
+    };
+    
+      
+      // let pokeDays = [];
+     
+      // console.log(pokeDays);
       // const bleedDays = this.state.bleeds;
       // if (bleedDays.includes(i)) {
       //   day.bleed = true;
       // }
-      days.push(day);
-    }
 
+      console.log(days);
 
     return (
       <div className='days__container'>
         {
-          days.map((day, index) => (
-            <div key={`${index}${day.date}`} className='day'>
-              <p className='day__date'>{day.date}</p>
-              {/* <p>{day.bleed ? "🔺" : null}</p> */}
-              <p>{day.poke ? (day.poke == 'single' ? "🔵" : "🔵🔵") : null}</p>
-            </div>
-            )
-          )
+          // days.map((day, index) => (
+          //   <div key={`${index}${day.date}`} className='day'>
+          //   </div>
+          //   )
+          // )
         }
       </div>
     )

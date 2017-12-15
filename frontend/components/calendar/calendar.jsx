@@ -17,6 +17,7 @@ class Calendar extends Component {
       monthNum: monthNum,
       year: year,
       pokes: this.props.pokes,
+      today: today,
     }
 
     this.handleChangeMonth = this.handleChangeMonth.bind(this);
