@@ -4,7 +4,12 @@ const UsersController = {
   },
   update: ({ user, body }, res) => {
     if (user) {
-      user.updateAttributes(body.user)
+
+      const userSettings = {};
+      Object.keys(body.user).forEach(key => {
+        if (body.user[key]) { userSettings[key] = body.user[key]; }
+      });
+      user.updateAttributes(userSettings)
         .then( updatedUser => {
           res.json(require('../views/currentUser')(updatedUser));
         })
