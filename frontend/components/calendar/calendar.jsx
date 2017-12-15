@@ -25,7 +25,14 @@ class Calendar extends Component {
   }
 
   componentDidMount(){
-    // dispatch 
+    const query = `${this.state.year}-${this.state.monthNum + 1}`;
+    console.log(query);
+    this.props.fetchPokes(query);
+  }
+
+  componentWillReceiveProps(nextProps) {
+    console.log('received props');
+    console.log(nextProps);
   }
 
   handleChangeMonth(e){
