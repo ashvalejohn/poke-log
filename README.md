@@ -58,7 +58,7 @@ Users will be able to:
 - [x] Signup React Component
 
 ### Phase Two: Infusion Log & User Settings
-- [ ] User can read/update dosage
+- [x] User can read/update dosage
 - [ ] User can read/update shared users
 - [x] User can create an infusion
 - [ ] Implement Service Worker
@@ -77,15 +77,15 @@ Users will be able to:
 - [ ] Send user settings data to DB
 
 ### Phase Three: Review Infusion (Index Views)
-- [ ] User can see calendar view of past infusions (infusion index)
+- [x] User can see calendar view of past infusions (infusion index)
 - [ ] User can see heatmap view of past bleeds (bleed index) **BONUS?**
 
 #### Thursday
 - Objective: Built calendar component
 - [ ] Responsive design
-- [ ] Calendar React Component
-- [ ] Send infusion data from DB
-- [ ] Send infusion data for current month from service worker
+- [x] Calendar React Component
+- [x] Send infusion data from DB
+- [ ] Send infusion data for current month
 
 #### Friday
 - Objective: Build heatmap component
