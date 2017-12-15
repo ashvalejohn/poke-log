@@ -21,6 +21,21 @@ class Days extends Component {
 
   render(){
     let days = [];
+    const singlePoke =
+      <div className="single-poke">
+      <svg height= "50" width= "50" >
+        <circle cx="50%" cy="50%" r="28%" fill="rgba(98, 133, 219, 0.8)"></circle>
+      </svg >
+      </div>;
+
+    const doublePoke = 
+      <div className="double-poke">
+        <svg height="50" width="50" >
+          <circle cx="40%" cy="50%" r="25%" fill="rgba(98, 133, 219, 0.8)"></circle>
+          <circle cx="60%" cy="50%" r="25%" fill="rgba(98, 133, 219, 0.8)"></circle>
+        </svg >
+      </div>;
+
 
     for (var i = 0; i < this.props.firstDay; i ++) {
       days.push({
@@ -55,8 +70,8 @@ class Days extends Component {
           days.map(day => (
             <div key={day.date} className='day'>
               <p className='day__date'>{day.date}</p>
-              <p>{day.bleed ? "🔺" : null}</p>
-              <p>{day.poke ? (day.poke == 'single' ? "🔵" : "🔵🔵") : null}</p>
+              <div className={day.bleed ? "red-drop" : null}></div>
+              <p>{day.poke ? (day.poke == 'single' ? singlePoke : doublePoke) : null}</p>
             </div>
             )
           )
