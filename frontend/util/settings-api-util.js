@@ -4,7 +4,7 @@ export const updateUser = payload => (
     $.ajax({
         method: 'PATCH',
         url: '/api/users',
-        data: { payload }
+        data: { user: payload }
     })
 );
 
