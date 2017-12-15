@@ -26,7 +26,8 @@ class Signup extends Component {
     this.props.signup({
       email: this.state.email,
       password: this.state.password,
-    });
+    })
+      .then(() => (this.props.history.push('/settings')));
   }
 
   render() {

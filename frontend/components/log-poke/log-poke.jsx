@@ -44,6 +44,7 @@ class LogPoke extends React.Component {
         const poke = this.state;
         this.props.logPoke(poke);
         document.getElementById('log-poke-form').reset();
+        this.props.history.push('/settings');
     }
 
 
