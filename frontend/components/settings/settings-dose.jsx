@@ -14,7 +14,6 @@ class SettingsDose extends Component {
   }
 
   makeEdit() {
-    console.log("Make changes");
     const inputTag = document.getElementById('settingsDose');
     const saveButton = document.getElementById('saveDose');
     const editButton = document.getElementById('editDose');
@@ -25,7 +24,6 @@ class SettingsDose extends Component {
   }
 
   saveEdit(){
-    console.log("Save changes");
     const inputTag = document.getElementById('settingsDose');
     const saveButton = document.getElementById('saveDose');
     const editButton = document.getElementById('editDose');
