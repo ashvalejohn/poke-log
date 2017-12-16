@@ -23,7 +23,6 @@ class Calendar extends Component {
     this.handleChangeMonth = this.handleChangeMonth.bind(this);
     this.getDaysInMonth = this.getDaysInMonth.bind(this);
     this.getFirstDayOfMonth = this.getFirstDayOfMonth.bind(this);
-    this.getNewMonth = this.getNewMonth.bind(this);
   }
 
   componentDidMount(){
@@ -32,7 +31,7 @@ class Calendar extends Component {
   }
 
   componentWillReceiveProps(nextProps){
-    console.log('RECEIVED PROPS:');
+    console.log('RECEIVE PROPS');
     console.log(nextProps);
     this.setState({
       pokes: nextProps.pokes,
@@ -42,9 +41,14 @@ class Calendar extends Component {
 
   handleChangeMonth(e){
     e.preventDefault();
+    console.log(`CHANGE MONTH to ${parseInt(e.target.value) + 1}`);
+    let month = parseInt(e.target.value);
+
+    // change month should take a zero-index integer (i.e. December is '11')
+    this.props.changeMonth(month);
     this.setState({
       month: e.target.value,
-    }, () => (this.getNewMonth()));
+    });
   }
 
   getDaysInMonth(){
@@ -56,28 +60,8 @@ class Calendar extends Component {
     return new Date(this.state.year, this.state.monthNum).getDay();
   }
 
-  getNewMonth(){
-    const monthNums = {
-      "January": '01',
-      "February": '02',
-      "March": '03',
-      "April": '04',
-      "May": '05',
-      "June": '06',
-      "July": '07',
-      "August": '08',
-      "September": '09',
-      "October": '10',
-      "November": '11',
-      "December": '12',
-    }
-
-    let month = `${this.state.year}-${monthNums[this.state.month]}`;
-    this.props.changeMonth(month);
-  }
-
   render(){
-    console.log('RENDER');
+    console.log(`RENDER pokes for ${this.state.month}`);
     return (
       <div className='calendar'>
         <h1 className='calendar__title'>Calendar</h1>
