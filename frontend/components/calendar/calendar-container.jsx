@@ -5,8 +5,8 @@ import { fetchPokes } from '../../actions/poke-log-actions';
 import { updateMonth } from '../../actions/ui-actions';
 
 const mapStateToProps = state => ({
-  // pokes: getCurrentMonthPokes(state),
-  pokes: state.loggedPokes,
+  pokes: getCurrentMonthPokes(state),
+  // pokes: state.loggedPokes,
   currentMonth: state.ui.currentMonth,
 });
 
@@ -16,7 +16,8 @@ const mapDispatchToProps = dispatch => ({
 });
 
 function getCurrentMonthPokes(state){
-  // console.log("getting current month's pokes");
+  console.log("getting current month's pokes");
+  console.log(state.ui.currentMonth);
   let currentMonthPokes = {};
   Object.keys(state.loggedPokes).forEach(key => {
     const poke = state.loggedPokes[key];

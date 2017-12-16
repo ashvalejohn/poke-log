@@ -24,9 +24,7 @@ const PokesController = {
   },
 
   index: (req, res, next) => {
-    req.user.getPokes({where: {
-      date: { $like: req.query.date + '%' }
-    }}).then(pokes => {
+    req.user.getPokes().then(pokes => {
       res.json(require('../views/pokes')(pokes));
     });
   }

@@ -52,6 +52,7 @@ class Calendar extends Component {
   }
 
   getDaysInMonth(){
+    // (2017, 12, 0) <== Returns last date of the month, which can be used to determine month length
     return new Date(this.state.year, (this.state.monthNum + 1), 0).getDate();
   }
 
