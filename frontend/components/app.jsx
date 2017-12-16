@@ -5,8 +5,8 @@ import LoginContainer from './session/login-container';
 import SignupContainer from './session/signup-container';
 import LogPokeContainer from './log-poke/log-poke-container';
 import SettingsContainer from './settings/settings-container';
-
 import CalendarContainer from './calendar/calendar-container';
+import HeatMapContainer from './heat-map/heat-map-container';
 
 import Nav from './nav';
 
@@ -23,6 +23,8 @@ const App = () => (
     <ProtectedRoute path='/log-a-poke' component={LogPokeContainer} />
     <ProtectedRoute path='/poke-log' component={CalendarContainer} />
     <ProtectedRoute path='/settings' component={SettingsContainer} />
+    <ProtectedRoute path='/heat-map' component={HeatMapContainer} />
+    
     <AuthRoute path='/login' component={LoginContainer} />
     <AuthRoute path='/signup' component={SignupContainer} />
     <Route path='/' component={Nav} />
