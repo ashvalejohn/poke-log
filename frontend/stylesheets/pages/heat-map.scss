@@ -1,0 +1,12 @@
+.heat-map__title {
+  color: $red;
+  @extend .page-title;
+}
+
+.heat-map__main {
+  background-image: url('../images/icons/heat-map.svg');
+  background-repeat: no-repeat;
+  width: 900px;
+  height: 900px;
+}
+

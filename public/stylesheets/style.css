@@ -35,7 +35,7 @@ body ul {
   }
 }
 
-.page-title, .auth__title, .settings__title, .log-poke__title, .calendar {
+.page-title, .auth__title, .settings__title, .log-poke__title, .calendar, .heat-map__title {
   font-size: 32px;
   text-align: center;
 }
@@ -552,4 +552,15 @@ body ul {
 .double-poke {
   display: flex;
   flex-direction: row;
+}
+
+.heat-map__title {
+  color: #D25737;
+}
+
+.heat-map__main {
+  background-image: url("../images/icons/heat-map.svg");
+  background-repeat: no-repeat;
+  width: 900px;
+  height: 900px;
 }
