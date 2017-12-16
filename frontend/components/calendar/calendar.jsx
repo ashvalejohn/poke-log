@@ -31,8 +31,6 @@ class Calendar extends Component {
   }
 
   componentWillReceiveProps(nextProps){
-    console.log('RECEIVE PROPS');
-    console.log(nextProps);
     this.setState({
       pokes: nextProps.pokes,
       monthNum: nextProps.currentMonth,
@@ -41,7 +39,6 @@ class Calendar extends Component {
 
   handleChangeMonth(e){
     e.preventDefault();
-    console.log(`CHANGE MONTH to ${parseInt(e.target.value) + 1}`);
     let month = parseInt(e.target.value);
 
     // change month should take a zero-index integer (i.e. December is '11')
@@ -61,7 +58,6 @@ class Calendar extends Component {
   }
 
   render(){
-    console.log(`RENDER pokes for ${this.state.month}`);
     return (
       <div className='calendar'>
         <h1 className='calendar__title'>Calendar</h1>

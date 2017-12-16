@@ -12,10 +12,6 @@ class Days extends Component {
     this.makeDays = this.makeDays.bind(this);
   }
 
-  componentWillReceiveProps(nextProps){
-    console.log(nextProps);
-  }
-  
   makeDays(){
     let days = {};
     const pokes = this.props.pokes;
