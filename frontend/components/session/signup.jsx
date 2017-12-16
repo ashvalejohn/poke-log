@@ -49,11 +49,11 @@ class Signup extends Component {
           <label htmlFor="" className='auth__form-field'>Password
             <input onChange={this.handleChange} type="password" className='auth__form-input' minLength='6' required />
           </label>
+          <p className='auth__errors'>{this.props.errors}</p>
           <div className='auth__login-signup'>
             <button className='auth__submit' onClick={this.handleSubmit}>Sign Up</button>
             <p>Already have an account? <Link to='/login'>Log In</Link></p>
           </div>
-          <p>{this.props.errors}</p>
         </form>
       </div>
     );

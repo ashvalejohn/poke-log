@@ -33,16 +33,11 @@ body ul {
   flex-direction: column;
   align-items: center;
 }
-@media screen and (min-width: 1000px) {
-  .page, .auth, .settings, .log-poke, .calendar {
-    margin-top: 10vh;
-  }
-}
 
 .page-title, .auth__title, .settings__title, .log-poke__title, .calendar {
   font-size: 32px;
   text-align: center;
-  margin-top: 5vh;
+  margin: 5vh 0 8vh 0;
 }
 
 .button, .auth__submit, .settings__sign-out, .log-poke__submit {
@@ -206,15 +201,10 @@ body ul {
   color: #0b101a;
   display: flex;
   flex-direction: column;
+  align-items: center;
   justify-content: center;
   font-size: 24px;
   width: 80%;
-}
-@media screen and (min-width: 500px) {
-  .auth__form {
-    align-items: center;
-    font-size: 2rem;
-  }
 }
 
 .auth__form-field {
@@ -245,7 +235,7 @@ body ul {
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  margin-top: 30px;
+  margin-top: 2vh;
 }
 .auth__login-signup p {
   color: #0b101a;
@@ -260,6 +250,13 @@ body ul {
 }
 .auth__login-signup p a:visited {
   color: inherit;
+}
+
+.auth__errors {
+  color: #D25737;
+  height: 30px;
+  text-align: center;
+  margin-top: 2vh;
 }
 
 .auth__submit {
