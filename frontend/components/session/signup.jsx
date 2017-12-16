@@ -21,6 +21,10 @@ class Signup extends Component {
     });
   }
 
+  componentWillUnmount() {
+    this.props.clearErrors();
+  }
+
   handleSubmit(e) {
     e.preventDefault();
     this.props.signup({
@@ -49,6 +53,7 @@ class Signup extends Component {
             <button className='auth__submit' onClick={this.handleSubmit}>Sign Up</button>
             <p>Already have an account? <Link to='/login'>Log In</Link></p>
           </div>
+          <p>{this.props.errors}</p>
         </form>
       </div>
     );

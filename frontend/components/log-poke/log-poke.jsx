@@ -49,6 +49,10 @@ class LogPoke extends React.Component {
         });
     }
 
+    componentWillUnmount() {
+      this.props.clearErrors();
+    }
+
     render() {
         return(
         <div className= "log-poke">
@@ -114,6 +118,7 @@ class LogPoke extends React.Component {
                     </select>
                 </label>
                 <button className="log-poke__submit" onClick= {this.handleSubmit}>LOG</button>
+                <p>{this.props.errors}</p>
             </form>
         </div>
         );
