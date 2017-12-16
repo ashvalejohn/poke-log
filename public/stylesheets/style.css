@@ -303,7 +303,9 @@ body ul {
 }
 
 .settings__input {
+  font-size: inherit;
   height: 90%;
+  width: 80%;
   border: 0px;
   padding-left: 2%;
   color: #0b101a;
@@ -334,6 +336,10 @@ body ul {
 
 .settings__input__button--save {
   background-image: url(../images/icons/save-black.svg);
+}
+.settings__input__button--save:hover {
+  background-image: url(../images/icons/save-green.svg);
+  transition: 0.3s;
 }
 
 .settings__input--new {

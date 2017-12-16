@@ -70,8 +70,8 @@ class LogPoke extends React.Component {
                     </div>
                 </label>
                 <label className="log-poke__form-field">Bleed?
-                    <select defaultValue="-- Select Bleed Location --" className="log-poke___form-select" onChange = {this.handleBleedChange}>
-                        <option disabled> -- Select Bleed Location -- </option>
+                   <select defaultValue="--- No Bleed ---" className="log-poke___form-select" onChange={this.handleBleedChange}>
+                        <option disabled> --- No Bleed --- </option>
                         <optgroup label="Lower Extremities">
                             <option value="left-foot"> Left Foot </option>
                             <option value="right-foot"> Right Foot </option>
