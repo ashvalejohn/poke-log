@@ -16,7 +16,7 @@
   display: flex;
   flex-direction: column;
   justify-content: center;
-  margin: 0 2%;
+  margin: 0 $form-margin;
   color: $dkyell;
   &:last-of-type{
     margin-top: 2vh;
@@ -27,6 +27,7 @@
 .auth__form-input{
   border: 2px solid $dkyell;
   @extend .input;
+  min-width: 300px;
   &:valid{
     border: 2px solid $green;
     outline-color: $green;
@@ -47,7 +48,7 @@
   p {
     color: $black;
     font-size: 16px;
-    margin-top: 2%;
+    margin-top: $form-margin;
     a {
       font-weight: bold;
       &:hover{
@@ -61,10 +62,7 @@
 }
 
 .auth__errors{
-  color: $red;
-  height: 30px;
-  text-align: center;
-  margin-top: 2vh;
+  @extend .errors;
 }
 
 .auth__submit{

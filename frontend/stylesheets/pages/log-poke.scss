@@ -15,6 +15,7 @@
   align-items: center;
   font-size: 24px;
   width: 80%;
+  max-width: 350px;
   @media screen and (min-width: $tablet){
     align-items: center;
     font-size: 2rem;
@@ -25,13 +26,10 @@
     display: flex;
     flex-direction: column;
     justify-content: center;
-    margin: 0 2%;
     color: $red;
     @extend .subtitle;
+    margin-bottom: $form-margin;
     width: 100%;
-    &:not(:first-child){
-        margin-top: 2vh;
-  }
 }
 
 .log-poke___toggle-bttn input {
@@ -51,7 +49,6 @@
     flex: 1;
     font-size: 1.25rem;
     height: 55px;
-    margin-bottom: 2%;
     text-align: center;
 
     display: flex;
@@ -63,7 +60,6 @@
     }
 
     @media screen and (min-width: $tablet){
-        font-size: 1.5rem;
         height: 55px;
         width: 200px;
     }
@@ -103,6 +99,7 @@
     background-color: $white;
     border: 2px solid $red;
     border-radius: $button-border;
+    box-sizing: content-box;
     height: 50px;
     padding-left: 2%;
     font-size: 1.5rem;
@@ -114,6 +111,10 @@
     // @media screen (min-width: ){
         
     // }
+}
+
+.log-poke__errors{
+    @extend .errors;
 }
 
 .log-poke__submit {

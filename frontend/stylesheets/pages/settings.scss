@@ -53,6 +53,9 @@
   &:hover{
     cursor: pointer;
   }
+  &:focus{
+    outline: none;
+  }
 }
 
 .settings__input__button--edit{
@@ -62,11 +65,7 @@
 
 .settings__input__button--save{
   @extend .settings__input__button;
-  background-image: url(../images/icons/save-black.svg);
-  &:hover{
-    background-image: url(../images/icons/save-green.svg);
-    transition: 0.3s;
-  }
+  background-image: url(../images/icons/save-green.svg);
 }
 
 .settings__input--new{

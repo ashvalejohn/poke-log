@@ -120,8 +120,8 @@ class LogPoke extends React.Component {
 
                     </select>
                 </label>
+                <p className='log-poke__errors'>{this.props.errors}</p>
                 <button className="log-poke__submit" onClick= {this.handleSubmit}>LOG</button>
-                <p>{this.props.errors}</p>
             </form>
         </div>
         );

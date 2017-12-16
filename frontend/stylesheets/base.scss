@@ -64,7 +64,6 @@ body{
   height: 50px;
   font-family: inherit;
   font-size: 20px;
-  min-width: 300px;
   padding-left: 2%;
 }
 
@@ -73,5 +72,13 @@ body{
 }
 
 .subtitle{
+  font-size: 24px;
+}
+
+.errors{
+  color: $red;
+  height: 30px;
+  text-align: center;
+  margin-top: 2vh;
   font-size: 24px;
 }
