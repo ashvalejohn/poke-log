@@ -6,7 +6,7 @@ class Calendar extends Component {
     super(props);
 
     const date = new Date(), locale = "en-us";
-    const month = date.toLocaleString(locale, { month: "long" });
+    const month = date.getMonth();
     const year = date.getFullYear();
     const monthNum = date.getMonth();
     const today = date.getDate();
@@ -33,27 +33,28 @@ class Calendar extends Component {
   componentWillReceiveProps(nextProps){
     this.setState({
       pokes: nextProps.pokes,
+      monthNum: nextProps.currentMonth,
     });
   }
 
   handleChangeMonth(e){
     e.preventDefault();
+    let month = parseInt(e.target.value);
+
+    // change month should take a zero-index integer (i.e. December is '11')
+    this.props.changeMonth(month);
     this.setState({
       month: e.target.value,
-    }, () => (console.log(`Please fetch infusion info for ${this.state.month}`)));
+    });
   }
 
   getDaysInMonth(){
-    const zeroDays = new Date(this.state.year, this.state.monthNum, 0).getDate();
-    return zeroDays + 1;
+    // (2017, 12, 0) <== Returns last date of the month, which can be used to determine month length
+    return new Date(this.state.year, (this.state.monthNum + 1), 0).getDate();
   }
 
   getFirstDayOfMonth(){
     return new Date(this.state.year, this.state.monthNum).getDay();
-  }
-
-  getNewMonth(){
-    // send string "2017-12"
   }
 
   render(){
@@ -61,18 +62,18 @@ class Calendar extends Component {
       <div className='calendar'>
         <h1 className='calendar__title'>Calendar</h1>
         <select defaultValue={this.state.month} onChange={this.handleChangeMonth} className='calendar__select-month'>
-          <option value="January">January</option>
-          <option value="February">February</option>
-          <option value="March">March</option>
-          <option value="April">April</option>
-          <option value="May">May</option>
-          <option value="June">June</option>
-          <option value="July">July</option>
-          <option value="August">August</option>
-          <option value="September">September</option>
-          <option value="October">October</option>
-          <option value="November">November</option>
-          <option value="December">December</option>
+          <option value="00">January</option>
+          <option value="01">February</option>
+          <option value="02">March</option>
+          <option value="03">April</option>
+          <option value="04">May</option>
+          <option value="05">June</option>
+          <option value="06">July</option>
+          <option value="07">August</option>
+          <option value="08">September</option>
+          <option value="09">October</option>
+          <option value="10">November</option>
+          <option value="11">December</option>
         </select>
         <div className='calendar__grid'>
           <div className='grid__days'>
