@@ -6,7 +6,7 @@ class Calendar extends Component {
     super(props);
 
     const date = new Date(), locale = "en-us";
-    const month = date.toLocaleString(locale, { month: "long" });
+    const month = this.props.currentMonth;
     const year = date.getFullYear();
     const monthNum = date.getMonth();
     const today = date.getDate();
@@ -23,6 +23,7 @@ class Calendar extends Component {
     this.handleChangeMonth = this.handleChangeMonth.bind(this);
     this.getDaysInMonth = this.getDaysInMonth.bind(this);
     this.getFirstDayOfMonth = this.getFirstDayOfMonth.bind(this);
+    this.getNewMonth = this.getNewMonth.bind(this);
   }
 
   componentDidMount(){
@@ -40,7 +41,7 @@ class Calendar extends Component {
     e.preventDefault();
     this.setState({
       month: e.target.value,
-    }, () => (console.log(`Please fetch infusion info for ${this.state.month}`)));
+    }, () => (this.getNewMonth()));
   }
 
   getDaysInMonth(){
@@ -53,7 +54,23 @@ class Calendar extends Component {
   }
 
   getNewMonth(){
-    // send string "2017-12"
+    const monthNums = {
+      "January": '01',
+      "February": '02',
+      "March": '03',
+      "April": '04',
+      "May": '05',
+      "June": '06',
+      "July": '07',
+      "August": '08',
+      "September": '09',
+      "October": '10',
+      "November": '11',
+      "December": '12',
+    }
+
+    let month = `${this.state.year}-${monthNums[this.state.month]}`;
+    this.props.changeMonth(month);
   }
 
   render(){
