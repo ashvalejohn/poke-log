@@ -62,20 +62,20 @@ body ul {
 .input, .auth__form-input, .settings__label, .log-poke__form-input, .calendar__select-month {
   background-color: white;
   border-radius: 5px;
+  color: #0b101a;
   height: 50px;
-  padding-left: 2%;
   font-family: inherit;
   font-size: 20px;
-  color: #0b101a;
-}
-@media screen and (min-width: 500px) {
-  .input, .auth__form-input, .settings__label, .log-poke__form-input, .calendar__select-month {
-    width: 350px;
-  }
+  min-width: 300px;
+  padding-left: 2%;
 }
 
 .hidden {
   display: none;
+}
+
+.subtitle, .log-poke__form-field {
+  font-size: 24px;
 }
 
 .nav {
@@ -355,6 +355,7 @@ body ul {
   display: flex;
   flex-direction: column;
   justify-content: center;
+  align-items: center;
   font-size: 24px;
   width: 80%;
 }
@@ -371,6 +372,7 @@ body ul {
   justify-content: center;
   margin: 0 2%;
   color: #D25737;
+  width: 100%;
 }
 .log-poke__form-field:not(:first-child) {
   margin-top: 2vh;
@@ -386,19 +388,18 @@ body ul {
 }
 
 .log-poke__form-field label {
-  border: 2px solid #D25737;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  width: 60px;
   background-color: white;
-  color: #D25737;
-  font-size: 14px;
-  text-align: center;
+  border: 2px solid #D25737;
   border-radius: 5px;
+  color: #D25737;
+  flex: 1;
   font-size: 1.25rem;
   height: 55px;
   margin-bottom: 2%;
+  text-align: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 .log-poke__form-field label:last-of-type {
   margin-left: 5px;
@@ -415,16 +416,21 @@ body ul {
   cursor: pointer;
 }
 
+.log-poke___toggle-bttn {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
 .log-poke___toggle-bttn input:checked + label {
   background-color: #D25737;
   color: white;
 }
 
-.log-poke___toggle-bttn {
-  width: 360px;
-  display: flex;
-  flex-direction: row;
-  justify-content: space-between;
+.switch_left, .switch_right {
+  background-color: white;
+  border: 2px solid solid #D25737;
+  border-radius: 5px;
+  color: #D25737;
 }
 
 .log-poke__form-input {
@@ -432,18 +438,17 @@ body ul {
 }
 
 .log-poke___form-select {
-  text-align-last: center;
+  background-color: white;
   border: 2px solid #D25737;
   border-radius: 5px;
   height: 50px;
   padding-left: 2%;
   font-size: 1.5rem;
   color: #0b101a;
+  width: 100%;
 }
-@media screen and (min-width: 500px) {
-  .log-poke___form-select {
-    width: 350px;
-  }
+.log-poke___form-select:hover {
+  cursor: pointer;
 }
 
 .log-poke__submit {

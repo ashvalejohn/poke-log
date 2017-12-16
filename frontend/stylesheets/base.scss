@@ -60,16 +60,18 @@ body{
 .input{
   background-color: $white;
   border-radius: $button-border;
+  color: $black;
   height: 50px;
-  padding-left: 2%;
   font-family: inherit;
   font-size: 20px;
-  color: $black;
-   @media screen and (min-width: $tablet){
-    width: 350px;
-  }
+  min-width: 300px;
+  padding-left: 2%;
 }
 
 .hidden{
   display: none;
+}
+
+.subtitle{
+  font-size: 24px;
 }
