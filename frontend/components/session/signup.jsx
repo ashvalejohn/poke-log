@@ -53,6 +53,7 @@ class Signup extends Component {
             <button className='auth__submit' onClick={this.handleSubmit}>Sign Up</button>
             <p>Already have an account? <Link to='/login'>Log In</Link></p>
           </div>
+          <p>{this.props.errors}</p>
         </form>
       </div>
     );

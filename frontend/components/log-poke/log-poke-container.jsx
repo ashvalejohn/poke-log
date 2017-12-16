@@ -6,10 +6,13 @@ import { clearErrors } from '../../actions/error-actions';
 import LogPoke from './log-poke';
 
 
+const mapStateToProps = ({ errors }) => ({
+  errors: errors.poke
+});
 
 const mapDispatchToProps = (dispatch) => ({
     logPoke: poke => dispatch(logPoke(poke)),
     clearErrors: () => dispatch(clearErrors())
 });
 
-export default withRouter(connect(null, mapDispatchToProps)(LogPoke));
+export default withRouter(connect(mapStateToProps, mapDispatchToProps)(LogPoke));

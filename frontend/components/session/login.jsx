@@ -47,6 +47,7 @@ class Login extends Component {
             <button className='auth__submit' onClick={this.handleSubmit}>Log In</button>
             <p>Don’t have an account? <Link to='/signup'>Sign Up</Link></p>
           </div>
+          <p>{this.props.errors}</p>
         </form>
       </div>
     );
