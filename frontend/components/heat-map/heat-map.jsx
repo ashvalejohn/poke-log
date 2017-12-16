@@ -13,9 +13,9 @@ class HeatMap extends React.Component {
 
   render() {
     return(
-      <div>
+      <div className="heat-map">
         <h1 className="heat-map__title"> Bleed History Heat Map</h1>
-        <div className="heat-map__main">
+        <div className="heat-map__diagram">
         </div>
       </div>
     );

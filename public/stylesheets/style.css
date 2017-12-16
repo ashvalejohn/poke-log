@@ -23,14 +23,14 @@ body ul {
   }
 }
 
-.page, .auth, .settings, .calendar {
+.page, .auth, .settings, .log-poke, .calendar, .heat-map {
   height: 90vh;
   width: 90%;
   margin: 0 auto;
   box-sizing: border-box;
 }
 @media screen and (min-width: 1000px) {
-  .page, .auth, .settings, .calendar {
+  .page, .auth, .settings, .log-poke, .calendar, .heat-map {
     margin-top: 10vh;
   }
 }
@@ -350,13 +350,10 @@ body ul {
 }
 
 .log-poke {
-  height: 90vh;
   display: flex;
   flex-direction: column;
   justify-content: space-evenly;
   align-items: center;
-  width: 90%;
-  margin: 0 auto;
 }
 
 .log-poke__title {
@@ -554,13 +551,27 @@ body ul {
   flex-direction: row;
 }
 
+.heat-map {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
 .heat-map__title {
   color: #D25737;
 }
 
-.heat-map__main {
+.heat-map__labels {
+  width: 43vh;
+  display: flex;
+  justify-content: space-between;
+}
+
+.heat-map__diagram {
   background-image: url("../images/icons/heat-map.svg");
   background-repeat: no-repeat;
-  width: 900px;
-  height: 900px;
+  background-size: contain;
+  background-position: center;
+  width: 80vh;
+  height: 80vh;
 }
