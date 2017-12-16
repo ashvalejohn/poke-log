@@ -52,8 +52,7 @@ class Calendar extends Component {
   }
 
   getDaysInMonth(){
-    const zeroDays = new Date(this.state.year, this.state.monthNum, 0).getDate();
-    return zeroDays + 1;
+    return new Date(this.state.year, (this.state.monthNum + 1), 0).getDate();
   }
 
   getFirstDayOfMonth(){
