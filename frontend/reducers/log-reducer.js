@@ -9,6 +9,6 @@ const logReducer = (state = {}, action) => {
     default:
       return state;
   }
-}
+};
 
 export default logReducer;
