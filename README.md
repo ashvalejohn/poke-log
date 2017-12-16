@@ -3,7 +3,7 @@ PokeLog is a Progressive Web App (PWA) that allows hemophilia patients to log an
 
 PokeLog is built for hemophilia patients to consolidate infusion and bleed information.
 
-[See it live](poke-log.herokuapp.com)
+[See it live](https://poke-log.herokuapp.com/)
 
 ## Team Members
 PokeLog is built by [Matthew Buckner](https://github.com/bucknermr), [Ashley Johnson](https://github.com/ashvalejohn), and [Nicholas Williams](https://github.com/nwilliams770).
