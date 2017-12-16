@@ -35,7 +35,7 @@ class Login extends Component {
         <h1 className='auth__title'>Log In</h1>
         <form className='auth__form'>
           <label htmlFor="" className='auth__form-field'>Email Address
-            <input onChange={this.handleChange} type="email" className='auth__form-input' pattern="[a-z0-9!#$%&'*+/=?^_`{|}~-]+(?:\.[a-z0-9!#$%&'*+/=?^_`{|}~-]+)*@(?:[a-z0-9](?:[a-z0-9-]*[a-z0-9])?\.)+[a-z0-9](?:[a-z0-9-]*[a-z0-9])?" required/>
+            <input onChange={this.handleChange} type="email" autofocus="autofocus" className='auth__form-input' pattern="[a-z0-9!#$%&'*+/=?^_`{|}~-]+(?:\.[a-z0-9!#$%&'*+/=?^_`{|}~-]+)*@(?:[a-z0-9](?:[a-z0-9-]*[a-z0-9])?\.)+[a-z0-9](?:[a-z0-9-]*[a-z0-9])?" required/>
           </label>
           <label htmlFor="" className='auth__form-field'>Password
             <input onChange={this.handleChange} type="password" className='auth__form-input' minLength='6' required/>
