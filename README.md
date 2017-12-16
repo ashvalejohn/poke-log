@@ -85,13 +85,13 @@ Users will be able to:
 - [ ] Responsive design
 - [x] Calendar React Component
 - [x] Send infusion data from DB
-- [ ] Send infusion data for current month
+- [x] Send infusion data for current month
 
 #### Friday
 - Objective: Build heatmap component
 - [ ] Responsive design 
 - [ ] Heatmap React Component
-- [ ] Send bleed data from DB
+- [x] Send bleed data from DB
 - [ ] Indicate that heatmap only available online
 
 ### Phase Four: Notifications
