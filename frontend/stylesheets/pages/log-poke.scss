@@ -1,11 +1,5 @@
 .log-poke {
-    height: 90vh;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-evenly;
-    align-items: center;
-    width: 90%;
-    margin: 0 auto;
+    @extend .page;
 }
 
 .log-poke__title {
