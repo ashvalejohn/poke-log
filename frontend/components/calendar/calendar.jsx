@@ -6,7 +6,7 @@ class Calendar extends Component {
     super(props);
 
     const date = new Date(), locale = "en-us";
-    const month = this.props.currentMonth;
+    const month = date.getMonth();
     const year = date.getFullYear();
     const monthNum = date.getMonth();
     const today = date.getDate();
@@ -32,8 +32,11 @@ class Calendar extends Component {
   }
 
   componentWillReceiveProps(nextProps){
+    console.log('RECEIVED PROPS:');
+    console.log(nextProps);
     this.setState({
       pokes: nextProps.pokes,
+      monthNum: nextProps.currentMonth,
     });
   }
 
@@ -74,22 +77,23 @@ class Calendar extends Component {
   }
 
   render(){
+    console.log('RENDER');
     return (
       <div className='calendar'>
         <h1 className='calendar__title'>Calendar</h1>
         <select defaultValue={this.state.month} onChange={this.handleChangeMonth} className='calendar__select-month'>
-          <option value="January">January</option>
-          <option value="February">February</option>
-          <option value="March">March</option>
-          <option value="April">April</option>
-          <option value="May">May</option>
-          <option value="June">June</option>
-          <option value="July">July</option>
-          <option value="August">August</option>
-          <option value="September">September</option>
-          <option value="October">October</option>
-          <option value="November">November</option>
-          <option value="December">December</option>
+          <option value="00">January</option>
+          <option value="01">February</option>
+          <option value="02">March</option>
+          <option value="03">April</option>
+          <option value="04">May</option>
+          <option value="05">June</option>
+          <option value="06">July</option>
+          <option value="07">August</option>
+          <option value="08">September</option>
+          <option value="09">October</option>
+          <option value="10">November</option>
+          <option value="11">December</option>
         </select>
         <div className='calendar__grid'>
           <div className='grid__days'>

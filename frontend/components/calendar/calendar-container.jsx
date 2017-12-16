@@ -5,7 +5,8 @@ import { fetchPokes } from '../../actions/poke-log-actions';
 import { updateMonth } from '../../actions/ui-actions';
 
 const mapStateToProps = state => ({
-  pokes: getCurrentMonthPokes(state),
+  // pokes: getCurrentMonthPokes(state),
+  pokes: state.loggedPokes,
   currentMonth: state.ui.currentMonth,
 });
 
@@ -15,14 +16,18 @@ const mapDispatchToProps = dispatch => ({
 });
 
 function getCurrentMonthPokes(state){
-  currentMonthPokes = {};
+  // console.log("getting current month's pokes");
+  let currentMonthPokes = {};
   Object.keys(state.loggedPokes).forEach(key => {
-    const poke = loggedPokes[key];
+    const poke = state.loggedPokes[key];
     const date = poke.date;
+    // console.log(poke);
+    // console.log(date);
     if (date.includes(state.ui.currentMonth)){
       currentMonthPokes[poke.id] = poke;
     }
   });
+  return currentMonthPokes;
 }
 
 export default withRouter(connect(mapStateToProps, mapDispatchToProps)(Calendar));
