@@ -33,6 +33,10 @@ class Settings extends React.Component {
     this.props.logout();
   }
 
+  componentWillUnmount() {
+    this.props.clearErrors();
+  }
+
   render(){
     return (
       <form className='settings'>

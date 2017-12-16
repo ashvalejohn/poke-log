@@ -14,6 +14,10 @@ class Login extends Component {
     this.handleChange = this.handleChange.bind(this);
   }
 
+  componentWillUnmount() {
+    this.props.clearErrors();
+  }
+
   handleChange(e){
     this.setState({
       [e.target.type]: e.target.value
