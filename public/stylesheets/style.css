@@ -284,7 +284,6 @@ body ul {
 }
 
 .settings__label {
-  margin-top: 5%;
   background-color: white;
   border: 2px solid #0b101a;
   padding: 0;
@@ -292,6 +291,7 @@ body ul {
   align-items: center;
   justify-content: space-between;
   min-width: 350px;
+  margin-bottom: 2vh;
 }
 
 .settings__input {
@@ -317,6 +317,7 @@ body ul {
   height: 80%;
   width: 50px;
   border: 0px;
+  margin-right: 2%;
 }
 .settings__input__button:hover, .settings__input__button--edit:hover, .settings__input__button--save:hover {
   cursor: pointer;
@@ -344,6 +345,7 @@ body ul {
 .settings__sign-out {
   background-color: #0b101a;
   color: white;
+  margin-top: 6vh;
 }
 
 .log-poke__title {
@@ -451,7 +453,6 @@ body ul {
 .log-poke__submit {
   background-color: #D25737;
   border: 0px;
-  margin-top: 5%;
   color: white;
   transition-duration: .25s;
 }

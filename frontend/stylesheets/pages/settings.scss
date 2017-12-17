@@ -14,7 +14,6 @@
 }
 
 .settings__label{
-  margin-top: 5%;;
   @extend .input;
   background-color: $white;
   border: $input-border $black;
@@ -23,6 +22,7 @@
   align-items: center;
   justify-content: space-between;
   min-width: 350px;
+  margin-bottom: $form-margin
 }
 
 .settings__input{
@@ -50,6 +50,7 @@
   height: 80%;
   width: 50px;
   border: 0px;
+  margin-right: 2%;
   &:hover{
     cursor: pointer;
   }
@@ -84,4 +85,5 @@
   @extend .button;
   background-color: $black;
   color: $white;
+  margin-top: 6vh;
 }
