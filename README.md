@@ -27,7 +27,7 @@ PokeLog is built by [Matthew Buckner](https://github.com/bucknermr), [Ashley Joh
 
  ## Features
  ### Log A Poke
-
+![Log a poke](http://res.cloudinary.com/ashvalejohn/image/upload/c_scale,w_400/v1513477013/log-poke_bufikb.gif)
  ### Review Pokes and Infusions
 
  ### Update Settings
