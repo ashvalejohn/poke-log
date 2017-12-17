@@ -38,16 +38,17 @@ class Login extends Component {
         <h1 className='auth__title'>Log In</h1>
         <form className='auth__form'>
           <label htmlFor="" className='auth__form-field'>Email Address
-            <input onChange={this.handleChange} type="email" autofocus="autofocus" className='auth__form-input' pattern="[a-z0-9!#$%&'*+/=?^_`{|}~-]+(?:\.[a-z0-9!#$%&'*+/=?^_`{|}~-]+)*@(?:[a-z0-9](?:[a-z0-9-]*[a-z0-9])?\.)+[a-z0-9](?:[a-z0-9-]*[a-z0-9])?" required/>
+            <input onChange={this.handleChange} type="email" autoFocus="autoFocus" className='auth__form-input' pattern="[a-z0-9!#$%&'*+/=?^_`{|}~-]+(?:\.[a-z0-9!#$%&'*+/=?^_`{|}~-]+)*@(?:[a-z0-9](?:[a-z0-9-]*[a-z0-9])?\.)+[a-z0-9](?:[a-z0-9-]*[a-z0-9])?" required/>
           </label>
           <label htmlFor="" className='auth__form-field'>Password
             <input onChange={this.handleChange} type="password" className='auth__form-input' minLength='6' required/>
           </label>
+          <p className='auth__errors'>{this.props.errors}</p>
           <div className='auth__login-signup'>
             <button className='auth__submit' onClick={this.handleSubmit}>Log In</button>
             <p>Don’t have an account? <Link to='/signup'>Sign Up</Link></p>
           </div>
-          <p>{this.props.errors}</p>
+          
         </form>
       </div>
     );

@@ -25,17 +25,18 @@ body{
 
 .page{
   height: 90vh;
-  width: 90%;
   margin: 0 auto;
   box-sizing: border-box;
-  @media screen and (min-width: $desktop){
-    margin-top: 10vh;
-  }
+  display: flex;
+  justify-content: flex-start;
+  flex-direction: column;
+  align-items: center;
 }
 
 .page-title {
   font-size: 32px;
   text-align: center;
+  margin: 5vh 0 8vh 0;
 }
 
 .button{
@@ -58,16 +59,25 @@ body{
 .input{
   background-color: $white;
   border-radius: $button-border;
-  height: 50px;
-  padding-left: 2%;
-  font-family: inherit;
-  font-size: inherit;
   color: $black;
-   @media screen and (min-width: $tablet){
-    width: 350px;
-  }
+  height: 50px;
+  font-family: inherit;
+  font-size: 20px;
+  padding-left: 2%;
 }
 
 .hidden{
   display: none;
+}
+
+.subtitle{
+  font-size: 24px;
+}
+
+.errors{
+  color: $red;
+  height: 30px;
+  text-align: center;
+  margin-top: 2vh;
+  font-size: 24px;
 }

@@ -63,15 +63,18 @@ class LogPoke extends React.Component {
                 </label>
                 <label className="log-poke__form-field">Dose
                     <div className="log-poke___toggle-bttn">
-                    <input type="radio" id="switch_left" name="switch_2" value={false} defaultChecked={true} onClick={this.handleDosageChange}/>
-                    <label htmlFor="switch_left">SINGLE</label>
-                    <input type="radio" id="switch_right" name="switch_2" value={true} onClick={this.handleDosageChange} />
-                    <label htmlFor="switch_right">DOUBLE</label>
+                        <input type="radio" id="switch_left" name="switch_2" value={false} defaultChecked={true} onClick={this.handleDosageChange}/>
+                        <label htmlFor="switch_left">SINGLE
+                        </label>
+                        
+                        <input type="radio" id="switch_right" name="switch_2" value={true} onClick={this.handleDosageChange} />
+                        <label htmlFor="switch_right">DOUBLE
+                        </label>
                     </div>
                 </label>
                 <label className="log-poke__form-field">Bleed?
-                   <select defaultValue="--- No Bleed ---" className="log-poke___form-select" onChange={this.handleBleedChange}>
-                        <option disabled> --- No Bleed --- </option>
+                   <select defaultValue="No Bleed" className="log-poke___form-select" onChange={this.handleBleedChange}>
+                        <option>No Bleed</option>
                         <optgroup label="Lower Extremities">
                             <option value="left-foot"> Left Foot </option>
                             <option value="right-foot"> Right Foot </option>
@@ -117,8 +120,8 @@ class LogPoke extends React.Component {
 
                     </select>
                 </label>
+                <p className='log-poke__errors'>{this.props.errors}</p>
                 <button className="log-poke__submit" onClick= {this.handleSubmit}>LOG</button>
-                <p>{this.props.errors}</p>
             </form>
         </div>
         );

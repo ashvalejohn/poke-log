@@ -23,21 +23,20 @@ body ul {
   }
 }
 
-.page, .auth, .settings, .calendar {
+.page, .auth, .settings, .log-poke, .calendar {
   height: 90vh;
-  width: 90%;
   margin: 0 auto;
   box-sizing: border-box;
-}
-@media screen and (min-width: 1000px) {
-  .page, .auth, .settings, .calendar {
-    margin-top: 10vh;
-  }
+  display: flex;
+  justify-content: flex-start;
+  flex-direction: column;
+  align-items: center;
 }
 
-.page-title, .auth__title, .settings__title, .log-poke__title, .calendar {
+.page-title, .auth__title, .settings__title, .log-poke__title, .calendar__title {
   font-size: 32px;
   text-align: center;
+  margin: 5vh 0 8vh 0;
 }
 
 .button, .auth__submit, .settings__sign-out, .log-poke__submit {
@@ -62,20 +61,27 @@ body ul {
 .input, .auth__form-input, .settings__label, .log-poke__form-input, .calendar__select-month {
   background-color: white;
   border-radius: 5px;
-  height: 50px;
-  padding-left: 2%;
-  font-family: inherit;
-  font-size: inherit;
   color: #0b101a;
-}
-@media screen and (min-width: 500px) {
-  .input, .auth__form-input, .settings__label, .log-poke__form-input, .calendar__select-month {
-    width: 350px;
-  }
+  height: 50px;
+  font-family: inherit;
+  font-size: 20px;
+  padding-left: 2%;
 }
 
 .hidden {
   display: none;
+}
+
+.subtitle, .log-poke__form-field {
+  font-size: 24px;
+}
+
+.errors, .auth__errors, .log-poke__errors {
+  color: #D25737;
+  height: 30px;
+  text-align: center;
+  margin-top: 2vh;
+  font-size: 24px;
 }
 
 .nav {
@@ -197,33 +203,21 @@ body ul {
   z-index: -1;
 }
 
-.auth {
-  display: flex;
-  flex-direction: column;
-  justify-content: space-evenly;
-  align-items: center;
-}
-
 .auth__form {
   color: #0b101a;
   display: flex;
   flex-direction: column;
+  align-items: center;
   justify-content: center;
   font-size: 24px;
   width: 80%;
-}
-@media screen and (min-width: 500px) {
-  .auth__form {
-    align-items: center;
-    font-size: 2rem;
-  }
 }
 
 .auth__form-field {
   display: flex;
   flex-direction: column;
   justify-content: center;
-  margin: 0 2%;
+  margin: 0 2vh;
   color: #e4a312;
 }
 .auth__form-field:last-of-type {
@@ -232,6 +226,7 @@ body ul {
 
 .auth__form-input {
   border: 2px solid #e4a312;
+  min-width: 300px;
 }
 .auth__form-input:valid {
   border: 2px solid #0a814f;
@@ -247,12 +242,12 @@ body ul {
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  margin-top: 30px;
+  margin-top: 2vh;
 }
 .auth__login-signup p {
   color: #0b101a;
   font-size: 16px;
-  margin-top: 2%;
+  margin-top: 2vh;
 }
 .auth__login-signup p a {
   font-weight: bold;
@@ -276,10 +271,6 @@ body ul {
 
 .settings {
   font-size: 24px;
-  display: flex;
-  justify-content: flex-start;
-  flex-direction: column;
-  align-items: center;
 }
 
 .settings__title {
@@ -292,7 +283,6 @@ body ul {
 }
 
 .settings__label {
-  margin-top: 5%;
   background-color: white;
   border: 2px solid #0b101a;
   padding: 0;
@@ -300,6 +290,7 @@ body ul {
   align-items: center;
   justify-content: space-between;
   min-width: 350px;
+  margin-bottom: 2vh;
 }
 
 .settings__input {
@@ -325,9 +316,13 @@ body ul {
   height: 80%;
   width: 50px;
   border: 0px;
+  margin-right: 2%;
 }
 .settings__input__button:hover, .settings__input__button--edit:hover, .settings__input__button--save:hover {
   cursor: pointer;
+}
+.settings__input__button:focus, .settings__input__button--edit:focus, .settings__input__button--save:focus {
+  outline: none;
 }
 
 .settings__input__button--edit {
@@ -335,11 +330,7 @@ body ul {
 }
 
 .settings__input__button--save {
-  background-image: url(../images/icons/save-black.svg);
-}
-.settings__input__button--save:hover {
   background-image: url(../images/icons/save-green.svg);
-  transition: 0.3s;
 }
 
 .settings__input--new {
@@ -353,16 +344,7 @@ body ul {
 .settings__sign-out {
   background-color: #0b101a;
   color: white;
-}
-
-.log-poke {
-  height: 90vh;
-  display: flex;
-  flex-direction: column;
-  justify-content: space-evenly;
-  align-items: center;
-  width: 90%;
-  margin: 0 auto;
+  margin-top: 6vh;
 }
 
 .log-poke__title {
@@ -374,8 +356,10 @@ body ul {
   display: flex;
   flex-direction: column;
   justify-content: center;
+  align-items: center;
   font-size: 24px;
   width: 80%;
+  max-width: 350px;
 }
 @media screen and (min-width: 500px) {
   .log-poke__form {
@@ -388,11 +372,9 @@ body ul {
   display: flex;
   flex-direction: column;
   justify-content: center;
-  margin: 0 2%;
   color: #D25737;
-}
-.log-poke__form-field:not(:first-child) {
-  margin-top: 2vh;
+  margin-bottom: 2vh;
+  width: 100%;
 }
 
 .log-poke___toggle-bttn input {
@@ -405,26 +387,23 @@ body ul {
 }
 
 .log-poke__form-field label {
+  background-color: white;
   border: 2px solid #D25737;
+  border-radius: 5px;
+  color: #D25737;
+  flex: 1;
+  font-size: 1.25rem;
+  height: 55px;
+  text-align: center;
   display: flex;
   align-items: center;
   justify-content: center;
-  width: 60px;
-  background-color: white;
-  color: #D25737;
-  font-size: 14px;
-  text-align: center;
-  border-radius: 5px;
-  font-size: 1.25rem;
-  height: 55px;
-  margin-bottom: 2%;
 }
 .log-poke__form-field label:last-of-type {
   margin-left: 5px;
 }
 @media screen and (min-width: 500px) {
   .log-poke__form-field label {
-    font-size: 1.5rem;
     height: 55px;
     width: 200px;
   }
@@ -434,16 +413,21 @@ body ul {
   cursor: pointer;
 }
 
+.log-poke___toggle-bttn {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
 .log-poke___toggle-bttn input:checked + label {
   background-color: #D25737;
   color: white;
 }
 
-.log-poke___toggle-bttn {
-  width: 360px;
-  display: flex;
-  flex-direction: row;
-  justify-content: space-between;
+.switch_left, .switch_right {
+  background-color: white;
+  border: 2px solid solid #D25737;
+  border-radius: 5px;
+  color: #D25737;
 }
 
 .log-poke__form-input {
@@ -451,24 +435,23 @@ body ul {
 }
 
 .log-poke___form-select {
-  text-align-last: center;
+  background-color: white;
   border: 2px solid #D25737;
   border-radius: 5px;
+  box-sizing: content-box;
   height: 50px;
   padding-left: 2%;
   font-size: 1.5rem;
   color: #0b101a;
+  width: 100%;
 }
-@media screen and (min-width: 500px) {
-  .log-poke___form-select {
-    width: 350px;
-  }
+.log-poke___form-select:hover {
+  cursor: pointer;
 }
 
 .log-poke__submit {
   background-color: #D25737;
   border: 0px;
-  margin-top: 5%;
   color: white;
   transition-duration: .25s;
 }
@@ -477,28 +460,29 @@ body ul {
 }
 
 .calendar {
-  display: flex;
-  flex-direction: column;
-  justify-content: flex-start;
-  align-items: center;
-}
-
-.calendar {
   color: #6285db;
+  height: auto;
 }
 
 .calendar__select-month {
   border: 2px solid #6285db;
   font-size: 1rem;
+  width: 350px;
 }
 
 .calendar__grid {
   background-color: white;
   border-radius: 5px;
-  margin-top: 2%;
+  margin: 2vh 0 15vh 0;
   border: 2px solid #6285db;
   display: flex;
   flex-direction: column;
+  width: 95%;
+}
+@media screen and (min-width: 1000px) {
+  .calendar__grid {
+    width: 75%;
+  }
 }
 
 .grid__days {
@@ -511,6 +495,7 @@ body ul {
   display: flex;
   justify-content: center;
   align-items: center;
+  text-align: center;
 }
 
 .day-name {
@@ -526,17 +511,31 @@ body ul {
 }
 
 .day {
-  min-height: 130px;
-  flex-basis: 14%;
+  min-height: 80px;
+  flex-basis: calc(100% / 7);
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
 }
 .day:not(:nth-of-type(7n)) {
   border-right: 1px solid #6285db;
 }
-.day:not(:nth-of-type(n + 29)) {
+.day:not(:nth-of-type(n + 36)) {
   border-bottom: 1px solid #6285db;
+}
+@media screen and (min-width: 500px) {
+  .day {
+    min-height: 100px;
+  }
+}
+@media screen and (min-width: 1000px) {
+  .day {
+    min-height: 140px;
+  }
 }
 
 .day__date {
+  flex: 1;
   font-size: 14px;
   text-align: left;
   padding: 3% 0 0 3%;
@@ -547,7 +546,8 @@ body ul {
   background-size: contain;
   background-position: center;
   background-repeat: no-repeat;
-  height: 26%;
+  height: 70%;
+  width: 30%;
 }
 
 .single-poke {
@@ -557,4 +557,11 @@ body ul {
 .double-poke {
   display: flex;
   flex-direction: row;
+}
+
+.poke-bleed {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex: 2;
 }

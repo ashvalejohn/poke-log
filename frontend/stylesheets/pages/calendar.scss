@@ -1,30 +1,32 @@
 .calendar {
+  color: $blue;
+  height: auto;
   @extend .page;
-  display: flex;
-  flex-direction: column;
-  justify-content: flex-start;
-  align-items: center;
 }
 
-.calendar {
+.calendar__title {
   @extend .page-title;
-  color: $blue;
 }
 
 .calendar__select-month{
   @extend .input;
   border: 2px solid $blue;
   font-size: 1rem;
+  width: 350px;
 }
 
 .calendar__grid{
   background-color: $white;
   border-radius: $button-border;
 
-  margin-top: 2%;
+  margin: 2vh 0 15vh 0;
   border: 2px solid $blue;
   display: flex;
   flex-direction: column;
+  width: 95%;
+  @media screen and (min-width: $desktop){
+    width: 75%;
+  }
 }
 
 .grid__days{
@@ -37,6 +39,7 @@
   display: flex;
   justify-content: center;
   align-items: center;
+  text-align: center;
 }
 
 .day-name{
@@ -52,17 +55,27 @@
 }
 
 .day{
-  min-height: 130px;
-  flex-basis: 14%;
+  min-height: 80px;
+  flex-basis: calc(100% / 7);
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
   &:not(:nth-of-type(7n)){
     border-right: 1px solid $blue;
   }
-  &:not(:nth-of-type(n + 29)){
+  &:not(:nth-of-type(n + 36)){
     border-bottom: 1px solid $blue;
+  }
+  @media screen and (min-width: $tablet){
+    min-height: 100px;
+  }
+  @media screen and (min-width: $desktop){
+    min-height: 140px;
   }
 }
 
 .day__date{
+  flex: 1;
   font-size: 14px;
   text-align: left;
   padding: 3% 0 0 3%;
@@ -73,7 +86,8 @@
   background-size: contain;
   background-position: center;
   background-repeat: no-repeat;
-  height: 26%;
+  height: 70%;
+  width: 30%;
 }
 
 .single-poke {
@@ -83,4 +97,11 @@
 .double-poke {
   display: flex;
   flex-direction: row;
+}
+
+.poke-bleed{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex: 2;
 }
