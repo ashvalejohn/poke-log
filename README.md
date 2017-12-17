@@ -23,7 +23,7 @@ PokeLog is built by [Matthew Buckner](https://github.com/bucknermr), [Ashley Joh
   - Update their name and dosage information
 
 ## Implementation Details
- PokeLog features a PostgreSQL database connected using [Sequelize](http://docs.sequelizejs.com/). User authentication is implemented with [Passport.js](http://www.passportjs.org/) using the Passport local strategy. PokeLog's frontend is built with React, using Redux for state management. 
+ PokeLog features a PostgreSQL database connected using [Sequelize](http://docs.sequelizejs.com/). User authentication is implemented with [Passport.js](http://www.passportjs.org/) using the `passport-local` strategy. PokeLog's frontend is built with React, using Redux for state management. 
 
  ## Features
  ### Log A Poke
@@ -31,15 +31,12 @@ PokeLog is built by [Matthew Buckner](https://github.com/bucknermr), [Ashley Joh
 
  ### Review Pokes and Infusions
 ![Review infusions and bleeds](http://res.cloudinary.com/ashvalejohn/image/upload/c_scale,h_400/v1513477481/calendar-log_xffzk9.png)
+
  ### Update Settings
 
  ## Future Features
- We all had a great time working together as a team on this project. Some future features we'd like to implement in the future are:
-
+ We all had a great time working together as a team on this project. Some features we'd like to implement in the future are:
  - Allow user to set up an infusion schedule that will send them push notifications when they are due for an infusion.
-
  - Allow user to share their infusion logs with parents, significant others, or physicians. 
-
-- Creating a bleeds heat map, showing the using a detailed history of their joint bleeds.
-
-- Adapt PokeLog to meet the criteria of a Progressive Web Application (PWA), allowing users to log pokes while offline. 
+ - Creating a bleeds heat map, showing the using a detailed history of their joint bleeds.
+ - Adapt PokeLog to meet the criteria of a Progressive Web Application (PWA), allowing users to log pokes while offline. 
