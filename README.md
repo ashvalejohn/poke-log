@@ -9,7 +9,7 @@ PokeLog is built for hemophilia patients to consolidate infusion and bleed infor
 PokeLog is built by [Matthew Buckner](https://github.com/bucknermr), [Ashley Johnson](https://github.com/ashvalejohn), and [Nicholas Williams](https://github.com/nwilliams770).
 
 ## Functionality & MVP
-- [ ] Hosted on Heroku
+- [x] Hosted on Heroku
 
 Users will be able to:
 - [x] Log in/Log out
