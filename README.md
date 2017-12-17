@@ -15,7 +15,7 @@ Users will be able to:
 - [x] Log in/Log out
 - [ ] Schedule a reminder to infuse
 - [x] Log an infusion (including date, dose, and whether it was in response to a bleed)
-- [ ] See a calendar view of infusions
+- [x] See a calendar view of infusions
 - [ ] Save the app to their home screen and log infusions while offline
 
 ### Bonus Features
@@ -74,7 +74,7 @@ Users will be able to:
 - Objective: Integrate service worker for infusion log
 - Objective: Allow user to update settings
 - [x] Settings React Component
-- [ ] Send user settings data to DB
+- [x] Send user settings data to DB
 
 ### Phase Three: Review Infusion (Index Views)
 - [x] User can see calendar view of past infusions (infusion index)
@@ -82,7 +82,7 @@ Users will be able to:
 
 #### Thursday
 - Objective: Built calendar component
-- [ ] Responsive design
+- [x] Responsive design
 - [x] Calendar React Component
 - [x] Send infusion data from DB
 - [x] Send infusion data for current month
