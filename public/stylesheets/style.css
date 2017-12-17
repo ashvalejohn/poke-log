@@ -25,7 +25,6 @@ body ul {
 
 .page, .auth, .settings, .log-poke, .calendar {
   height: 90vh;
-  width: 90%;
   margin: 0 auto;
   box-sizing: border-box;
   display: flex;
@@ -34,7 +33,7 @@ body ul {
   align-items: center;
 }
 
-.page-title, .auth__title, .settings__title, .log-poke__title, .calendar {
+.page-title, .auth__title, .settings__title, .log-poke__title, .calendar__title {
   font-size: 32px;
   text-align: center;
   margin: 5vh 0 8vh 0;
@@ -462,20 +461,28 @@ body ul {
 
 .calendar {
   color: #6285db;
+  height: auto;
 }
 
 .calendar__select-month {
   border: 2px solid #6285db;
   font-size: 1rem;
+  width: 350px;
 }
 
 .calendar__grid {
   background-color: white;
   border-radius: 5px;
-  margin-top: 2%;
+  margin: 2vh 0 15vh 0;
   border: 2px solid #6285db;
   display: flex;
   flex-direction: column;
+  width: 95%;
+}
+@media screen and (min-width: 1000px) {
+  .calendar__grid {
+    width: 75%;
+  }
 }
 
 .grid__days {
@@ -488,6 +495,7 @@ body ul {
   display: flex;
   justify-content: center;
   align-items: center;
+  text-align: center;
 }
 
 .day-name {
@@ -503,17 +511,31 @@ body ul {
 }
 
 .day {
-  min-height: 130px;
-  flex-basis: 14%;
+  min-height: 80px;
+  flex-basis: calc(100% / 7);
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
 }
 .day:not(:nth-of-type(7n)) {
   border-right: 1px solid #6285db;
 }
-.day:not(:nth-of-type(n + 29)) {
+.day:not(:nth-of-type(n + 36)) {
   border-bottom: 1px solid #6285db;
+}
+@media screen and (min-width: 500px) {
+  .day {
+    min-height: 100px;
+  }
+}
+@media screen and (min-width: 1000px) {
+  .day {
+    min-height: 140px;
+  }
 }
 
 .day__date {
+  flex: 1;
   font-size: 14px;
   text-align: left;
   padding: 3% 0 0 3%;
@@ -524,7 +546,8 @@ body ul {
   background-size: contain;
   background-position: center;
   background-repeat: no-repeat;
-  height: 26%;
+  height: 70%;
+  width: 30%;
 }
 
 .single-poke {
@@ -534,4 +557,11 @@ body ul {
 .double-poke {
   display: flex;
   flex-direction: row;
+}
+
+.poke-bleed {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex: 2;
 }

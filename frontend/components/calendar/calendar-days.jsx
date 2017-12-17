@@ -77,8 +77,10 @@ class Days extends Component {
           days.map((day, index) => (
             <div key={`${index}${day.date}`} className='day'>
               <div className='day__date'>{day.date}</div>
-              <div className={day.bleed ? "red-drop" : null}></div>
-              <div>{day.poke ? (day.poke == 'single' ? singlePoke : doublePoke) : null}</div>
+              <div className='poke-bleed'>
+                <div className={`${day.bleed ? "red-drop" : null}`}></div>
+              </div>
+              <div className='poke-bleed'>{day.poke ? (day.poke == 'single' ? singlePoke : doublePoke) : null}</div>
             </div>
             )
           )
