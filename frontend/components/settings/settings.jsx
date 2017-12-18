@@ -8,7 +8,6 @@ import merge from 'lodash/merge';
 class Settings extends React.Component {
   constructor(props){
     super(props);
-    console.log(this.props);
     this.state = {
       name: this.props.name,
       dosage: this.props.dosage
@@ -23,8 +22,7 @@ class Settings extends React.Component {
   updateUser(newState){
     let prevState = this.state;
     // setState with child component info, cb to action
-    // TODO : send whole user object to DB, rerende
-    console.log(newState);
+    // TODO : send whole user object to DB, rerender
     this.setState(merge(prevState, newState));
     this.props.updateUser(this.state);
   }
