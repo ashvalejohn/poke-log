@@ -14,7 +14,6 @@ class SettingsName extends Component {
   }
 
   makeEdit() {
-    console.log("Make changes");
     const inputTag = document.getElementById('settingsName');
     const saveButton = document.getElementById('saveName');
     const editButton = document.getElementById('editName');
@@ -25,7 +24,6 @@ class SettingsName extends Component {
   }
 
   saveEdit() {
-    console.log("Save changes");
     const inputTag = document.getElementById('settingsName');
     const saveButton = document.getElementById('saveName');
     const editButton = document.getElementById('editName');
