@@ -250,6 +250,7 @@ body ul {
   margin-top: 2vh;
 }
 .auth__login-signup p a {
+  color: inherit;
   font-weight: bold;
 }
 .auth__login-signup p a:hover {
