@@ -49,8 +49,6 @@ class SettingsName extends Component {
         <p>Name</p>
         <label className='settings__label'>
           <input id='settingsName' className='settings__input' placeholder={this.props.name} onChange={this.handleChange} readOnly/>
-          <button id='editName' onClick={this.makeEdit} className='settings__input__button--edit'></button>
-          <button id='saveName' onClick={this.saveEdit} className='settings__input__button--save hidden'></button>
         </label>
       </div>
     )

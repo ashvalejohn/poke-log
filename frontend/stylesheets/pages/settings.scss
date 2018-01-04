@@ -59,20 +59,6 @@
   }
 }
 
-.settings__input__button--edit{
-  @extend .settings__input__button;
-  background-image: url(../images/icons/pencil-edit.svg);
-}
-
-.settings__input__button--save{
-  @extend .settings__input__button;
-  background-image: url(../images/icons/save-green.svg);
-}
-
-.settings__input--new{
-  color: $gray;
-}
-
 #shares{
   li {
     &:not(:last-of-type){
@@ -81,9 +67,24 @@
   }
 }
 
+.settings_buttons{
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  width: 350px;
+  margin-top: 6vh;
+}
+
+.settings__update{
+  @extend .button;
+  background-color: $green;
+  color: $white;
+  width: 45%;
+}
+
 .settings__sign-out{
   @extend .button;
-  background-color: $black;
+  background-color: $red;
   color: $white;
-  margin-top: 6vh;
+  width: 45%;
 }

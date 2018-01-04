@@ -39,8 +39,9 @@ body ul {
   margin: 5vh 0 8vh 0;
 }
 
-.button, .auth__submit, .settings__sign-out, .log-poke__submit {
+.button, .auth__submit, .settings__update, .settings__sign-out, .log-poke__submit {
   border-radius: 5px;
+  border: 0px;
   font-size: 1.25rem;
   height: 60px;
   text-transform: uppercase;
@@ -48,13 +49,13 @@ body ul {
   margin-bottom: 2%;
 }
 @media screen and (min-width: 500px) {
-  .button, .auth__submit, .settings__sign-out, .log-poke__submit {
+  .button, .auth__submit, .settings__update, .settings__sign-out, .log-poke__submit {
     font-size: 1.5rem;
     height: 75px;
     width: 200px;
   }
 }
-.button:hover, .auth__submit:hover, .settings__sign-out:hover, .log-poke__submit:hover {
+.button:hover, .auth__submit:hover, .settings__update:hover, .settings__sign-out:hover, .log-poke__submit:hover {
   cursor: pointer;
 }
 
@@ -309,7 +310,7 @@ body ul {
   color: #95989A;
 }
 
-.settings__input__button, .settings__input__button--edit, .settings__input__button--save {
+.settings__input__button {
   background-position: center;
   background-size: contain;
   background-repeat: no-repeat;
@@ -318,33 +319,35 @@ body ul {
   border: 0px;
   margin-right: 2%;
 }
-.settings__input__button:hover, .settings__input__button--edit:hover, .settings__input__button--save:hover {
+.settings__input__button:hover {
   cursor: pointer;
 }
-.settings__input__button:focus, .settings__input__button--edit:focus, .settings__input__button--save:focus {
+.settings__input__button:focus {
   outline: none;
-}
-
-.settings__input__button--edit {
-  background-image: url(../images/icons/pencil-edit.svg);
-}
-
-.settings__input__button--save {
-  background-image: url(../images/icons/save-green.svg);
-}
-
-.settings__input--new {
-  color: #95989A;
 }
 
 #shares li:not(:last-of-type) {
   margin-bottom: 3%;
 }
 
-.settings__sign-out {
-  background-color: #0b101a;
-  color: white;
+.settings_buttons {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  width: 350px;
   margin-top: 6vh;
+}
+
+.settings__update {
+  background-color: #0a814f;
+  color: white;
+  width: 45%;
+}
+
+.settings__sign-out {
+  background-color: #D25737;
+  color: white;
+  width: 45%;
 }
 
 .log-poke__title {
