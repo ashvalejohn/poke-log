@@ -95,11 +95,11 @@
     @extend .input;
 }
 
-.log-poke___form-select {
+.log-poke__form-select {
     background-color: $white;
     border: 2px solid $red;
     border-radius: $button-border;
-    box-sizing: content-box;
+    box-sizing: border-box;
     height: 50px;
     padding-left: 2%;
     font-size: 1.5rem;

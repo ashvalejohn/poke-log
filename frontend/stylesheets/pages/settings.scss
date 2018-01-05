@@ -1,6 +1,8 @@
 .settings{
   @extend .page;
   font-size: 24px;
+  width: 80%;
+  max-width: 350px;
 }
 
 .settings__title{
@@ -11,66 +13,28 @@
 .settings__fields{
   display: flex;
   flex-direction: column;
+  width: 100%;
 }
 
 .settings__label{
-  @extend .input;
-  background-color: $white;
-  border: $input-border $black;
   padding: 0;
   display: flex;
-  align-items: center;
-  justify-content: space-between;
-  min-width: 350px;
-  margin-bottom: $form-margin
+  flex-direction: column;
+  align-items: flex-start;
 }
 
 .settings__input{
+  @extend .input;
+  border: $input-border $black; 
+  box-sizing: border-box;
   font-size: inherit;
-  height: 90%;
-  width: 80%;
-  border: 0px;
-  padding-left: 2%;
   color: $black;
+  margin-bottom: $form-margin;
+  padding-left: 2%;
+  width: 100%;
   &::placeholder{
     color: $black;
   }
-}
-
-.settings__input--save{
-  &::placeholder{
-    color: $gray;
-  }
-}
-
-.settings__input__button{
-  background-position: center;
-  background-size: contain;
-  background-repeat: no-repeat;
-  height: 80%;
-  width: 50px;
-  border: 0px;
-  margin-right: 2%;
-  &:hover{
-    cursor: pointer;
-  }
-  &:focus{
-    outline: none;
-  }
-}
-
-.settings__input__button--edit{
-  @extend .settings__input__button;
-  background-image: url(../images/icons/pencil-edit.svg);
-}
-
-.settings__input__button--save{
-  @extend .settings__input__button;
-  background-image: url(../images/icons/save-green.svg);
-}
-
-.settings__input--new{
-  color: $gray;
 }
 
 #shares{
@@ -81,9 +45,24 @@
   }
 }
 
+.settings_buttons{
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  width: 100%;
+  margin-top: 6vh;
+}
+
+.settings__update{
+  @extend .button;
+  background-color: $green;
+  color: $white;
+  width: 45%;
+}
+
 .settings__sign-out{
   @extend .button;
-  background-color: $black;
+  background-color: $red;
   color: $white;
-  margin-top: 6vh;
+  width: 45%;
 }
