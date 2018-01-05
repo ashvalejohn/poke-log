@@ -303,7 +303,7 @@ body ul {
   width: 100%;
 }
 .settings__input::placeholder {
-  color: #0b101a;
+  color: #95989A;
 }
 
 #shares li:not(:last-of-type) {

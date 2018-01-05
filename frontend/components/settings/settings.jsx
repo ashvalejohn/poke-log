@@ -48,14 +48,16 @@ class Settings extends React.Component {
             <input 
               id='settingsName' 
               className='settings__input' 
-              placeholder={this.state.name} 
+              value={this.state.name} 
+              placeholder="i.e. John Doe"
               onChange={this.handleChange('name')} />
           </label>
           <label className='settings__label'>Dose (in mL)
             <input
               id='settingsName'
               className='settings__input'
-              placeholder={this.state.dosage}
+              value={this.state.dosage}
+              placeholder="450"
               onChange={this.handleChange('dosage')} />
           </label>
         </div>
