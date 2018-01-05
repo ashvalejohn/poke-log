@@ -1,6 +1,8 @@
 .settings{
   @extend .page;
   font-size: 24px;
+  width: 80%;
+  max-width: 350px;
 }
 
 .settings__title{
@@ -11,6 +13,7 @@
 .settings__fields{
   display: flex;
   flex-direction: column;
+  width: 100%;
 }
 
 .settings__label{
@@ -23,11 +26,12 @@
 .settings__input{
   @extend .input;
   border: $input-border $black; 
+  box-sizing: border-box;
   font-size: inherit;
-  padding-left: 2%;
   color: $black;
-  min-width: 350px;
   margin-bottom: $form-margin;
+  padding-left: 2%;
+  width: 100%;
   &::placeholder{
     color: $black;
   }
@@ -45,7 +49,7 @@
   display: flex;
   flex-direction: row;
   justify-content: space-between;
-  width: 350px;
+  width: 100%;
   margin-top: 6vh;
 }
 

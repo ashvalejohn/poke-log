@@ -13,6 +13,9 @@
   border: 2px solid $blue;
   font-size: 1rem;
   width: 350px;
+  &:hover{
+    cursor: pointer;
+  }
 }
 
 .calendar__grid{
