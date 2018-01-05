@@ -14,24 +14,21 @@
 }
 
 .settings__label{
-  @extend .input;
-  background-color: $white;
-  border: $input-border $black;
   padding: 0;
   display: flex;
-  align-items: center;
-  justify-content: space-between;
-  min-width: 350px;
-  margin-bottom: $form-margin
+  flex-direction: column;
+  align-items: flex-start;
 }
 
 .settings__input{
+  @extend .input;
+  border: $input-border $black; 
   font-size: inherit;
   height: 90%;
-  width: 80%;
-  border: 0px;
   padding-left: 2%;
   color: $black;
+  min-width: 350px;
+  margin-bottom: $form-margin;
   &::placeholder{
     color: $black;
   }

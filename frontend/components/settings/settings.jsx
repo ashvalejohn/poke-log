@@ -1,7 +1,5 @@
 import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
-import SettingsName from './settings-name';
-import SettingsDose from './settings-dose';
 
 import merge from 'lodash/merge';
 
@@ -16,15 +14,20 @@ class Settings extends React.Component {
     };
 
     this.updateUser = this.updateUser.bind(this);
+    this.handleChange = this.handleChange.bind(this);
     this.handleLogout = this.handleLogout.bind(this);
   }
 
   updateUser(newState){
-    let prevState = this.state;
-    // setState with child component info, cb to action
-    // TODO : send whole user object to DB, rerender
-    this.setState(merge(prevState, newState));
     this.props.updateUser(this.state);
+  }
+
+  handleChange(type){
+    return (e) => {
+      this.setState({
+        [type]: e.target.value,
+      })
+    }
   }
 
   handleLogout(){
@@ -36,15 +39,28 @@ class Settings extends React.Component {
   }
 
   render(){
+    console.log(this.props);
     return (
       <form className='settings'>
         <h1 className='settings__title'>Settings</h1>
         <div className='settings__fields'>
-          <SettingsName name={this.state.name} update={this.updateUser}/>
-          <SettingsDose dosage= {this.state.dosage} update={this.updateUser}/>
+          <label className='settings__label'>Name
+            <input 
+              id='settingsName' 
+              className='settings__input' 
+              placeholder={this.state.name} 
+              onChange={this.handleChange('name')} />
+          </label>
+          <label className='settings__label'>Dose (in mL)
+            <input
+              id='settingsName'
+              className='settings__input'
+              placeholder={this.state.dosage}
+              onChange={this.handleChange('dosage')} />
+          </label>
         </div>
         <div className='settings_buttons'>
-          <button className='settings__update'>Update</button>
+          <button className='settings__update' onClick={this.updateUser}>Update</button>
           <button className='settings__sign-out' onClick={this.handleLogout}>Sign Out</button>
         </div>
       </form>

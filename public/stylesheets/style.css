@@ -59,7 +59,7 @@ body ul {
   cursor: pointer;
 }
 
-.input, .auth__form-input, .settings__label, .log-poke__form-input, .calendar__select-month {
+.input, .auth__form-input, .settings__input, .log-poke__form-input, .calendar__select-month {
   background-color: white;
   border-radius: 5px;
   color: #0b101a;
@@ -284,23 +284,20 @@ body ul {
 }
 
 .settings__label {
-  background-color: white;
-  border: 2px solid #0b101a;
   padding: 0;
   display: flex;
-  align-items: center;
-  justify-content: space-between;
-  min-width: 350px;
-  margin-bottom: 2vh;
+  flex-direction: column;
+  align-items: flex-start;
 }
 
 .settings__input {
+  border: 2px solid #0b101a;
   font-size: inherit;
   height: 90%;
-  width: 80%;
-  border: 0px;
   padding-left: 2%;
   color: #0b101a;
+  min-width: 350px;
+  margin-bottom: 2vh;
 }
 .settings__input::placeholder {
   color: #0b101a;
