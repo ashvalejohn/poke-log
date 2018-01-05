@@ -24,35 +24,12 @@
   @extend .input;
   border: $input-border $black; 
   font-size: inherit;
-  height: 90%;
   padding-left: 2%;
   color: $black;
   min-width: 350px;
   margin-bottom: $form-margin;
   &::placeholder{
     color: $black;
-  }
-}
-
-.settings__input--save{
-  &::placeholder{
-    color: $gray;
-  }
-}
-
-.settings__input__button{
-  background-position: center;
-  background-size: contain;
-  background-repeat: no-repeat;
-  height: 80%;
-  width: 50px;
-  border: 0px;
-  margin-right: 2%;
-  &:hover{
-    cursor: pointer;
-  }
-  &:focus{
-    outline: none;
   }
 }
 

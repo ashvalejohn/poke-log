@@ -293,7 +293,6 @@ body ul {
 .settings__input {
   border: 2px solid #0b101a;
   font-size: inherit;
-  height: 90%;
   padding-left: 2%;
   color: #0b101a;
   min-width: 350px;
@@ -301,26 +300,6 @@ body ul {
 }
 .settings__input::placeholder {
   color: #0b101a;
-}
-
-.settings__input--save::placeholder {
-  color: #95989A;
-}
-
-.settings__input__button {
-  background-position: center;
-  background-size: contain;
-  background-repeat: no-repeat;
-  height: 80%;
-  width: 50px;
-  border: 0px;
-  margin-right: 2%;
-}
-.settings__input__button:hover {
-  cursor: pointer;
-}
-.settings__input__button:focus {
-  outline: none;
 }
 
 #shares li:not(:last-of-type) {
