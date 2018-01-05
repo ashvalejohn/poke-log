@@ -20,6 +20,8 @@ class Settings extends React.Component {
 
   updateUser(newState){
     this.props.updateUser(this.state);
+    document.querySelector('.settings__update').classList.remove('settings__update--save');
+    console.log(document.querySelector('.settings__update').classList);
   }
 
   handleChange(type){
@@ -27,6 +29,7 @@ class Settings extends React.Component {
       this.setState({
         [type]: e.target.value,
       })
+      document.querySelector('.settings__update').classList.add('settings__update--save');
     }
   }
 
@@ -48,14 +51,16 @@ class Settings extends React.Component {
             <input 
               id='settingsName' 
               className='settings__input' 
-              placeholder={this.state.name} 
+              value={this.state.name} 
+              placeholder="i.e. John Doe"
               onChange={this.handleChange('name')} />
           </label>
           <label className='settings__label'>Dose (in mL)
             <input
               id='settingsName'
               className='settings__input'
-              placeholder={this.state.dosage}
+              value={this.state.dosage}
+              placeholder="450"
               onChange={this.handleChange('dosage')} />
           </label>
         </div>

@@ -33,7 +33,7 @@
   padding-left: 2%;
   width: 100%;
   &::placeholder{
-    color: $black;
+    color: $gray;
   }
 }
 
@@ -55,9 +55,12 @@
 
 .settings__update{
   @extend .button;
-  background-color: $green;
+  background-color: $gray;
   color: $white;
   width: 45%;
+  &--save{
+    background-color: $green;
+  }
 }
 
 .settings__sign-out{

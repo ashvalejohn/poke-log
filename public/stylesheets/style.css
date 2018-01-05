@@ -304,7 +304,7 @@ body ul {
   width: 100%;
 }
 .settings__input::placeholder {
-  color: #0b101a;
+  color: #95989A;
 }
 
 #shares li:not(:last-of-type) {
@@ -320,9 +320,12 @@ body ul {
 }
 
 .settings__update {
-  background-color: #0a814f;
+  background-color: #95989A;
   color: white;
   width: 45%;
+}
+.settings__update--save {
+  background-color: #0a814f;
 }
 
 .settings__sign-out {
