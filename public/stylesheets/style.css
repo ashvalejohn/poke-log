@@ -319,9 +319,12 @@ body ul {
 }
 
 .settings__update {
-  background-color: #0a814f;
+  background-color: #95989A;
   color: white;
   width: 45%;
+}
+.settings__update--save {
+  background-color: #0a814f;
 }
 
 .settings__sign-out {
