@@ -1,0 +1,76 @@
+.splash-page{
+  height: inherit;
+
+  main{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+  } 
+
+  h1{
+    color: $dkyell;
+  }
+
+  &__coming-soon{
+    color: $dkyell;
+  }
+
+  &__try-it{
+    @extend .button;
+    background-color: $mdyell;
+    color: $white;
+    margin: 0 auto;
+  }
+
+  footer{
+    bottom: 0;
+    position: fixed;
+    width: 100%;
+    p{
+      padding: 2%;
+    }
+  }
+}
+
+.feature{
+  background-color: $white;
+  border-radius: $button-border;
+  border-width: 2px;
+  border-style: solid;
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+  margin: 2vw;
+  padding: 2%;
+  min-height: 350px;
+  width: 250px;
+  h3{
+    border-bottom-width: 2px;
+    border-bottom-style: solid;
+    border-color: inherit;
+    width: 80%;
+  }
+  &--share{
+    border-color: $green;
+    h3{
+      color: $green;
+    }
+  }
+  &--log{
+    border-color: $blue;
+    h3{
+      color: $blue;
+    }
+  }
+  &--poke{
+    border-color: $dkyell;
+    h3{
+      color: $dkyell;
+    }
+  }
+  p{
+    padding-top: 2%;
+  }
+}
+

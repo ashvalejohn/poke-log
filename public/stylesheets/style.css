@@ -4,7 +4,7 @@ body {
   padding: 0;
   font-family: Arial, Helvetica, sans-serif;
 }
-body h1, body p, body ul {
+body h1, body h2, body h3, body p, body ul {
   margin: 0;
   font-size: inherit;
 }
@@ -39,7 +39,7 @@ body ul {
   margin: 5vh 0 8vh 0;
 }
 
-.button, .auth__submit, .settings__update, .settings__sign-out, .log-poke__submit {
+.button, .splash-page__try-it, .auth__submit, .settings__update, .settings__sign-out, .log-poke__submit {
   border-radius: 5px;
   border: 0px;
   font-size: 1.25rem;
@@ -49,13 +49,13 @@ body ul {
   margin-bottom: 2%;
 }
 @media screen and (min-width: 500px) {
-  .button, .auth__submit, .settings__update, .settings__sign-out, .log-poke__submit {
+  .button, .splash-page__try-it, .auth__submit, .settings__update, .settings__sign-out, .log-poke__submit {
     font-size: 1.5rem;
     height: 75px;
     width: 200px;
   }
 }
-.button:hover, .auth__submit:hover, .settings__update:hover, .settings__sign-out:hover, .log-poke__submit:hover {
+.button:hover, .splash-page__try-it:hover, .auth__submit:hover, .settings__update:hover, .settings__sign-out:hover, .log-poke__submit:hover {
   cursor: pointer;
 }
 
@@ -204,6 +204,76 @@ body ul {
   z-index: -1;
 }
 
+.splash-page {
+  height: inherit;
+}
+.splash-page main {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+}
+.splash-page h1 {
+  color: #e4a312;
+}
+.splash-page__coming-soon {
+  color: #e4a312;
+}
+.splash-page__try-it {
+  background-color: #f0b83a;
+  color: white;
+  margin: 0 auto;
+}
+.splash-page footer {
+  bottom: 0;
+  position: fixed;
+  width: 100%;
+}
+.splash-page footer p {
+  padding: 2%;
+}
+
+.feature {
+  background-color: white;
+  border-radius: 5px;
+  border-width: 2px;
+  border-style: solid;
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+  margin: 2vw;
+  padding: 2%;
+  min-height: 350px;
+  width: 250px;
+}
+.feature h3 {
+  border-bottom-width: 2px;
+  border-bottom-style: solid;
+  border-color: inherit;
+  width: 80%;
+}
+.feature--share {
+  border-color: #0a814f;
+}
+.feature--share h3 {
+  color: #0a814f;
+}
+.feature--log {
+  border-color: #6285db;
+}
+.feature--log h3 {
+  color: #6285db;
+}
+.feature--poke {
+  border-color: #e4a312;
+}
+.feature--poke h3 {
+  color: #e4a312;
+}
+.feature p {
+  padding-top: 2%;
+}
+
 .auth__form {
   color: #0b101a;
   display: flex;
@@ -251,7 +321,6 @@ body ul {
   margin-top: 2vh;
 }
 .auth__login-signup p a {
-  color: inherit;
   font-weight: bold;
 }
 .auth__login-signup p a:hover {

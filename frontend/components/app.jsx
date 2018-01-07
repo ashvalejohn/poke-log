@@ -5,8 +5,8 @@ import LoginContainer from './session/login-container';
 import SignupContainer from './session/signup-container';
 import LogPokeContainer from './log-poke/log-poke-container';
 import SettingsContainer from './settings/settings-container';
-
 import CalendarContainer from './calendar/calendar-container';
+import Splash from './splash/splash';
 
 import Nav from './nav';
 
@@ -25,6 +25,7 @@ const App = () => (
     <ProtectedRoute path='/settings' component={SettingsContainer} />
     <AuthRoute path='/login' component={LoginContainer} />
     <AuthRoute path='/signup' component={SignupContainer} />
+    <Route path='/splash' component={Splash} />
     <Route path='/' component={Nav} />
     <Route exact path ='/' component={defaultRedirect} />
   </div>
