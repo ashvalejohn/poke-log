@@ -15,7 +15,7 @@ import Nav from './nav';
 // Else, redirect to "log-a-poke"
 const defaultRedirect = (state) => {
   const loggedIn = typeof state.session !== undefined ? false : true;
-  return loggedIn ? <Redirect to='/log-a-poke' /> : <Redirect to='/login' />;
+  return loggedIn ? <Redirect to='/log-a-poke' /> : <Redirect to='/' />;
 };
 
 const App = () => (
@@ -25,7 +25,7 @@ const App = () => (
     <ProtectedRoute path='/settings' component={SettingsContainer} />
     <AuthRoute path='/login' component={LoginContainer} />
     <AuthRoute path='/signup' component={SignupContainer} />
-    <Route path='/splash' component={Splash} />
+    <AuthRoute path='/' component={Splash} />
     <Route path='/' component={Nav} />
     <Route exact path ='/' component={defaultRedirect} />
   </div>

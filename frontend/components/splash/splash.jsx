@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 
 const Splash = () => (
   <div className='splash-page'>
@@ -28,7 +29,9 @@ const Splash = () => (
         </article>
       </section>
     </main>
-    <button className='splash-page__try-it'>Try It</button>
+    <Link to='/signup'>
+      <button className='splash-page__try-it'>Try It</button>
+    </Link>
     <footer>
       <p><a href="https://github.com/ashvalejohn/poke-log" target="_blank">Poke Log</a> was built by <a href="https://github.com/bucknermr" target="_blank">Matthew Buckner</a>, <a href="https://github.com/ashvalejohn" target="_blank">Ashley Johnson</a> and <a href="https://github.com/nwilliams770" target="_blank">Nicholas Williams</a>.</p>
     </footer>
