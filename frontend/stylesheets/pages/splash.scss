@@ -1,0 +1,135 @@
+.splash-page{
+  height: inherit;
+  padding: 2%;
+  margin-bottom: 20vh;
+  @media screen and (min-width: $desktop){
+    margin-bottom: 0;
+  }
+
+  main{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 5%;
+    @media screen and (min-width: $desktop){
+      flex-direction: row;
+      margin: 0;
+    }
+  } 
+
+  h1{
+    color: $dkyell;
+    font-size: 32px;
+    @media screen and (min-width: $desktop){
+      margin-top: 2%;
+    }
+  }
+
+  h2{
+    color: $black;
+    font-weight: normal;
+  }
+
+  &__coming-soon{
+    color: $dkyell;
+    font-style: italic;
+    text-align: right;
+  }
+
+  &__try-it{
+    @extend .button;
+    background-color: $mdyell;
+    color: $white;
+    position: absolute;
+    right: 2%;
+  }
+
+  footer{
+    bottom: 0;
+    position: fixed;
+    width: 100%;
+    p{
+      color: $black;
+      padding: 2%;
+    }
+    a{
+      text-decoration: none;
+      font-weight: bold;
+      &:visited{
+        color: inherit;
+      }
+      &:hover{
+        cursor: pointer;
+        color: $dkyell;
+        text-decoration: underline;
+      }
+    }
+  }
+}
+
+.feature{
+  background-color: $white;
+  border-radius: $button-border;
+  border-width: 2px;
+  border-style: solid;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  justify-content: flex-start;
+  flex: 1;
+  margin: 2vw;
+  padding: 5% 2% 2% 2%;
+  min-height: 200px;
+  height: 30vh;
+  width: 250px;
+  @media screen and (min-width: $desktop){
+    min-height: 250px;
+  }
+  article{
+    margin-top: 5%;
+  }
+  h3{
+    border-bottom-width: 2px;
+    border-bottom-style: solid;
+    border-color: inherit;
+  }
+  &--share{
+    border-color: $green;
+    h3{
+      color: $green;
+    }
+    .feature__icon{
+      background-image: url('../images/icons/share-green.svg');
+    }
+  }
+  &--log{
+    border-color: $blue;
+    h3{
+      color: $blue;
+    }
+    .feature__icon{
+      background-image: url('../images/icons/calendar-blue.svg');
+    }
+  }
+  &--poke{
+    border-color: $red;
+    h3{
+      color: $red;
+    }
+    .feature__icon{
+      background-image: url('../images/icons/droplet-red.svg');
+    }
+  }
+  p{
+    padding-top: 2%;
+  }
+}
+
+.feature__icon{
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: contain;
+  height: 100px;
+  width: 100px;
+}
