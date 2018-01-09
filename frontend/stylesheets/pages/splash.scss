@@ -1,5 +1,6 @@
 .splash-page{
   height: inherit;
+  padding: 2%;
 
   main{
     display: flex;
@@ -10,6 +11,12 @@
 
   h1{
     color: $dkyell;
+    font-size: 32px;
+  }
+
+  h2{
+    color: $black;
+    font-weight: normal;
   }
 
   &__coming-soon{
@@ -22,7 +29,8 @@
     @extend .button;
     background-color: $mdyell;
     color: $white;
-    margin: 0 auto;
+    position: absolute;
+    right: 2%;
   }
 
   footer{
@@ -30,7 +38,20 @@
     position: fixed;
     width: 100%;
     p{
+      color: $black;
       padding: 2%;
+    }
+    a{
+      text-decoration: none;
+      font-weight: bold;
+      &:visited{
+        color: inherit;
+      }
+      &:hover{
+        cursor: pointer;
+        color: $dkyell;
+        text-decoration: underline;
+      }
     }
   }
 }
@@ -47,7 +68,8 @@
   flex: 1;
   margin: 2vw;
   padding: 5% 2% 2% 2%;
-  min-height: 30vh;
+  min-height: 250px;
+  height: 30vh;
   width: 250px;
   article{
     margin-top: 5%;

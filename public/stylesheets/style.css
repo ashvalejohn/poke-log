@@ -206,6 +206,7 @@ body ul {
 
 .splash-page {
   height: inherit;
+  padding: 2%;
 }
 .splash-page main {
   display: flex;
@@ -215,6 +216,11 @@ body ul {
 }
 .splash-page h1 {
   color: #e4a312;
+  font-size: 32px;
+}
+.splash-page h2 {
+  color: #0b101a;
+  font-weight: normal;
 }
 .splash-page__coming-soon {
   color: #e4a312;
@@ -224,7 +230,8 @@ body ul {
 .splash-page__try-it {
   background-color: #f0b83a;
   color: white;
-  margin: 0 auto;
+  position: absolute;
+  right: 2%;
 }
 .splash-page footer {
   bottom: 0;
@@ -232,7 +239,20 @@ body ul {
   width: 100%;
 }
 .splash-page footer p {
+  color: #0b101a;
   padding: 2%;
+}
+.splash-page footer a {
+  text-decoration: none;
+  font-weight: bold;
+}
+.splash-page footer a:visited {
+  color: inherit;
+}
+.splash-page footer a:hover {
+  cursor: pointer;
+  color: #e4a312;
+  text-decoration: underline;
 }
 
 .feature {
@@ -247,7 +267,8 @@ body ul {
   flex: 1;
   margin: 2vw;
   padding: 5% 2% 2% 2%;
-  min-height: 30vh;
+  min-height: 250px;
+  height: 30vh;
   width: 250px;
 }
 .feature article {
