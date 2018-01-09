@@ -207,16 +207,34 @@ body ul {
 .splash-page {
   height: inherit;
   padding: 2%;
+  margin-bottom: 20vh;
+}
+@media screen and (min-width: 1000px) {
+  .splash-page {
+    margin-bottom: 0;
+  }
 }
 .splash-page main {
   display: flex;
-  flex-direction: row;
+  flex-direction: column;
   justify-content: space-between;
   align-items: center;
+  margin-top: 5%;
+}
+@media screen and (min-width: 1000px) {
+  .splash-page main {
+    flex-direction: row;
+    margin: 0;
+  }
 }
 .splash-page h1 {
   color: #e4a312;
   font-size: 32px;
+}
+@media screen and (min-width: 1000px) {
+  .splash-page h1 {
+    margin-top: 2%;
+  }
 }
 .splash-page h2 {
   color: #0b101a;
@@ -261,15 +279,20 @@ body ul {
   border-width: 2px;
   border-style: solid;
   display: flex;
-  flex-direction: column;
   align-items: center;
+  flex-direction: column;
   justify-content: flex-start;
   flex: 1;
   margin: 2vw;
   padding: 5% 2% 2% 2%;
-  min-height: 250px;
+  min-height: 200px;
   height: 30vh;
   width: 250px;
+}
+@media screen and (min-width: 1000px) {
+  .feature {
+    min-height: 250px;
+  }
 }
 .feature article {
   margin-top: 5%;
@@ -311,6 +334,7 @@ body ul {
 }
 
 .feature__icon {
+  background-position: center;
   background-repeat: no-repeat;
   background-size: contain;
   height: 100px;
