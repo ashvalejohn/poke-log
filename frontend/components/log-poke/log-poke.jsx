@@ -49,6 +49,15 @@ class LogPoke extends React.Component {
         });
     }
 
+    getTodayDateString() {
+      const today = new Date();
+      let day = today.getDate();
+      day = day < 10 ? `0${day}` : day;
+      let month = today.getMonth() + 1;
+      month = month < 10 ? `0${month}` : month;
+      return `${today.getFullYear()}-${month}-${day}`;
+    }
+
     componentWillUnmount() {
       this.props.clearErrors();
     }
@@ -59,14 +68,14 @@ class LogPoke extends React.Component {
             <h1 className= "log-poke__title"> Log a Poke </h1>
             <form id="log-poke-form" action="" className= "log-poke__form">
                 <label className="log-poke__form-field"> Poke Date
-                    <input type="date" className="log-poke__form-input" onChange={this.handleDateChange}/>
+                    <input type="date" className="log-poke__form-input" onChange={this.handleDateChange} max={this.getTodayDateString()}/>
                 </label>
                 <label className="log-poke__form-field">Dose
                     <div className="log-poke___toggle-bttn">
                         <input type="radio" id="switch_left" name="switch_2" value={false} defaultChecked={true} onClick={this.handleDosageChange}/>
                         <label htmlFor="switch_left">SINGLE
                         </label>
-                        
+
                         <input type="radio" id="switch_right" name="switch_2" value={true} onClick={this.handleDosageChange} />
                         <label htmlFor="switch_right">DOUBLE
                         </label>
