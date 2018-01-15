@@ -47,8 +47,8 @@ body{
   text-transform: uppercase;
   width: 50vw;
   margin-bottom: 2%;
+  transition-duration: .25s;
   @media screen and (min-width: $tablet){
-    font-size: 1.5rem;
     height: 75px;
     width: 200px;
   }
@@ -80,5 +80,5 @@ body{
   height: 30px;
   text-align: center;
   margin-top: 2vh;
-  font-size: 24px;
+  font-size: 1.25rem;
 }
