@@ -12,6 +12,7 @@ class Login extends Component {
 
     this.handleSubmit = this.handleSubmit.bind(this);
     this.handleChange = this.handleChange.bind(this);
+    this.handleDemoUser = this.handleDemoUser.bind(this);
   }
 
   componentWillUnmount() {
@@ -30,6 +31,14 @@ class Login extends Component {
       email: this.state.email,
       password: this.state.password
     });
+  }
+
+  handleDemoUser(e){
+    e.preventDefault();
+    this.props.login({
+      email: "demo@email.com",
+      password: "password"
+    })
   }
 
   render(){
