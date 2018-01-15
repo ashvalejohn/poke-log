@@ -3,7 +3,6 @@ const SessionsController = {
     res.json({ id, email, name, dosage });
   },
   destroy: ({ user, logout, session }, res) => {
-    console.log('session.........', session);
     if (user) {
       const { id, email, name, dosage } = user;
       session.destroy();
