@@ -21,7 +21,6 @@ class Settings extends React.Component {
   updateUser(newState){
     this.props.updateUser(this.state);
     document.querySelector('.settings__update').classList.remove('settings__update--save');
-    console.log(document.querySelector('.settings__update').classList);
   }
 
   handleChange(type){
@@ -42,16 +41,15 @@ class Settings extends React.Component {
   }
 
   render(){
-    console.log(this.props);
     return (
       <form className='settings'>
         <h1 className='settings__title'>Settings</h1>
         <div className='settings__fields'>
           <label className='settings__label'>Name
-            <input 
-              id='settingsName' 
-              className='settings__input' 
-              value={this.state.name} 
+            <input
+              id='settingsName'
+              className='settings__input'
+              value={this.state.name}
               placeholder="i.e. John Doe"
               onChange={this.handleChange('name')} />
           </label>
