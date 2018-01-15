@@ -59,7 +59,7 @@ class Login extends Component {
             <button className="auth__submit" onClick={this.handleSubmit}>
               Log In
             </button>
-            <button className="auth__submit--demo" onClick={this.handleSubmit}>
+            <button className="auth__submit--demo" onClick={this.handleDemoUser}>
               Demo Login
             </button>
           </div>
