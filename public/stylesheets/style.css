@@ -39,7 +39,7 @@ body ul {
   margin: 5vh 0 8vh 0;
 }
 
-.button, .splash-page__try-it, .auth__submit, .settings__update, .settings__sign-out, .log-poke__submit {
+.button, .splash-page__try-it, .auth__submit, .auth__submit--demo, .settings__update, .settings__sign-out, .log-poke__submit {
   border-radius: 5px;
   border: 0px;
   font-size: 1.25rem;
@@ -47,15 +47,15 @@ body ul {
   text-transform: uppercase;
   width: 50vw;
   margin-bottom: 2%;
+  transition-duration: .25s;
 }
 @media screen and (min-width: 500px) {
-  .button, .splash-page__try-it, .auth__submit, .settings__update, .settings__sign-out, .log-poke__submit {
-    font-size: 1.5rem;
+  .button, .splash-page__try-it, .auth__submit, .auth__submit--demo, .settings__update, .settings__sign-out, .log-poke__submit {
     height: 75px;
     width: 200px;
   }
 }
-.button:hover, .splash-page__try-it:hover, .auth__submit:hover, .settings__update:hover, .settings__sign-out:hover, .log-poke__submit:hover {
+.button:hover, .splash-page__try-it:hover, .auth__submit:hover, .auth__submit--demo:hover, .settings__update:hover, .settings__sign-out:hover, .log-poke__submit:hover {
   cursor: pointer;
 }
 
@@ -82,7 +82,7 @@ body ul {
   height: 30px;
   text-align: center;
   margin-top: 2vh;
-  font-size: 24px;
+  font-size: 1.25rem;
 }
 
 .nav {
@@ -347,7 +347,7 @@ body ul {
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  font-size: 24px;
+  font-size: 1.25rem;
   width: 80%;
 }
 
@@ -399,12 +399,21 @@ body ul {
 
 .auth__submit {
   background-color: #e4a312;
-  border: 0px;
+  border: 2px;
   color: white;
-  transition-duration: .25s;
 }
 .auth__submit:hover {
   background-color: #f0b83a;
+}
+.auth__submit--demo {
+  border: 2px solid #0a814f;
+  background-color: #FCF9F2;
+  color: #0a814f;
+  margin-left: 2vh;
+}
+.auth__submit--demo:hover {
+  background-color: #0a814f;
+  color: white;
 }
 
 .settings {
