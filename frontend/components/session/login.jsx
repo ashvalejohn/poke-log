@@ -33,25 +33,33 @@ class Login extends Component {
   }
 
   render(){
-    return (
-      <div className='auth'>
-        <h1 className='auth__title'>Log In</h1>
-        <form className='auth__form'>
-          <label htmlFor="" className='auth__form-field'>Email Address
-            <input onChange={this.handleChange} type="email" autoFocus="autoFocus" className='auth__form-input' pattern="[a-z0-9!#$%&'*+/=?^_`{|}~-]+(?:\.[a-z0-9!#$%&'*+/=?^_`{|}~-]+)*@(?:[a-z0-9](?:[a-z0-9-]*[a-z0-9])?\.)+[a-z0-9](?:[a-z0-9-]*[a-z0-9])?" required/>
+    return <div className="auth">
+        <h1 className="auth__title">Log In</h1>
+        <form className="auth__form">
+          <label htmlFor="" className="auth__form-field">
+            Email Address
+            <input onChange={this.handleChange} type="email" autoFocus="autoFocus" className="auth__form-input" pattern="[a-z0-9!#$%&'*+/=?^_`{|}~-]+(?:\.[a-z0-9!#$%&'*+/=?^_`{|}~-]+)*@(?:[a-z0-9](?:[a-z0-9-]*[a-z0-9])?\.)+[a-z0-9](?:[a-z0-9-]*[a-z0-9])?" required />
           </label>
-          <label htmlFor="" className='auth__form-field'>Password
-            <input onChange={this.handleChange} type="password" className='auth__form-input' minLength='6' required/>
+          <label htmlFor="" className="auth__form-field">
+            Password
+            <input onChange={this.handleChange} type="password" className="auth__form-input" minLength="6" required />
           </label>
-          <p className='auth__errors'>{this.props.errors}</p>
-          <div className='auth__login-signup'>
-            <button className='auth__submit' onClick={this.handleSubmit}>Log In</button>
-            <p>Don’t have an account? <Link to='/signup'>Sign Up</Link></p>
+          <p className="auth__errors">{this.props.errors}</p>
+          <div className="auth__login-signup">
+          <div>
+            <button className="auth__submit" onClick={this.handleSubmit}>
+              Log In
+            </button>
+            <button className="auth__submit--demo" onClick={this.handleSubmit}>
+              Demo Login
+            </button>
           </div>
-          
+            <p>
+              Don’t have an account? <Link to="/signup">Sign Up</Link>
+            </p>
+          </div>
         </form>
-      </div>
-    );
+      </div>;
   }
 }
 

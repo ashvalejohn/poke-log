@@ -51,7 +51,10 @@ class Signup extends Component {
           </label>
           <p className='auth__errors'>{this.props.errors}</p>
           <div className='auth__login-signup'>
-            <button className='auth__submit' onClick={this.handleSubmit}>Sign Up</button>
+            <div>
+              <button className='auth__submit' onClick={this.handleSubmit}>Sign Up</button>
+              <button className='auth__submit--demo' onClick={this.handleSubmit}>Demo Login</button>
+            </div>
             <p>Already have an account? <Link to='/login'>Log In</Link></p>
           </div>
         </form>

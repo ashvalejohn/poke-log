@@ -8,7 +8,7 @@
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  font-size: 24px;
+  font-size: 1.25rem;
   width: 80%;
 }
 
@@ -67,11 +67,22 @@
 
 .auth__submit{
   background-color: $dkyell;
-  border: 0px;
+  border: 2px;
   color: $white;
-  transition-duration: .25s;
+  
   @extend .button;
   &:hover{
     background-color: $mdyell;
+  }
+  &--demo{
+    @extend .button;
+    border: 2px solid $green;
+    background-color: $ltyell;
+    color: $green;
+    margin-left: $form-margin;
+    &:hover{
+      background-color: $green;
+      color: $white;
+    }
   }
 }
