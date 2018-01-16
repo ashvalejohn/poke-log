@@ -250,6 +250,10 @@ body ul {
   color: white;
   position: absolute;
   right: 2%;
+  text-decoration: none;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 .splash-page footer {
   bottom: 0;
