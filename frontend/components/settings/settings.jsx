@@ -18,7 +18,8 @@ class Settings extends React.Component {
     this.handleLogout = this.handleLogout.bind(this);
   }
 
-  updateUser(newState){
+  updateUser(e){
+    e.preventDefault();
     this.props.updateUser(this.state);
     document.querySelector('.settings__update').classList.remove('settings__update--save');
   }
@@ -32,7 +33,8 @@ class Settings extends React.Component {
     }
   }
 
-  handleLogout(){
+  handleLogout(e){
+    e.preventDefault();
     this.props.logout();
   }
 
