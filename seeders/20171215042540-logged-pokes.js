@@ -7,7 +7,7 @@ module.exports = {
       return queryInterface.bulkInsert('Pokes', [
         {
           UserId: 1,
-          date: "2017-11-15",
+          date: "2018-01-15",
           dose: 250,
           double: true,
           bleed: 'left-wrist',
@@ -16,7 +16,7 @@ module.exports = {
         },
         {
           UserId: 1,
-          date: "2017-11-18",
+          date: "2018-01-18",
           dose: 250,
           double: false,
           bleed: null,
@@ -25,7 +25,7 @@ module.exports = {
         },
         {
           UserId: 1,
-          date: "2017-11-22",
+          date: "2018-01-22",
           dose: 250,
           double: false,
           bleed: null,
@@ -34,7 +34,7 @@ module.exports = {
         },
         {
           UserId: 1,
-          date: "2017-11-24",
+          date: "2018-01-24",
           dose: 250,
           double: true,
           bleed: 'left-foot',
@@ -43,7 +43,7 @@ module.exports = {
         },
         {
           UserId: 1,
-          date: "2017-12-11",
+          date: "2018-01-11",
           dose: 250,
           double: false,
           bleed: null,
@@ -52,7 +52,7 @@ module.exports = {
         },
         {
           UserId: 1,
-          date: "2017-12-14",
+          date: "2018-01-14",
           dose: 250,
           double: true,
           bleed: 'lower-back',
@@ -61,7 +61,7 @@ module.exports = {
         },
         {
           UserId: 1,
-          date: "2017-12-13",
+          date: "2018-01-13",
           dose: 250,
           double: true,
           bleed: null,
@@ -70,7 +70,7 @@ module.exports = {
         },
         {
           UserId: 1,
-          date: "2017-12-04",
+          date: "2018-01-04",
           dose: 250,
           double: false,
           bleed: null,
@@ -79,7 +79,7 @@ module.exports = {
         },
         {
           UserId: 1,
-          date: "2017-12-02",
+          date: "2018-01-02",
           dose: 250,
           double: false,
           bleed: null,
