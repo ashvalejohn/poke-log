@@ -87,14 +87,14 @@ class Calendar extends Component {
       "November",
       "December"
     ]
-    console.log(this.state.month);
-    console.log(this.state.year);
     return (
       <div className='calendar'>
         <h1 className='calendar__title'>Calendar</h1>
-        <button value="prev" onClick={this.handleChangeMonth}>Prev</button>
-        <p className='calendar__select-month'>{months[this.state.month]}</p>
-        <button value="next" onClick={this.handleChangeMonth}>Next</button>
+        <div className='calendar__select-month'>
+          <button value="prev" onClick={this.handleChangeMonth} className="calendar__button calendar__button--prev">Prev</button>
+          <p className='calendar__month'>{months[this.state.month]} {this.state.year}</p>
+          <button value="next" onClick={this.handleChangeMonth} className="calendar__button calendar__button--next">Next</button>
+        </div>
         <div className='calendar__grid'>
           <div className='grid__days'>
             <span className="day-name">Sun</span>
