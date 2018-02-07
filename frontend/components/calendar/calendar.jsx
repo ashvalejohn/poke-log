@@ -14,7 +14,6 @@ class Calendar extends Component {
     this.state = {
       date: date,
       month: month,
-      monthNum: monthNum,
       year: year,
       pokes: this.props.pokes,
       today: today,
@@ -26,55 +25,76 @@ class Calendar extends Component {
   }
 
   componentDidMount(){
-    const query = `${this.state.year}-${this.state.monthNum}`;
+    const query = `${this.state.year}-${this.state.month}`;
     this.props.fetchPokes(query);
   }
 
   componentWillReceiveProps(nextProps){
     this.setState({
       pokes: nextProps.pokes,
-      monthNum: nextProps.currentMonth,
+      month: nextProps.currentMonth,
+      year: nextProps.currentYear,
     });
   }
 
   handleChangeMonth(e){
     e.preventDefault();
-    let month = parseInt(e.target.value);
+    let month;
+    let year = this.state.year;
+    if (e.target.value == "prev"){
+      if (this.state.month == 0){
+        month = 11;
+
+        year = this.state.year - 1;
+      } else{
+        month = this.state.month - 1;
+      }
+    } else {
+      if (this.state.month == 11) {
+        month = 0;
+        year = this.state.year + 1;
+      } else {
+        month = this.state.month + 1;
+      }
+    }
 
     // change month should take a zero-index integer (i.e. December is '11')
-    this.props.changeMonth(month);
-    this.setState({
-      month: e.target.value,
-    });
+    this.props.changeMonth(month, year);
   }
 
   getDaysInMonth(){
     // (2017, 12, 0) <== Returns last date of the month, which can be used to determine month length
-    return new Date(this.state.year, (this.state.monthNum + 1), 0).getDate();
+    return new Date(this.state.year, (this.state.month + 1), 0).getDate();
   }
 
   getFirstDayOfMonth(){
-    return new Date(this.state.year, this.state.monthNum).getDay();
+    return new Date(this.state.year, this.state.month).getDay();
   }
 
   render(){
+
+    const months = [
+      "January",
+      "February",
+      "March",
+      "April",
+      "May",
+      "June",
+      "July",
+      "August",
+      "September",
+      "October",
+      "November",
+      "December"
+    ]
+    console.log(this.state.month);
+    console.log(this.state.year);
     return (
       <div className='calendar'>
         <h1 className='calendar__title'>Calendar</h1>
-        <select defaultValue={this.state.month} onChange={this.handleChangeMonth} className='calendar__select-month'>
-          <option value="00">January</option>
-          <option value="01">February</option>
-          <option value="02">March</option>
-          <option value="03">April</option>
-          <option value="04">May</option>
-          <option value="05">June</option>
-          <option value="06">July</option>
-          <option value="07">August</option>
-          <option value="08">September</option>
-          <option value="09">October</option>
-          <option value="10">November</option>
-          <option value="11">December</option>
-        </select>
+        <button value="prev" onClick={this.handleChangeMonth}>Prev</button>
+        <p className='calendar__select-month'>{months[this.state.month]}</p>
+        <button value="next" onClick={this.handleChangeMonth}>Next</button>
         <div className='calendar__grid'>
           <div className='grid__days'>
             <span className="day-name">Sun</span>

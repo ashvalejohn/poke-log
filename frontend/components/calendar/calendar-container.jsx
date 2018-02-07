@@ -7,20 +7,22 @@ import { updateMonth } from '../../actions/ui-actions';
 const mapStateToProps = state => ({
   pokes: getCurrentMonthPokes(state),
   currentMonth: state.ui.currentMonth,
+  currentYear: state.ui.currentYear,
 });
 
 const mapDispatchToProps = dispatch => ({
   fetchPokes: date => dispatch(fetchPokes(date)),
-  changeMonth: month => dispatch(updateMonth(month)),
+  changeMonth: (month, year) => dispatch(updateMonth(month, year)),
 });
 
 function getCurrentMonthPokes(state){
   const month  = state.ui.currentMonth;
+  const year = state.ui.currentYear;
   let currentMonthPokes = {};
   Object.keys(state.loggedPokes).forEach(key => {
     const poke = state.loggedPokes[key];
     const date = poke.date;
-    if (date.slice(5, 7) == month + 1) {
+    if (date.slice(0, 7) == `${year}-${month + 1}`) {
       currentMonthPokes[poke.id] = poke;
     }
   });

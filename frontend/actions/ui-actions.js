@@ -1,6 +1,7 @@
 export const UPDATE_MONTH = 'UPDATE_MONTH';
 
-export const updateMonth = month => ({
+export const updateMonth = (month, year) => ({
   type: UPDATE_MONTH,
-  month
+  month,
+  year,
 });
