@@ -9,13 +9,41 @@
 }
 
 .calendar__select-month{
-  @extend .input;
-  border: 2px solid $blue;
-  font-size: 1rem;
-  width: 350px;
+  display: flex;
+}
+
+.calendar__button{
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: 60%;
+  background-color: $blue;
+  border-radius: $button-border;
+  border: 0px;
+  color: rgba(0, 0, 0, 0);
+  margin: 0 10px;
+  &--prev{
+    background-image: url("/images/icons/left-arrow.svg");
+  }
+  &--next{
+    background-image: url("/images/icons/right-arrow.svg");
+  }
   &:hover{
     cursor: pointer;
   }
+  &:focus{
+    outline: none;
+  }
+}
+
+.calendar__month{
+  @extend .input;
+  border: 2px solid $blue;
+  font-size: 1rem;
+  width: 300px;
+  text-align: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 .calendar__grid{

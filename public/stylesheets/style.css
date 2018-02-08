@@ -59,7 +59,7 @@ body ul {
   cursor: pointer;
 }
 
-.input, .auth__form-input, .settings__input, .log-poke__form-input, .calendar__select-month {
+.input, .auth__form-input, .settings__input, .log-poke__form-input, .calendar__month {
   background-color: white;
   border-radius: 5px;
   color: #0b101a;
@@ -602,12 +602,40 @@ body ul {
 }
 
 .calendar__select-month {
+  display: flex;
+}
+
+.calendar__button {
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: 60%;
+  background-color: #6285db;
+  border-radius: 5px;
+  border: 0px;
+  color: rgba(0, 0, 0, 0);
+  margin: 0 10px;
+}
+.calendar__button--prev {
+  background-image: url("/images/icons/left-arrow.svg");
+}
+.calendar__button--next {
+  background-image: url("/images/icons/right-arrow.svg");
+}
+.calendar__button:hover {
+  cursor: pointer;
+}
+.calendar__button:focus {
+  outline: none;
+}
+
+.calendar__month {
   border: 2px solid #6285db;
   font-size: 1rem;
-  width: 350px;
-}
-.calendar__select-month:hover {
-  cursor: pointer;
+  width: 300px;
+  text-align: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 .calendar__grid {
