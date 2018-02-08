@@ -16,13 +16,13 @@ const mapDispatchToProps = dispatch => ({
 });
 
 function getCurrentMonthPokes(state){
-  const month  = state.ui.currentMonth;
+  const month  = (state.ui.currentMonth + 1).toString().padStart(2, "0");
   const year = state.ui.currentYear;
   let currentMonthPokes = {};
   Object.keys(state.loggedPokes).forEach(key => {
     const poke = state.loggedPokes[key];
     const date = poke.date;
-    if (date.slice(0, 7) == `${year}-${month + 1}`) {
+    if (date.slice(0, 7) == `${year}-${month}`) {
       currentMonthPokes[poke.id] = poke;
     }
   });
