@@ -9,8 +9,6 @@ PokeLog is built with:
 
 PokeLog's design is responsive and device-agnostic, so users have a consistent experience on desktop and mobile. 
 
-[See it live](https://poke-log.herokuapp.com/)
-
 ## Team Members
 PokeLog is built by [Matthew Buckner](https://github.com/bucknermr), [Ashley Johnson](https://github.com/ashvalejohn), and [Nicholas Williams](https://github.com/nwilliams770).
 
